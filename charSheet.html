@@ -12,13 +12,244 @@
 
 <body>
 	<div class="container-fluid">
-		<div class="sect" id="character">
-			<label>Class:</label>
-			<input type="text" placeholder="Class" >
-			<label>Level:</label>
-			<input type="number" placeholder="Level" >
-		</div>
-		<div class="sect" id="health">
+		<h1>Character</h1>
+		<form class="sect form" id="character">
+			<div class="row" id="basicInfo">
+				<div class="col-sm-2">
+					<label for="Class">Class:</label>
+					<input class="form-control" type="text" placeholder="Class" id="Class">
+				</div>
+
+				<div class="col-sm-1">
+					<label for="Level">Level:</label>
+					<input class="form-control" type="number" placeholder="Level" id="Level">
+				</div>
+
+				<div class="col-sm-1">
+					<label for="XP">XP:</label>
+					<input class="form-control" type="number" placeholder="XP" id="XP">
+				</div>
+
+				<div class="col-sm-2">
+					<label for="Race">Race:</label>
+					<input class="form-control" type="text" placeholder="Race" id="Race">
+				</div>
+
+				<div class="col-sm-2">
+					<label for="Alignment">Alignment:</label>
+					<input class="form-control" type="text" placeholder="Alignment" id="Alignment">
+				</div>
+
+				<div class="col-sm-2">
+					<label for="Background">Background:</label>
+					<input class="form-control" type="text" placeholder="Background" id="Background">
+				</div>
+			</div>
+			
+
+			<div class="row form-group" id="ability">
+				<div class="col-sm-2">
+					<table>
+						<tr>
+							<th>Strength</th>
+						</tr>
+						<tr>
+							<td><input class="form-control" type="number" placeholder="STR" id="STR"></td>
+							<td><input class="form-control" type="text" readonly id="STR_MOD" value=""></td>
+						</tr>
+					</table>
+				</div>
+				<div class="col-sm-2">
+					<table>
+						<tr>
+							<th>Dexterity</th>
+						</tr>
+						<tr>
+							<td><input class="form-control" type="number" placeholder="DEX" id="DEX"></td>
+							<td><input class="form-control" type="text" readonly id="DEX_MOD" value=""></td>
+						</tr>
+					</table>
+				</div>
+				<div class="col-sm-2">
+					<table>
+						<tr>
+							<th>Constitution</th>
+						</tr>
+						<tr>
+							<td><input class="form-control" type="number" placeholder="CONST" id="CONST"></td>
+							<td><input class="form-control" type="text" readonly id="CONST_MOD" value=""></td>
+						</tr>
+					</table>
+				</div>
+				<div class="col-sm-2">
+					<table>
+						<tr>
+							<th>Intelligence</th>
+						</tr>
+						<tr>
+							<td><input class="form-control" type="number" placeholder="INT" id="INT"></td>
+							<td><input class="form-control" type="text" readonly id="INT_MOD" value=""></td>
+						</tr>
+					</table>
+				</div>
+				<div class="col-sm-2">
+					<table>
+						<tr>
+							<th>Wisdom</th>
+						</tr>
+						<tr>
+							<td><input class="form-control" type="number" placeholder="WIS" id="WIS"></td>
+							<td><input class="form-control" type="text" readonly id="WIS_MOD" value=""></td>
+						</tr>
+					</table>
+				</div>
+				<div class="col-sm-2">
+					<table>
+						<tr>
+							<th>Charisma</th>
+						</tr>
+						<tr>
+							<td><input class="form-control" type="number" placeholder="CHAR" id="CHAR"></td>
+							<td><input class="form-control" type="text" readonly id="CHAR_MOD" value=""></td>
+						</tr>
+					</table>
+				</div>
+			</div>
+			
+			
+			<div class="row form-group justify-content-around" id="skill">
+				<div class="col-sm-2 row justify-content-center">
+					<table>
+						<tr>
+							<td><input class="" type="checkbox" name="STR_SAVE">Saving Throw</td>
+							<td><input class="form-control offset-sm-1" type="text" readonly id="STR_SAVE_MOD" value="" size="3"></td>
+						</tr>
+						<tr>
+							<td><input class="" type="checkbox" name="athletics">Athletics</td>
+							<td><input class="form-control offset-sm-1" type="text" readonly id="ATH_MOD" value="" size="3"></td>
+						</tr>
+					</table>
+				</div>
+				
+				<div class="col-sm-2 row justify-content-center">
+					<table>
+						<tr>
+							<td><input class="" type="checkbox" name="DEX_SAVE">Saving Throw</td>
+							<td><input class="form-control offset-sm-1" type="text" readonly id="DEX_SAVE_MOD" value="" size="3"></td>
+						</tr>
+						<tr>
+							<td><input class="" type="checkbox" name="acrobatics">Acrobatics</td>
+							<td><input class="form-control offset-sm-1" type="text" readonly id="ACR_MOD" value="" size="3"></td>
+						</tr>
+						<tr>
+							<td><input class="" type="checkbox" name="slight_of_hand">Slight of Hand</td>
+							<td><input class="form-control offset-sm-1" type="text" readonly id="SoH_MOD" value="" size="3"></td>
+						</tr>
+						<tr>
+							<td><input class="" type="checkbox" name="stealth">Stealth</td>
+							<td><input class="form-control offset-sm-1" type="text" readonly id="STL_MOD" value="" size="3"></td>
+						</tr>
+					</table>
+				</div>
+				
+				<div class="col-sm-2 row justify-content-center">
+					<table>
+						<tr>
+							<td><input class="" type="checkbox" name="CONST_SAVE">Saving Throw</td>
+							<td><input class="form-control offset-sm-1" type="text" readonly id="CONST_SAVE_MOD" value="" size="3"></td>
+						</tr>
+					</table>
+				</div>
+				
+				<div class="col-sm-2 row justify-content-center">
+					<table>
+						<tr>
+							<td><input class="" type="checkbox" name="INT_SAVE">Saving Throw</td>
+							<td><input class="form-control offset-sm-1" type="text" readonly id="INT_SAVE_MOD" value="" size="3"></td>
+						</tr>
+						<tr>
+							<td><input class="" type="checkbox" name="arcana">Arcana</td>
+							<td><input class="form-control offset-sm-1" type="text" readonly id="ARC_MOD" value="" size="3"></td>
+						</tr>
+						<tr>
+							<td><input class="" type="checkbox" name="history">History</td>
+							<td><input class="form-control offset-sm-1" type="text" readonly id="HIS_MOD" value="" size="3"></td>
+						</tr>
+						<tr>
+							<td><input class="" type="checkbox" name="investigation">Investigation</td>
+							<td><input class="form-control offset-sm-1" type="text" readonly id="INV_MOD" value="" size="3"></td>
+						</tr>
+						<tr>
+							<td><input class="" type="checkbox" name="nature">Nature</td>
+							<td><input class="form-control offset-sm-1" type="text" readonly id="NAT_MOD" value="" size="3"></td>
+						</tr>
+						<tr>
+							<td><input class="" type="checkbox" name="religion">Religion</td>
+							<td><input class="form-control offset-sm-1" type="text" readonly id="REL_MOD" value="" size="3"></td>
+						</tr>
+					</table>
+				</div>
+				
+				<div class="col-sm-2 row justify-content-center">
+					<table>
+						<tr>
+							<td><input class="" type="checkbox" name="WIS_SAVE">Saving Throw</td>
+							<td><input class="form-control offset-sm-1" type="text" readonly id="WIS_SAVE_MOD" value="" size="3"></td>
+						</tr>
+						<tr>
+							<td><input class="" type="checkbox" name="animal_handling">Animal Handling</td>
+							<td><input class="form-control offset-sm-1" type="text" readonly id="AnH_MOD" value="" size="3"></td>
+						</tr>
+						<tr>
+							<td><input class="" type="checkbox" name="insight">Insight</td>
+							<td><input class="form-control offset-sm-1" type="text" readonly id="INS_MOD" value="" size="3"></td>
+						</tr>
+						<tr>
+							<td><input class="" type="checkbox" name="medicine">Medicine</td>
+							<td><input class="form-control offset-sm-1" type="text" readonly id="MED_MOD" value="" size="3"></td>
+						</tr>
+						<tr>
+							<td><input class="" type="checkbox" name="perception">Perception</td>
+							<td><input class="form-control offset-sm-1" type="text" readonly id="PER_MOD" value="" size="3"></td>
+						</tr>
+						<tr>
+							<td><input class="" type="checkbox" name="survival">Survival</td>
+							<td><input class="form-control offset-sm-1" type="text" readonly id="SUR_MOD" value="" size="3"></td>
+						</tr>
+					</table>
+				</div>
+				
+				<div class="col-sm-2 row justify-content-center">
+					<table>
+						<tr>
+							<td><input class="" type="checkbox" name="CHR_SAVE">Saving Throw</td>
+							<td><input class="form-control offset-sm-1" type="text" readonly id="CHR_SAVE_MOD" value="" size="3"></td>
+						</tr>
+						<tr>
+							<td><input class="" type="checkbox" name="deception">Deception</td>
+							<td><input class="form-control offset-sm-1" type="text" readonly id="DEC_MOD" value="" size="3"></td>
+						</tr>
+						<tr>
+							<td><input class="" type="checkbox" name="intimidation">Intimidation</td>
+							<td><input class="form-control offset-sm-1" type="text" readonly id="IND_MOD" value="" size="3"></td>
+						</tr>
+						<tr>
+							<td><input class="" type="checkbox" name="performance">Performance</td>
+							<td><input class="form-control offset-sm-1" type="text" readonly id="PEF_MOD" value="" size="3"></td>
+						</tr>
+						<tr>
+							<td><input class="" type="checkbox" name="persuasion">Persuasion</td>
+							<td><input class="form-control offset-sm-1" type="text" readonly id="PES_MOD" value="" size="3"></td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</form>
+
+
+
+
+		<!--		<div class="sect" id="health">
 			this will have HP and AC
 		</div>
 		<div class="sect" id="features">
@@ -35,7 +266,7 @@
 		</div>
 		<div class="sect" id="backstory">
 			character backstory
-		</div>
+		</div>-->
 	</div>
 	<script src="charSheet.js"></script>
 </body>
