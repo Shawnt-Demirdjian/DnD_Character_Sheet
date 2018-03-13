@@ -20,7 +20,7 @@
 	*Use dnd5eapi.co to issue requests and add these details in the modal boxes
 
 ### Friday, March 30 (Day 18):
-	*Add CSS design, colooring and animations
+	*Add CSS design, coloring and animations
 
 ### Tuesday, April 3 (Day 22):
 	*FINISH
