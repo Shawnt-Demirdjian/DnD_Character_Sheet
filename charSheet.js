@@ -18,11 +18,25 @@ $(document).ready(function () {
 	}
 
 
-	/*SOMETHING ELSE*/
+	/*List Item Manegement*/
 	
 	
+	$(".addLi").click(function(){
+		var copyLi = $(this).parent().next();
+		var currUl = $(this).parent().parent();
+		$(copyLi).clone().appendTo(currUl);
+		
+		$(".remLi").click(RemoveListItem);
+	});
 	
+	$(".remLi").click(RemoveListItem);
 	
+	function RemoveListItem(){		
+		if($(this).parent().parent().children().length <= 2){
+		   return;
+		}
+		$(this).parent().remove();
+	}
 	
 
 });

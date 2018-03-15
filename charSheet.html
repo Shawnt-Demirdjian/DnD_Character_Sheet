@@ -310,18 +310,12 @@
 		<div class="sect container-fluid" id="feat_trait">
 			<div class="row">
 				<ul class="col-md-6 list-group">
-					<label>Race and Background</label>
-					<li class="list-group-item"><input type="text" class="form-control form-control-sm"></li>
-					<li class="list-group-item"><input type="text" class="form-control form-control-sm"></li>
-					<li class="list-group-item"><input type="text" class="form-control form-control-sm"></li>
-					<li class="list-group-item"><input type="text" class="form-control form-control-sm"></li>
+					<label>Race and Background <button class="addLi btn col-md-2">Add</button></label>
+					<li class="list-group-item d-flex"><input type="text" class="form-control form-control-sm col-md-10"><button class="remLi btn col-md-2">Remove</button></li>
 				</ul>
 				<ul class="col-md-6 list-group">
-					<label>Class</label>
-					<li class="list-group-item"><input type="text" class="form-control form-control-sm"></li>
-					<li class="list-group-item"><input type="text" class="form-control form-control-sm"></li>
-					<li class="list-group-item"><input type="text" class="form-control form-control-sm"></li>
-					<li class="list-group-item"><input type="text" class="form-control form-control-sm"></li>
+					<label>Class <button class="addLi btn col-md-2">Add</button></label>
+					<li class="list-group-item d-flex"><input type="text" class="form-control form-control-sm col-md-10"><button class="remLi btn col-md-2">Remove</button></li>
 				</ul>
 			</div>
 		</div>
@@ -332,32 +326,20 @@
 		<div class="sect container-fluid" id="proficiencies">
 			<div class="row">
 				<ul class="col-md-3 list-group">
-					<label>Weapons</label>
-					<li class="list-group-item"><input type="text" class="form-control form-control-sm"></li>
-					<li class="list-group-item"><input type="text" class="form-control form-control-sm"></li>
-					<li class="list-group-item"><input type="text" class="form-control form-control-sm"></li>
-					<li class="list-group-item"><input type="text" class="form-control form-control-sm"></li>
+					<label>Weapons <button class="addLi btn col-md-2">Add</button></label>
+					<li class="list-group-item d-flex"><input type="text" class="form-control form-control-sm col-md-9"><button class="remLi btn btn-sm col-md-3">Remove</button></li>
 				</ul>
 				<ul class="col-md-3 list-group">
-					<label>Languages</label>
-					<li class="list-group-item"><input type="text" class="form-control form-control-sm"></li>
-					<li class="list-group-item"><input type="text" class="form-control form-control-sm"></li>
-					<li class="list-group-item"><input type="text" class="form-control form-control-sm"></li>
-					<li class="list-group-item"><input type="text" class="form-control form-control-sm"></li>
+					<label>Languages <button class="addLi btn col-md-2">Add</button></label>
+					<li class="list-group-item d-flex"><input type="text" class="form-control form-control-sm col-md-9"><button class="remLi btn btn-sm col-md-3">Remove</button></li>
 				</ul>
 				<ul class="col-md-3 list-group">
-					<label>Tools and Vehicles</label>
-					<li class="list-group-item"><input type="text" class="form-control form-control-sm"></li>
-					<li class="list-group-item"><input type="text" class="form-control form-control-sm"></li>
-					<li class="list-group-item"><input type="text" class="form-control form-control-sm"></li>
-					<li class="list-group-item"><input type="text" class="form-control form-control-sm"></li>
+					<label>Tools and Vehicles <button class="addLi btn col-md-2">Add</button></label>
+					<li class="list-group-item d-flex"><input type="text" class="form-control form-control-sm col-md-9"><button class="remLi btn btn-sm col-md-3">Remove</button></li>
 				</ul>
 				<ul class="col-md-3 list-group">
-					<label>Armors</label>
-					<li class="list-group-item"><input type="text" class="form-control form-control-sm"></li>
-					<li class="list-group-item"><input type="text" class="form-control form-control-sm"></li>
-					<li class="list-group-item"><input type="text" class="form-control form-control-sm"></li>
-					<li class="list-group-item"><input type="text" class="form-control form-control-sm"></li>
+					<label>Armors <button class="addLi btn col-md-2">Add</button></label>
+					<li class="list-group-item d-flex"><input type="text" class="form-control form-control-sm col-md-9"><button class="remLi btn btn-sm col-md-3">Remove</button></li>
 				</ul>
 			</div>
 		</div>
@@ -393,17 +375,18 @@
 						</tr>
 					</tbody>
 					<tfoot>
-						<td><button id="add" class="btn col-md-4">ADD</button></td>
+						<td><button id="add" class="btn col-md-4">Add</button></td>
 					</tfoot>
 				</table>
 			</div>
 			<div class="row container-fluid justify-content-around">
-				<ul class="col-md-4 list-group">
-					<label>Gear</label>
-					<li class="list-group-item"><input type="text" class="form-control form-control-sm"></li>
-					<li class="list-group-item"><input type="text" class="form-control form-control-sm"></li>
-					<li class="list-group-item"><input type="text" class="form-control form-control-sm"></li>
-					<li class="list-group-item"><input type="text" class="form-control form-control-sm"></li>
+				<ul class="col-md-5 list-group">
+					<label>Gear <button class="addLi btn col-md-2">Add</button></label>
+					<li class="list-group-item d-flex"><input type="text" class="form-control form-control-sm col-md-9"><button class="remLi btn btn-sm col-md-3">Remove</button></li>
+				</ul>				
+		<ul class="col-md-5 list-group">
+					<label>Treasure <button class="addLi btn col-md-2">Add</button></label>
+					<li class="list-group-item d-flex"><input type="text" class="form-control form-control-sm col-md-9"><button class="remLi btn btn-sm col-md-3">Remove</button></li>
 				</ul>
 				<table class="table table-striped table-responsive table-sm col-md-2" id="coin">
 					<thead>
@@ -415,33 +398,26 @@
 					<tbody>
 						<tr>
 							<th scope="row">Copper</th>
-							<td><input type="number" class="col-md-10"></td>
+							<td><input type="number" class="col-md-10" value="0"></td>
 						</tr>
 						<tr>
 							<th scope="row">Silver</th>
-							<td><input type="number" class="col-md-10"></td>
+							<td><input type="number" class="col-md-10" value="0"></td>
 						</tr>
 						<tr>
 							<th scope="row">Electrum</th>
-							<td><input type="number" class="col-md-10"></td>
+							<td><input type="number" class="col-md-10" value="0"></td>
 						</tr>
 						<tr>
 							<th scope="row">Gold</th>
-							<td><input type="number" class="col-md-10"></td>
+							<td><input type="number" class="col-md-10" value="0"></td>
 						</tr>
 						<tr>
 							<th scope="row">Platinum</th>
-							<td><input type="number" class="col-md-10"></td>
+							<td><input type="number" class="col-md-10" value="0"></td>
 						</tr>
 					</tbody>
 				</table>
-				<ul class="col-md-4 list-group">
-					<label>Treasure</label>
-					<li class="list-group-item"><input type="text" class="form-control form-control-sm"></li>
-					<li class="list-group-item"><input type="text" class="form-control form-control-sm"></li>
-					<li class="list-group-item"><input type="text" class="form-control form-control-sm"></li>
-					<li class="list-group-item"><input type="text" class="form-control form-control-sm"></li>
-				</ul>
 			</div>
 		</div>
 
@@ -467,76 +443,46 @@
 					<input class="form-control" type="text" placeholder="Modifier" id="spellMod">
 				</div>
 			</div>
-			<div class="row">
+			<div class="row" id="spellLists">
 				<ul class="col-md-3 list-group">
-					<label>Cantrips</label>
-					<li class="list-group-item"><input type="text" class="form-control form-control-sm"></li>
-					<li class="list-group-item"><input type="text" class="form-control form-control-sm"></li>
-					<li class="list-group-item"><input type="text" class="form-control form-control-sm"></li>
-					<li class="list-group-item"><input type="text" class="form-control form-control-sm"></li>
+					<label>Cantrips<button class="addLi btn btn-sm col-md-2">Add</button></label>
+					<li class="list-group-item d-flex"><input type="text" class="form-control form-control-sm col-md-9"><button class="remLi btn btn-sm col-md-3">Remove</button></li>
 				</ul>
 				<ul class="col-md-3 list-group">
-					<label class="d-flex">Level 1: <input class="form-control col-md-4 offset-md-1" type="number" placeholder="Slots Spent"><input class="form-control col-md-4" type="number" placeholder="Slots Total"></label>
-					<li class="list-group-item"><input type="text" class="form-control form-control-sm"></li>
-					<li class="list-group-item"><input type="text" class="form-control form-control-sm"></li>
-					<li class="list-group-item"><input type="text" class="form-control form-control-sm"></li>
-					<li class="list-group-item"><input type="text" class="form-control form-control-sm"></li>
+					<label class="d-flex">Level 1: <button class="addLi btn btn-sm col-md-3">Add</button><input class="form-control col-md-3" type="number" placeholder="Spent"><input class="form-control col-md-3" type="number" placeholder="Total"></label>
+					<li class="list-group-item d-flex"><input type="text" class="form-control form-control-sm col-md-9"><button class="remLi btn btn-sm col-md-3">Remove</button></li>
 				</ul>
 				<ul class="col-md-3 list-group">
-					<label class="d-flex">Level 2: <input class="form-control col-md-4 offset-md-1" type="number" placeholder="Slots Spent"><input class="form-control col-md-4" type="number" placeholder="Slots Total"></label>
-					<li class="list-group-item"><input type="text" class="form-control form-control-sm"></li>
-					<li class="list-group-item"><input type="text" class="form-control form-control-sm"></li>
-					<li class="list-group-item"><input type="text" class="form-control form-control-sm"></li>
-					<li class="list-group-item"><input type="text" class="form-control form-control-sm"></li>
+					<label class="d-flex">Level 2: <button class="addLi btn btn-sm col-md-3">Add</button><input class="form-control col-md-3" type="number" placeholder="Spent"><input class="form-control col-md-3" type="number" placeholder="Total"></label>
+					<li class="list-group-item d-flex"><input type="text" class="form-control form-control-sm col-md-9"><button class="remLi btn btn-sm col-md-3">Remove</button></li>
 				</ul>
 				<ul class="col-md-3 list-group">
-					<label class="d-flex">Level 3: <input class="form-control col-md-4 offset-md-1" type="number" placeholder="Slots Spent"><input class="form-control col-md-4" type="number" placeholder="Slots Total"></label>
-					<li class="list-group-item"><input type="text" class="form-control form-control-sm"></li>
-					<li class="list-group-item"><input type="text" class="form-control form-control-sm"></li>
-					<li class="list-group-item"><input type="text" class="form-control form-control-sm"></li>
-					<li class="list-group-item"><input type="text" class="form-control form-control-sm"></li>
+					<label class="d-flex">Level 3: <button class="addLi btn btn-sm col-md-3">Add</button><input class="form-control col-md-3" type="number" placeholder="Spent"><input class="form-control col-md-3" type="number" placeholder="Total"></label>
+					<li class="list-group-item d-flex"><input type="text" class="form-control form-control-sm col-md-9"><button class="remLi btn btn-sm col-md-3">Remove</button></li>
 				</ul>
 				<ul class="col-md-3 list-group">
-					<label class="d-flex">Level 4: <input class="form-control col-md-4 offset-md-1" type="number" placeholder="Slots Spent"><input class="form-control col-md-4" type="number" placeholder="Slots Total"></label>
-					<li class="list-group-item"><input type="text" class="form-control form-control-sm"></li>
-					<li class="list-group-item"><input type="text" class="form-control form-control-sm"></li>
-					<li class="list-group-item"><input type="text" class="form-control form-control-sm"></li>
-					<li class="list-group-item"><input type="text" class="form-control form-control-sm"></li>
+					<label class="d-flex">Level 4: <button class="addLi btn btn-sm col-md-3">Add</button><input class="form-control col-md-3" type="number" placeholder="Spent"><input class="form-control col-md-3" type="number" placeholder="Total"></label>
+					<li class="list-group-item d-flex"><input type="text" class="form-control form-control-sm col-md-9"><button class="remLi btn btn-sm col-md-3">Remove</button></li>
 				</ul>
 				<ul class="col-md-3 list-group">
-					<label class="d-flex">Level 5: <input class="form-control col-md-4 offset-md-1" type="number" placeholder="Slots Spent"><input class="form-control col-md-4" type="number" placeholder="Slots Total"></label>
-					<li class="list-group-item"><input type="text" class="form-control form-control-sm"></li>
-					<li class="list-group-item"><input type="text" class="form-control form-control-sm"></li>
-					<li class="list-group-item"><input type="text" class="form-control form-control-sm"></li>
-					<li class="list-group-item"><input type="text" class="form-control form-control-sm"></li>
+					<label class="d-flex">Level 5: <button class="addLi btn btn-sm col-md-3">Add</button><input class="form-control col-md-3" type="number" placeholder="Spent"><input class="form-control col-md-3" type="number" placeholder="Total"></label>
+					<li class="list-group-item d-flex"><input type="text" class="form-control form-control-sm col-md-9"><button class="remLi btn btn-sm col-md-3">Remove</button></li>
 				</ul>
 				<ul class="col-md-3 list-group">
-					<label class="d-flex">Level 6: <input class="form-control col-md-4 offset-md-1" type="number" placeholder="Slots Spent"><input class="form-control col-md-4" type="number" placeholder="Slots Total"></label>
-					<li class="list-group-item"><input type="text" class="form-control form-control-sm"></li>
-					<li class="list-group-item"><input type="text" class="form-control form-control-sm"></li>
-					<li class="list-group-item"><input type="text" class="form-control form-control-sm"></li>
-					<li class="list-group-item"><input type="text" class="form-control form-control-sm"></li>
+					<label class="d-flex">Level 6: <button class="addLi btn btn-sm col-md-3">Add</button><input class="form-control col-md-3" type="number" placeholder="Spent"><input class="form-control col-md-3" type="number" placeholder="Total"></label>
+					<li class="list-group-item d-flex"><input type="text" class="form-control form-control-sm col-md-9"><button class="remLi btn btn-sm col-md-3">Remove</button></li>
 				</ul>
 				<ul class="col-md-3 list-group">
-					<label class="d-flex">Level 7: <input class="form-control col-md-4 offset-md-1" type="number" placeholder="Slots Spent"><input class="form-control col-md-4" type="number" placeholder="Slots Total"></label>
-					<li class="list-group-item"><input type="text" class="form-control form-control-sm"></li>
-					<li class="list-group-item"><input type="text" class="form-control form-control-sm"></li>
-					<li class="list-group-item"><input type="text" class="form-control form-control-sm"></li>
-					<li class="list-group-item"><input type="text" class="form-control form-control-sm"></li>
+					<label class="d-flex">Level 7: <button class="addLi btn btn-sm col-md-3">Add</button><input class="form-control col-md-3" type="number" placeholder="Spent"><input class="form-control col-md-3" type="number" placeholder="Total"></label>
+					<li class="list-group-item d-flex"><input type="text" class="form-control form-control-sm col-md-9"><button class="remLi btn btn-sm col-md-3">Remove</button></li>
 				</ul>
 				<ul class="col-md-3 list-group">
-					<label class="d-flex">Level 8: <input class="form-control col-md-4 offset-md-1" type="number" placeholder="Slots Spent"><input class="form-control col-md-4" type="number" placeholder="Slots Total"></label>
-					<li class="list-group-item"><input type="text" class="form-control form-control-sm"></li>
-					<li class="list-group-item"><input type="text" class="form-control form-control-sm"></li>
-					<li class="list-group-item"><input type="text" class="form-control form-control-sm"></li>
-					<li class="list-group-item"><input type="text" class="form-control form-control-sm"></li>
+					<label class="d-flex">Level 8: <button class="addLi btn btn-sm col-md-3">Add</button><input class="form-control col-md-3" type="number" placeholder="Spent"><input class="form-control col-md-3" type="number" placeholder="Total"></label>
+					<li class="list-group-item d-flex"><input type="text" class="form-control form-control-sm col-md-9"><button class="remLi btn btn-sm col-md-3">Remove</button></li>
 				</ul>
 				<ul class="col-md-3 list-group">
-					<label class="d-flex">Level 9: <input class="form-control col-md-4 offset-md-1" type="number" placeholder="Slots Spent"><input class="form-control col-md-4" type="number" placeholder="Slots Total"></label>
-					<li class="list-group-item"><input type="text" class="form-control form-control-sm"></li>
-					<li class="list-group-item"><input type="text" class="form-control form-control-sm"></li>
-					<li class="list-group-item"><input type="text" class="form-control form-control-sm"></li>
-					<li class="list-group-item"><input type="text" class="form-control form-control-sm"></li>
+					<label class="d-flex">Level 9: <button class="addLi btn btn-sm col-md-3">Add</button><input class="form-control col-md-3" type="number" placeholder="Spent"><input class="form-control col-md-3" type="number" placeholder="Total"></label>
+					<li class="list-group-item d-flex"><input type="text" class="form-control form-control-sm col-md-9"><button class="remLi btn btn-sm col-md-3">Remove</button></li>
 				</ul>
 			</div>
 		</div>
@@ -548,31 +494,19 @@
 			<div class="row">
 				<ul class="col-md-3 list-group">
 					<label>Personality Traits</label>
-					<li class="list-group-item"><input type="text" class="form-control form-control-sm"></li>
-					<li class="list-group-item"><input type="text" class="form-control form-control-sm"></li>
-					<li class="list-group-item"><input type="text" class="form-control form-control-sm"></li>
-					<li class="list-group-item"><input type="text" class="form-control form-control-sm"></li>
+					<li class="list-group-item d-flex"><input type="text" class="form-control form-control-sm col-md-9"><button class="remLi btn btn-sm col-md-3">Remove</button></li>
 				</ul>
 				<ul class="col-md-3 list-group">
 					<label>Ideals</label>
-					<li class="list-group-item"><input type="text" class="form-control form-control-sm"></li>
-					<li class="list-group-item"><input type="text" class="form-control form-control-sm"></li>
-					<li class="list-group-item"><input type="text" class="form-control form-control-sm"></li>
-					<li class="list-group-item"><input type="text" class="form-control form-control-sm"></li>
+					<li class="list-group-item d-flex"><input type="text" class="form-control form-control-sm col-md-9"><button class="remLi btn btn-sm col-md-3">Remove</button></li>
 				</ul>
 				<ul class="col-md-3 list-group">
 					<label>Bonds</label>
-					<li class="list-group-item"><input type="text" class="form-control form-control-sm"></li>
-					<li class="list-group-item"><input type="text" class="form-control form-control-sm"></li>
-					<li class="list-group-item"><input type="text" class="form-control form-control-sm"></li>
-					<li class="list-group-item"><input type="text" class="form-control form-control-sm"></li>
+					<li class="list-group-item d-flex"><input type="text" class="form-control form-control-sm col-md-9"><button class="remLi btn btn-sm col-md-3">Remove</button></li>
 				</ul>
 				<ul class="col-md-3 list-group">
 					<label>Flaws</label>
-					<li class="list-group-item"><input type="text" class="form-control form-control-sm"></li>
-					<li class="list-group-item"><input type="text" class="form-control form-control-sm"></li>
-					<li class="list-group-item"><input type="text" class="form-control form-control-sm"></li>
-					<li class="list-group-item"><input type="text" class="form-control form-control-sm"></li>
+					<li class="list-group-item d-flex"><input type="text" class="form-control form-control-sm col-md-9"><button class="remLi btn btn-sm col-md-3">Remove</button></li>
 				</ul>
 			</div>
 			<div class="row">
@@ -590,4 +524,5 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="charSheet.js"></script>
 </body>
+
 </html>
