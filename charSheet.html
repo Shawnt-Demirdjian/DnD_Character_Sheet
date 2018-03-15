@@ -12,43 +12,66 @@
 
 <body>
 	<div class="container-fluid">
-		<h1>Character</h1>
+
+		<!--		NAMES							-->
+
+		<h1>Names</h1>
+		<form class="sect form" id="names">
+			<div class="row">
+				<div class="col-md-6">
+					<label for="charName">Character Name</label>
+					<input class="form-control" type="text" placeholder="" id="charName">
+				</div>
+				<div class="col-md-6">
+					<label for="playerName">Player Name</label>
+					<input class="form-control" type="text" placeholder="" id="playerName">
+				</div>
+			</div>
+		</form>
+
+		<!--		GENERAL CHARACTER INFORMATION	-->
+
+		<h1>Character Abilities and Skills</h1>
 		<form class="sect form" id="character">
 			<div class="row" id="basicInfo">
-				<div class="col-sm-2">
-					<label for="Class">Class:</label>
+				<div class="col-md-2">
+					<label for="Class">Class</label>
 					<input class="form-control" type="text" placeholder="Class" id="Class">
 				</div>
-
-				<div class="col-sm-1">
-					<label for="Level">Level:</label>
+				<div class="col-md-1">
+					<label for="Level">Level</label>
 					<input class="form-control" type="number" placeholder="Level" id="Level">
 				</div>
-
-				<div class="col-sm-1">
-					<label for="XP">XP:</label>
+				<div class="col-md-1">
+					<label for="XP">XP</label>
 					<input class="form-control" type="number" placeholder="XP" id="XP">
 				</div>
-
-				<div class="col-sm-2">
-					<label for="Race">Race:</label>
+				<div class="col-md-1">
+					<label for="inspiration">Inspiration</label>
+					<input class="form-control" type="text" placeholder="" id="inspiration">
+				</div>
+				<div class="col-md-1">
+					<label for="PB">Proficiency</label>
+					<input class="form-control" type="number" placeholder="Bonus" readonly id="PB">
+				</div>
+				<div class="col-md-2">
+					<label for="Race">Race</label>
 					<input class="form-control" type="text" placeholder="Race" id="Race">
 				</div>
-
-				<div class="col-sm-2">
-					<label for="Alignment">Alignment:</label>
+				<div class="col-md-2">
+					<label for="Alignment">Alignment</label>
 					<input class="form-control" type="text" placeholder="Alignment" id="Alignment">
 				</div>
-
-				<div class="col-sm-2">
-					<label for="Background">Background:</label>
+				<div class="col-md-2">
+					<label for="Background">Background</label>
 					<input class="form-control" type="text" placeholder="Background" id="Background">
 				</div>
 			</div>
-			
+
+			<!--		ABILITY SCORES AND MODIFIERS	-->
 
 			<div class="row form-group" id="ability">
-				<div class="col-sm-2">
+				<div class="col-md-2">
 					<table>
 						<tr>
 							<th>Strength</th>
@@ -57,9 +80,17 @@
 							<td><input class="form-control" type="number" placeholder="STR" id="STR"></td>
 							<td><input class="form-control" type="text" readonly id="STR_MOD" value=""></td>
 						</tr>
+						<tr>
+							<td><input class="" type="checkbox" name="STR_SAVE">Saving Throw</td>
+							<td><input class="form-control" type="text" readonly id="STR_SAVE_MOD" value="" size="3"></td>
+						</tr>
+						<tr>
+							<td><input class="" type="checkbox" name="athletics">Athletics</td>
+							<td><input class="form-control" type="text" readonly id="ATH_MOD" value="" size="3"></td>
+						</tr>
 					</table>
 				</div>
-				<div class="col-sm-2">
+				<div class="col-md-2">
 					<table>
 						<tr>
 							<th>Dexterity</th>
@@ -68,9 +99,25 @@
 							<td><input class="form-control" type="number" placeholder="DEX" id="DEX"></td>
 							<td><input class="form-control" type="text" readonly id="DEX_MOD" value=""></td>
 						</tr>
+						<tr>
+							<td><input class="" type="checkbox" name="DEX_SAVE">Saving Throw</td>
+							<td><input class="form-control" type="text" readonly id="DEX_SAVE_MOD" value="" size="3"></td>
+						</tr>
+						<tr>
+							<td><input class="" type="checkbox" name="acrobatics">Acrobatics</td>
+							<td><input class="form-control" type="text" readonly id="ACR_MOD" value="" size="3"></td>
+						</tr>
+						<tr>
+							<td><input class="" type="checkbox" name="slight_of_hand">Slight of Hand</td>
+							<td><input class="form-control" type="text" readonly id="SoH_MOD" value="" size="3"></td>
+						</tr>
+						<tr>
+							<td><input class="" type="checkbox" name="stealth">Stealth</td>
+							<td><input class="form-control" type="text" readonly id="STL_MOD" value="" size="3"></td>
+						</tr>
 					</table>
 				</div>
-				<div class="col-sm-2">
+				<div class="col-md-2">
 					<table>
 						<tr>
 							<th>Constitution</th>
@@ -79,9 +126,13 @@
 							<td><input class="form-control" type="number" placeholder="CONST" id="CONST"></td>
 							<td><input class="form-control" type="text" readonly id="CONST_MOD" value=""></td>
 						</tr>
+						<tr>
+							<td><input class="" type="checkbox" name="CONST_SAVE">Saving Throw</td>
+							<td><input class="form-control " type="text" readonly id="CONST_SAVE_MOD" value="" size="3"></td>
+						</tr>
 					</table>
 				</div>
-				<div class="col-sm-2">
+				<div class="col-md-2">
 					<table>
 						<tr>
 							<th>Intelligence</th>
@@ -90,9 +141,33 @@
 							<td><input class="form-control" type="number" placeholder="INT" id="INT"></td>
 							<td><input class="form-control" type="text" readonly id="INT_MOD" value=""></td>
 						</tr>
+						<tr>
+							<td><input class="" type="checkbox" name="INT_SAVE">Saving Throw</td>
+							<td><input class="form-control " type="text" readonly id="INT_SAVE_MOD" value="" size="3"></td>
+						</tr>
+						<tr>
+							<td><input class="" type="checkbox" name="arcana">Arcana</td>
+							<td><input class="form-control " type="text" readonly id="ARC_MOD" value="" size="3"></td>
+						</tr>
+						<tr>
+							<td><input class="" type="checkbox" name="history">History</td>
+							<td><input class="form-control " type="text" readonly id="HIS_MOD" value="" size="3"></td>
+						</tr>
+						<tr>
+							<td><input class="" type="checkbox" name="investigation">Investigation</td>
+							<td><input class="form-control " type="text" readonly id="INV_MOD" value="" size="3"></td>
+						</tr>
+						<tr>
+							<td><input class="" type="checkbox" name="nature">Nature</td>
+							<td><input class="form-control " type="text" readonly id="NAT_MOD" value="" size="3"></td>
+						</tr>
+						<tr>
+							<td><input class="" type="checkbox" name="religion">Religion</td>
+							<td><input class="form-control " type="text" readonly id="REL_MOD" value="" size="3"></td>
+						</tr>
 					</table>
 				</div>
-				<div class="col-sm-2">
+				<div class="col-md-2">
 					<table>
 						<tr>
 							<th>Wisdom</th>
@@ -101,9 +176,33 @@
 							<td><input class="form-control" type="number" placeholder="WIS" id="WIS"></td>
 							<td><input class="form-control" type="text" readonly id="WIS_MOD" value=""></td>
 						</tr>
+						<tr>
+							<td><input class="" type="checkbox" name="WIS_SAVE">Saving Throw</td>
+							<td><input class="form-control " type="text" readonly id="WIS_SAVE_MOD" value="" size="3"></td>
+						</tr>
+						<tr>
+							<td><input class="" type="checkbox" name="animal_handling">Animal Handling</td>
+							<td><input class="form-control " type="text" readonly id="AnH_MOD" value="" size="3"></td>
+						</tr>
+						<tr>
+							<td><input class="" type="checkbox" name="insight">Insight</td>
+							<td><input class="form-control " type="text" readonly id="INS_MOD" value="" size="3"></td>
+						</tr>
+						<tr>
+							<td><input class="" type="checkbox" name="medicine">Medicine</td>
+							<td><input class="form-control " type="text" readonly id="MED_MOD" value="" size="3"></td>
+						</tr>
+						<tr>
+							<td><input class="" type="checkbox" name="perception">Perception</td>
+							<td><input class="form-control " type="text" readonly id="PER_MOD" value="" size="3"></td>
+						</tr>
+						<tr>
+							<td><input class="" type="checkbox" name="survival">Survival</td>
+							<td><input class="form-control " type="text" readonly id="SUR_MOD" value="" size="3"></td>
+						</tr>
 					</table>
 				</div>
-				<div class="col-sm-2">
+				<div class="col-md-2">
 					<table>
 						<tr>
 							<th>Charisma</th>
@@ -112,155 +211,259 @@
 							<td><input class="form-control" type="number" placeholder="CHAR" id="CHAR"></td>
 							<td><input class="form-control" type="text" readonly id="CHAR_MOD" value=""></td>
 						</tr>
-					</table>
-				</div>
-			</div>
-			
-			
-			<div class="row form-group justify-content-around" id="skill">
-				<div class="col-sm-2 row justify-content-center">
-					<table>
-						<tr>
-							<td><input class="" type="checkbox" name="STR_SAVE">Saving Throw</td>
-							<td><input class="form-control offset-sm-1" type="text" readonly id="STR_SAVE_MOD" value="" size="3"></td>
-						</tr>
-						<tr>
-							<td><input class="" type="checkbox" name="athletics">Athletics</td>
-							<td><input class="form-control offset-sm-1" type="text" readonly id="ATH_MOD" value="" size="3"></td>
-						</tr>
-					</table>
-				</div>
-				
-				<div class="col-sm-2 row justify-content-center">
-					<table>
-						<tr>
-							<td><input class="" type="checkbox" name="DEX_SAVE">Saving Throw</td>
-							<td><input class="form-control offset-sm-1" type="text" readonly id="DEX_SAVE_MOD" value="" size="3"></td>
-						</tr>
-						<tr>
-							<td><input class="" type="checkbox" name="acrobatics">Acrobatics</td>
-							<td><input class="form-control offset-sm-1" type="text" readonly id="ACR_MOD" value="" size="3"></td>
-						</tr>
-						<tr>
-							<td><input class="" type="checkbox" name="slight_of_hand">Slight of Hand</td>
-							<td><input class="form-control offset-sm-1" type="text" readonly id="SoH_MOD" value="" size="3"></td>
-						</tr>
-						<tr>
-							<td><input class="" type="checkbox" name="stealth">Stealth</td>
-							<td><input class="form-control offset-sm-1" type="text" readonly id="STL_MOD" value="" size="3"></td>
-						</tr>
-					</table>
-				</div>
-				
-				<div class="col-sm-2 row justify-content-center">
-					<table>
-						<tr>
-							<td><input class="" type="checkbox" name="CONST_SAVE">Saving Throw</td>
-							<td><input class="form-control offset-sm-1" type="text" readonly id="CONST_SAVE_MOD" value="" size="3"></td>
-						</tr>
-					</table>
-				</div>
-				
-				<div class="col-sm-2 row justify-content-center">
-					<table>
-						<tr>
-							<td><input class="" type="checkbox" name="INT_SAVE">Saving Throw</td>
-							<td><input class="form-control offset-sm-1" type="text" readonly id="INT_SAVE_MOD" value="" size="3"></td>
-						</tr>
-						<tr>
-							<td><input class="" type="checkbox" name="arcana">Arcana</td>
-							<td><input class="form-control offset-sm-1" type="text" readonly id="ARC_MOD" value="" size="3"></td>
-						</tr>
-						<tr>
-							<td><input class="" type="checkbox" name="history">History</td>
-							<td><input class="form-control offset-sm-1" type="text" readonly id="HIS_MOD" value="" size="3"></td>
-						</tr>
-						<tr>
-							<td><input class="" type="checkbox" name="investigation">Investigation</td>
-							<td><input class="form-control offset-sm-1" type="text" readonly id="INV_MOD" value="" size="3"></td>
-						</tr>
-						<tr>
-							<td><input class="" type="checkbox" name="nature">Nature</td>
-							<td><input class="form-control offset-sm-1" type="text" readonly id="NAT_MOD" value="" size="3"></td>
-						</tr>
-						<tr>
-							<td><input class="" type="checkbox" name="religion">Religion</td>
-							<td><input class="form-control offset-sm-1" type="text" readonly id="REL_MOD" value="" size="3"></td>
-						</tr>
-					</table>
-				</div>
-				
-				<div class="col-sm-2 row justify-content-center">
-					<table>
-						<tr>
-							<td><input class="" type="checkbox" name="WIS_SAVE">Saving Throw</td>
-							<td><input class="form-control offset-sm-1" type="text" readonly id="WIS_SAVE_MOD" value="" size="3"></td>
-						</tr>
-						<tr>
-							<td><input class="" type="checkbox" name="animal_handling">Animal Handling</td>
-							<td><input class="form-control offset-sm-1" type="text" readonly id="AnH_MOD" value="" size="3"></td>
-						</tr>
-						<tr>
-							<td><input class="" type="checkbox" name="insight">Insight</td>
-							<td><input class="form-control offset-sm-1" type="text" readonly id="INS_MOD" value="" size="3"></td>
-						</tr>
-						<tr>
-							<td><input class="" type="checkbox" name="medicine">Medicine</td>
-							<td><input class="form-control offset-sm-1" type="text" readonly id="MED_MOD" value="" size="3"></td>
-						</tr>
-						<tr>
-							<td><input class="" type="checkbox" name="perception">Perception</td>
-							<td><input class="form-control offset-sm-1" type="text" readonly id="PER_MOD" value="" size="3"></td>
-						</tr>
-						<tr>
-							<td><input class="" type="checkbox" name="survival">Survival</td>
-							<td><input class="form-control offset-sm-1" type="text" readonly id="SUR_MOD" value="" size="3"></td>
-						</tr>
-					</table>
-				</div>
-				
-				<div class="col-sm-2 row justify-content-center">
-					<table>
 						<tr>
 							<td><input class="" type="checkbox" name="CHR_SAVE">Saving Throw</td>
-							<td><input class="form-control offset-sm-1" type="text" readonly id="CHR_SAVE_MOD" value="" size="3"></td>
+							<td><input class="form-control " type="text" readonly id="CHR_SAVE_MOD" value="" size="3"></td>
 						</tr>
 						<tr>
 							<td><input class="" type="checkbox" name="deception">Deception</td>
-							<td><input class="form-control offset-sm-1" type="text" readonly id="DEC_MOD" value="" size="3"></td>
+							<td><input class="form-control " type="text" readonly id="DEC_MOD" value="" size="3"></td>
 						</tr>
 						<tr>
 							<td><input class="" type="checkbox" name="intimidation">Intimidation</td>
-							<td><input class="form-control offset-sm-1" type="text" readonly id="IND_MOD" value="" size="3"></td>
+							<td><input class="form-control " type="text" readonly id="IND_MOD" value="" size="3"></td>
 						</tr>
 						<tr>
 							<td><input class="" type="checkbox" name="performance">Performance</td>
-							<td><input class="form-control offset-sm-1" type="text" readonly id="PEF_MOD" value="" size="3"></td>
+							<td><input class="form-control " type="text" readonly id="PEF_MOD" value="" size="3"></td>
 						</tr>
 						<tr>
 							<td><input class="" type="checkbox" name="persuasion">Persuasion</td>
-							<td><input class="form-control offset-sm-1" type="text" readonly id="PES_MOD" value="" size="3"></td>
+							<td><input class="form-control " type="text" readonly id="PES_MOD" value="" size="3"></td>
 						</tr>
 					</table>
 				</div>
 			</div>
 		</form>
 
+		<!--		Health and Armor	-->
 
+		<h1>Health and Armor</h1>
+		<form class="sect form" id="healthArmor">
+			<div class="row form-group">
+				<div class="col-md-3">
+					<table>
+						<tr>
+							<td><label>Armor Class:</label></td>
+							<td><input class="form-control" type="number" id="AC" value=""></td>
+						</tr>
+						<tr>
+							<td><label>Speed (feet):</label></td>
+							<td><input class="form-control" type="number" id="speed" value=""></td>
+						</tr>
+						<tr>
+							<td><label>Initiative:</label></td>
+							<td><input class="form-control" type="number" id="initiative" value=""></td>
+						</tr>
+					</table>
+				</div>
+				<div class="col-md-3">
+					<table>
+						<tr>
+							<td><label>Current HP:</label></td>
+							<td><input class="form-control" type="number" id="currHP" value=""></td>
+						</tr>
+						<tr>
+							<td><label>Temp HP:</label></td>
+							<td><input class="form-control" type="number" id="tempHP" value=""></td>
+						</tr>
+						<tr>
+							<td><label>Max HP:</label></td>
+							<td><input class="form-control" type="number" id="maxHP" value=""></td>
+						</tr>
+					</table>
+				</div>
+				<div class="col-md-3">
+					<table>
+						<tr>
+							<td><label>Hit Dice Type:</label></td>
+							<td><input class="form-control" type="text" id="HDtype" value=""></td>
+						</tr>
+						<tr>
+							<td><label>Hit Dice Total:</label></td>
+							<td><input class="form-control" type="number" id="HDtotal" value=""></td>
+						</tr>
+					</table>
+				</div>
+				<div class="col-md-3">
+					<table>
+						<label>Death Saves</label>
+						<tr>
+							<td><label>Successes:</label></td>
+							<td><input class="" type="checkbox" id="" value=""></td>
+							<td><input class="" type="checkbox" id="" value=""></td>
+							<td><input class="" type="checkbox" id="" value=""></td>
+						</tr>
+						<tr>
+							<td><label>Faliures:</label></td>
+							<td><input class="" type="checkbox" id="" value=""></td>
+							<td><input class="" type="checkbox" id="" value=""></td>
+							<td><input class="" type="checkbox" id="" value=""></td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</form>
 
+		<!--		Features and Traits	-->
 
-		<!--		<div class="sect" id="health">
-			this will have HP and AC
+		<h1>Features and Traits</h1>
+		<div class="sect container-fluid" id="feat_trait">
+			<div class="row">
+				<ul class="col-md-6 list-group">
+					<label>Race and Background</label>
+					<li class="list-group-item">garbage</li>
+					<li class="list-group-item">garbage</li>
+					<li class="list-group-item">garbage</li>
+					<li class="list-group-item">garbage</li>
+				</ul>
+				<ul class="col-md-6 list-group">
+					<label>Class</label>
+					<li class="list-group-item">garbage</li>
+					<li class="list-group-item">garbage</li>
+					<li class="list-group-item">garbage</li>
+					<li class="list-group-item">garbage</li>
+				</ul>
+			</div>
 		</div>
-		<div class="sect" id="features">
-			this will be class and race features and traits
+
+		<!--		Proficiencies		-->
+
+		<h1>Proficiencies</h1>
+		<div class="sect container-fluid" id="proficiencies">
+			<div class="row">
+				<ul class="col-md-3 list-group">
+					<label>Weapons</label>
+					<li class="list-group-item">garbage</li>
+					<li class="list-group-item">garbage</li>
+					<li class="list-group-item">garbage</li>
+					<li class="list-group-item">garbage</li>
+				</ul>
+				<ul class="col-md-3 list-group">
+					<label>Languages</label>
+					<li class="list-group-item">garbage</li>
+					<li class="list-group-item">garbage</li>
+					<li class="list-group-item">garbage</li>
+					<li class="list-group-item">garbage</li>
+				</ul>
+				<ul class="col-md-3 list-group">
+					<label>Tools and Vehicles</label>
+					<li class="list-group-item">garbage</li>
+					<li class="list-group-item">garbage</li>
+					<li class="list-group-item">garbage</li>
+					<li class="list-group-item">garbage</li>
+				</ul>
+				<ul class="col-md-3 list-group">
+					<label>Armors</label>
+					<li class="list-group-item">garbage</li>
+					<li class="list-group-item">garbage</li>
+					<li class="list-group-item">garbage</li>
+					<li class="list-group-item">garbage</li>
+				</ul>
+			</div>
 		</div>
-		<div class="sect" id="proficiencies">
-			language armor and weapon proficiensies
+
+		<!--		Equipment		-->
+
+		<h1>Equipment</h1>
+		<div class="sect container-fluid" id="equipment">
+			<div class="row">
+				<table class="table table-striped">
+					<thead>
+						<tr>
+							<th scope="col"><h4 class="font-weight-bold">Weapons</h4></th>
+							<th scope="col">Damage</th>
+							<th scope="col">Damage Type</th>
+							<th scope="col">Range</th>
+							<th scope="col">Weight</th>
+							<th scope="col">Properties</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th scope="row">Club</th>
+							<td>1d4</td>
+							<td>bludgeoning</td>
+							<td>N/A</td>
+							<td>2 lbs</td>
+							<td>light</td>
+						</tr>
+						<tr>
+							<th scope="row">Club</th>
+							<td>1d4</td>
+							<td>bludgeoning</td>
+							<td>N/A</td>
+							<td>2 lbs</td>
+							<td>light</td>
+						</tr>
+						<tr>
+							<th scope="row">Club</th>
+							<td>1d4</td>
+							<td>bludgeoning</td>
+							<td>N/A</td>
+							<td>2 lbs</td>
+							<td>light</td>
+						</tr>
+						<tr>
+							<th scope="row">Club</th>
+							<td>1d4</td>
+							<td>bludgeoning</td>
+							<td>N/A</td>
+							<td>2 lbs</td>
+							<td>light</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="row container-fluid justify-content-between">
+				<ul class="col-md-5 list-group">
+					<label>Gear</label>
+					<li class="list-group-item">garbage</li>
+					<li class="list-group-item">garbage</li>
+					<li class="list-group-item">garbage</li>
+					<li class="list-group-item">garbage</li>
+				</ul>
+				<table class="table table-striped table-responsive table-sm col-md-2" id="coin">
+					<thead>
+						<tr>
+							<th>Coin</th>
+							<th>Amount</th>
+						</tr>					
+					</thead>
+					<tbody>
+						<tr>
+							<th scope="row">Copper</th>
+							<td>14</td>
+						</tr>
+						<tr>
+							<th scope="row">Silver</th>
+							<td>14</td>
+						</tr>
+						<tr>
+							<th scope="row">Electrum</th>
+							<td>14</td>
+						</tr>
+						<tr>
+							<th scope="row">Gold</th>
+							<td>14</td>
+						</tr>
+						<tr>
+							<th scope="row">Platinum</th>
+							<td>14</td>
+						</tr>
+					</tbody>
+				</table>
+				<ul class="col-md-5 list-group">
+					<label>Treasure</label>
+					<li class="list-group-item">garbage</li>
+					<li class="list-group-item">garbage</li>
+					<li class="list-group-item">garbage</li>
+					<li class="list-group-item">garbage</li>
+				</ul>
+			</div>
 		</div>
-		<div class="sect" id="equipment">
-			equipment and gear
-		</div>
+
+		<!--
 		<div class="sect" id="spellcasting">
 			spells and such
 		</div>

@@ -1,6 +1,17 @@
 .sect{
 	border: solid 5px black;
 }
-#skill{
-	font-size: 88%;
+
+label{
+	font-size: 130%;
+	font-weight: bold;
+	margin-bottom: 0;
+}
+
+.list-group-item {
+    padding: 3px 10px
+}
+
+#coin{
+	margin-right: -3em;
 }
