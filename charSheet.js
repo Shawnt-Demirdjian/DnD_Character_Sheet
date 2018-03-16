@@ -7,7 +7,7 @@ $(document).ready(function () {
 		$("#rem").click(RemoveWeaponRow);
 
 	});
-	
+
 	$("#rem").click(RemoveWeaponRow);
 
 	function RemoveWeaponRow() {
@@ -19,25 +19,36 @@ $(document).ready(function () {
 
 
 	/*List Item Manegement*/
-	
-	
-	$(".addLi").click(function(){
+
+
+	$(".addLi").click(function () {
 		var copyLi = $(this).parent().next();
 		var currUl = $(this).parent().parent();
 		$(copyLi).clone().appendTo(currUl);
-		
+
 		$(".remLi").click(RemoveListItem);
 	});
-	
+
 	$(".remLi").click(RemoveListItem);
-	
-	function RemoveListItem(){		
-		if($(this).parent().parent().children().length <= 2){
-		   return;
+
+	function RemoveListItem() {
+		if ($(this).parent().parent().children().length <= 2) {
+			return;
 		}
 		$(this).parent().remove();
 	}
 	
+	/*Section Hiding*/
+	
+	$(".hide").click(function(){
+		$(this).parent().next().toggle();
+	});
+	
+	/*Item Detail Modal Box*/
+
+	$("#myClass").click(function(){
+		console.log("hello");
+	});
 
 });
 

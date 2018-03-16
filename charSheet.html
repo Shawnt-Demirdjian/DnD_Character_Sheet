@@ -14,7 +14,7 @@
 
 		<!--		NAMES							-->
 
-		<h1>Names</h1>
+		<h1>Names<button class="hide btn btn-sm">Show/Hide</button></h1>
 		<form class="sect form" id="names">
 			<div class="row">
 				<div class="col-md-6">
@@ -30,11 +30,11 @@
 
 		<!--		GENERAL CHARACTER INFORMATION	-->
 
-		<h1>Character Abilities and Skills</h1>
+		<h1>Character Abilities and Skills<button class="hide btn btn-sm">Show/Hide</button></h1>
 		<form class="sect form" id="character">
 			<div class="row" id="basicInfo">
 				<div class="col-md-2">
-					<label for="Class">Class</label>
+					<label for="Class" id="myClass">Class</label>
 					<input class="form-control" type="text" placeholder="Class" id="Class">
 				</div>
 				<div class="col-md-1">
@@ -51,7 +51,7 @@
 				</div>
 				<div class="col-md-1">
 					<label for="PB">Proficiency</label>
-					<input class="form-control" type="number" placeholder="Bonus" readonly id="PB">
+					<input class="form-control" type="number" placeholder="Bonus" id="PB">
 				</div>
 				<div class="col-md-2">
 					<label for="Race">Race</label>
@@ -237,7 +237,7 @@
 
 		<!--		Health and Armor	-->
 
-		<h1>Health and Armor</h1>
+		<h1>Health and Armor<button class="hide btn btn-sm">Show/Hide</button></h1>
 		<form class="sect form" id="healthArmor">
 			<div class="row form-group">
 				<div class="col-md-3">
@@ -306,7 +306,7 @@
 
 		<!--		Features and Traits	-->
 
-		<h1>Features and Traits</h1>
+		<h1>Features and Traits<button class="hide btn btn-sm">Show/Hide</button></h1>
 		<div class="sect container-fluid" id="feat_trait">
 			<div class="row">
 				<ul class="col-md-6 list-group">
@@ -322,7 +322,7 @@
 
 		<!--		Proficiencies		-->
 
-		<h1>Proficiencies</h1>
+		<h1>Proficiencies<button class="hide btn btn-sm">Show/Hide</button></h1>
 		<div class="sect container-fluid" id="proficiencies">
 			<div class="row">
 				<ul class="col-md-3 list-group">
@@ -346,7 +346,7 @@
 
 		<!--		Equipment		-->
 
-		<h1>Equipment</h1>
+		<h1>Equipment<button class="hide btn btn-sm">Show/Hide</button></h1>
 		<div class="sect container-fluid" id="equipment">
 			<div class="row">
 				<table class="table table-striped">
@@ -383,8 +383,8 @@
 				<ul class="col-md-5 list-group">
 					<label>Gear <button class="addLi btn col-md-2">Add</button></label>
 					<li class="list-group-item d-flex"><input type="text" class="form-control form-control-sm col-md-9"><button class="remLi btn btn-sm col-md-3">Remove</button></li>
-				</ul>				
-		<ul class="col-md-5 list-group">
+				</ul>
+				<ul class="col-md-5 list-group">
 					<label>Treasure <button class="addLi btn col-md-2">Add</button></label>
 					<li class="list-group-item d-flex"><input type="text" class="form-control form-control-sm col-md-9"><button class="remLi btn btn-sm col-md-3">Remove</button></li>
 				</ul>
@@ -423,7 +423,7 @@
 
 		<!--		SPELL CASTING	-->
 
-		<h1>Spell Casting</h1>
+		<h1>Spell Casting<button class="hide btn btn-sm">Show/Hide</button></h1>
 		<div class="sect container-fluid" id="spells">
 			<div class="row">
 				<div class="col-md-3">
@@ -489,7 +489,7 @@
 
 		<!--		CHARACTER BACKSTORY AND DETAILS-->
 
-		<h1>Character Details</h1>
+		<h1>Character Details<button class="hide btn btn-sm">Show/Hide</button></h1>
 		<div class="sect container-fluid" id="charDetails">
 			<div class="row">
 				<ul class="col-md-3 list-group">
@@ -521,6 +521,16 @@
 			</div>
 		</div>
 	</div>
+
+		<!--		Item Detail Modal Box			-->
+	
+	<div class="modal-dialog modal-dialog-centered" id="myModal">
+	
+	THIS IS BULLSHIT
+	
+	</div>
+	
+	
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="charSheet.js"></script>
 </body>
