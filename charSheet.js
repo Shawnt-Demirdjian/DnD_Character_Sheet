@@ -1,6 +1,6 @@
 $(document).ready(function () {
 
-	/*Weapon Row Management*/
+	/*WEAPON ROW MANEGEMENT*/
 
 	$("#add").click(function () {
 		$("#weaponRow").clone().prependTo("#weapons");
@@ -17,9 +17,7 @@ $(document).ready(function () {
 		$(this).parent().parent().remove();
 	}
 
-
-	/*List Item Manegement*/
-
+	/*LIST ITEM MANAGEMENT*/
 
 	$(".addLi").click(function () {
 		var copyLi = $(this).parent().next();
@@ -37,25 +35,72 @@ $(document).ready(function () {
 		}
 		$(this).parent().remove();
 	}
-	
-	/*Section Hiding*/
-	
-	$(".hide").click(function(){
+
+	/*SECTION HIDING*/
+
+	$(".hide").click(function () {
 		$(this).parent().next().toggle();
 	});
-	
-	/*Item Detail Modal Box*/
 
-	$("#myClass").click(function(){
-		console.log("hello");
+	/*ITEM DETAIL MODAL BOX*/
+
+	$(".modable").click(function () {
+		var title = $(this).html();
+		$("#modTitle").html(title + " Details");
+		$("#detailModal").modal('toggle');
 	});
 
-});
+	/*AUTOMATIC MODIFIERS*/
+
+	$("#Level").blur(function () { //updates Prof Bonus and Prof skill mods
+		var lev = $(this).val();
+		if (lev <= 4) {
+			$("#PB").val(2);
+		} else if (lev <= 8) {
+			$("#PB").val(3);
+		} else if (lev <= 12) {
+			$("#PB").val(4);
+		} else if (lev <= 16) {
+			$("#PB").val(5);
+		} else {
+			$("#PB").val(6);
+		}
+
+		profSkillModChange();
+	});
+
+	$(".autoMod").blur(function () { //updates all ability and skill mods
+		var natMod = Math.floor(($(this).val()-10)/2);
+		$(this).parent().next().children().val(natMod);
+		$.each($(this).parent().parent().parent().find(":not(:checked)"), function (index, skill) {
+			$(skill).parent().next().children().val(natMod);
+		});
+		profSkillModChange();
+	});
+
+	$("#ability input:checkbox").mouseup(function () { //updates skill mod on loss/gain prof
+		var currMod = $(this).parent().next().children().val();
+		if ($(this).is(":checked")) { //loose proficiency
+			$(this).parent().next().children().val(parseInt(currMod) - parseInt($("#PB").val()));
+		} else { //gain proficiency
+			$(this).parent().next().children().val(parseInt(currMod) + parseInt($("#PB").val()));
+		}
+	});
+
+	function profSkillModChange() { //updates all proficient skill mods
+		$.each($(".natMod"), function (natIndex, natMod) {
+			$.each($(this).parent().parent().parent().find(":checked"), function (skillindex, skill) {
+				$(skill).parent().next().children().val(parseInt($(natMod).val()) + parseInt($("#PB").val()));
+			});
+		});
+	}
+
+}); //end document.ready funtion
 
 
 /*
 	$('#send').on("click", function () {
-		var url = "http://www.dnd5eapi.co/api/ides";
+		var url = "http://www.dnd5eapi.co/api/classes";
 
 		$.get(url, function (response) {
 			$('#phrase').html(response);
