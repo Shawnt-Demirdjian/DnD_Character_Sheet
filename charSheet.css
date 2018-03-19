@@ -39,3 +39,7 @@ label {
 input {
 	margin: auto;
 }
+
+h1 button{
+	margin-left: 10px;
+}

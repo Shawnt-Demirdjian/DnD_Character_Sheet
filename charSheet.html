@@ -309,12 +309,12 @@
 		<div class="sect container-fluid" id="feat_trait">
 			<div class="row">
 				<ul class="col-md-6 list-group">
-					<label>Race and Background <button class="addLi btn col-md-2">Add</button></label>
-					<li class="list-group-item d-flex"><input type="text" class="form-control form-control-sm col-md-10"><button class="remLi btn col-md-2">Remove</button></li>
+					<label>Race and Background <button class="addLi btn btn-sm col-md-2">Add</button></label>
+					<li class="list-group-item d-flex"><input type="text" class="form-control form-control-sm col-md-10"><button class="remLi btn btn-sm col-md-2">Remove</button></li>
 				</ul>
 				<ul class="col-md-6 list-group">
-					<label>Class <button class="addLi btn col-md-2">Add</button></label>
-					<li class="list-group-item d-flex"><input type="text" class="form-control form-control-sm col-md-10"><button class="remLi btn col-md-2">Remove</button></li>
+					<label>Class <button class="addLi btn btn-sm col-md-2">Add</button></label>
+					<li class="list-group-item d-flex"><input type="text" class="form-control form-control-sm col-md-10"><button class="remLi btn btn-sm col-md-2">Remove</button></li>
 				</ul>
 			</div>
 		</div>
@@ -325,19 +325,19 @@
 		<div class="sect container-fluid" id="proficiencies">
 			<div class="row">
 				<ul class="col-md-3 list-group">
-					<label>Weapons <button class="addLi btn col-md-2">Add</button></label>
+					<label>Weapons <button class="addLi btn btn-sm col-md-2">Add</button></label>
 					<li class="list-group-item d-flex"><input type="text" class="form-control form-control-sm col-md-9"><button class="remLi btn btn-sm col-md-3">Remove</button></li>
 				</ul>
 				<ul class="col-md-3 list-group">
-					<label>Languages <button class="addLi btn col-md-2">Add</button></label>
+					<label>Languages <button class="addLi btn btn-sm col-md-2">Add</button></label>
 					<li class="list-group-item d-flex"><input type="text" class="form-control form-control-sm col-md-9"><button class="remLi btn btn-sm col-md-3">Remove</button></li>
 				</ul>
 				<ul class="col-md-3 list-group">
-					<label>Tools and Vehicles <button class="addLi btn col-md-2">Add</button></label>
+					<label>Tools and Vehicles <button class="addLi btn btn-sm col-md-2">Add</button></label>
 					<li class="list-group-item d-flex"><input type="text" class="form-control form-control-sm col-md-9"><button class="remLi btn btn-sm col-md-3">Remove</button></li>
 				</ul>
 				<ul class="col-md-3 list-group">
-					<label>Armors <button class="addLi btn col-md-2">Add</button></label>
+					<label>Armors <button class="addLi btn btn-sm col-md-2">Add</button></label>
 					<li class="list-group-item d-flex"><input type="text" class="form-control form-control-sm col-md-9"><button class="remLi btn btn-sm col-md-3">Remove</button></li>
 				</ul>
 			</div>
@@ -363,13 +363,13 @@
 					</thead>
 					<tbody id="weapons">
 						<tr class="weaponRows" id="weaponRow">
-							<th scope="row"><input type="text" placeholder="Weapon"></th>
+							<th id="weapName" scope="row"><input type="text" placeholder="Weapon"></th>
 							<td><input type="text" placeholder="Damage"></td>
 							<td><input type="text" placeholder="Damage Type"></td>
 							<td><input type="text" placeholder="Range"></td>
 							<td><input type="text" placeholder="Weight"></td>
 							<td><input type="text" placeholder="Properties"></td>
-							<td><button id="" class="btn btn-sm modableWeapon">Detials</button></td>
+							<td><button id="det" class="btn btn-sm modableWeapon">Detials</button></td>
 							<td><button id="rem" class="btn btn-sm">Remove</button></td>
 						</tr>
 					</tbody>
@@ -380,11 +380,11 @@
 			</div>
 			<div class="row container-fluid justify-content-around">
 				<ul class="col-md-5 list-group">
-					<label>Gear <button class="addLi btn col-md-2">Add</button></label>
+					<label>Gear <button class="addLi btn btn-sm col-md-2">Add</button></label>
 					<li class="list-group-item d-flex"><input type="text" class="form-control form-control-sm col-md-9"><button class="remLi btn btn-sm col-md-3">Remove</button></li>
 				</ul>
 				<ul class="col-md-5 list-group">
-					<label>Treasure <button class="addLi btn col-md-2">Add</button></label>
+					<label>Treasure <button class="addLi btn btn-sm col-md-2">Add</button></label>
 					<li class="list-group-item d-flex"><input type="text" class="form-control form-control-sm col-md-9"><button class="remLi btn btn-sm col-md-3">Remove</button></li>
 				</ul>
 				<table class="table table-striped table-responsive table-sm col-md-2" id="coin">
@@ -443,45 +443,45 @@
 				</div>
 			</div>
 			<div class="row" id="spellLists">
-				<ul class="col-md-3 list-group">
+				<ul class="col-md-4 list-group">
 					<label>Cantrips:<button class="addLi btn btn-sm col-md-3 form-control-sm">Add</button></label>
-					<li class="list-group-item d-flex"><input type="text" class="form-control form-control-sm col-md-9"><button class="remLi btn btn-sm col-md-3">Remove</button></li>
+					<li class="list-group-item d-flex"><input type="text" class="form-control form-control-sm col-md-8"><button class="modableSpell btn btn-sm col-md-2">Details</button><button class="remLi btn btn-sm col-md-2">Remove</button></li>
 				</ul>
-				<ul class="col-md-3 list-group">
+				<ul class="col-md-4 list-group">
 					<label class="d-flex">Level 1: <button class="addLi btn btn-sm col-md-3 form-control-sm">Add</button><input class="form-control form-control-sm col-md-3" type="number" placeholder="Spent"><input class="form-control form-control-sm col-md-3" type="number" placeholder="Total"></label>
-					<li class="list-group-item d-flex"><input type="text" class="form-control form-control-sm col-md-9"><button class="remLi btn btn-sm col-md-3">Remove</button></li>
+					<li class="list-group-item d-flex"><input type="text" class="form-control form-control-sm col-md-8"><button class="modableSpell btn btn-sm col-md-2">Details</button><button class="remLi btn btn-sm col-md-2">Remove</button></li>
 				</ul>
-				<ul class="col-md-3 list-group">
+				<ul class="col-md-4 list-group">
 					<label class="d-flex">Level 2: <button class="addLi btn btn-sm col-md-3 form-control-sm">Add</button><input class="form-control form-control-sm col-md-3" type="number" placeholder="Spent"><input class="form-control form-control-sm col-md-3" type="number" placeholder="Total"></label>
-					<li class="list-group-item d-flex"><input type="text" class="form-control form-control-sm col-md-9"><button class="remLi btn btn-sm col-md-3">Remove</button></li>
+					<li class="list-group-item d-flex"><input type="text" class="form-control form-control-sm col-md-8"><button class="modableSpell btn btn-sm col-md-2">Details</button><button class="remLi btn btn-sm col-md-2">Remove</button></li>
 				</ul>
-				<ul class="col-md-3 list-group">
+				<ul class="col-md-4 list-group">
 					<label class="d-flex">Level 3: <button class="addLi btn btn-sm col-md-3 form-control-sm">Add</button><input class="form-control form-control-sm col-md-3" type="number" placeholder="Spent"><input class="form-control form-control-sm col-md-3" type="number" placeholder="Total"></label>
-					<li class="list-group-item d-flex"><input type="text" class="form-control form-control-sm col-md-9"><button class="remLi btn btn-sm col-md-3">Remove</button></li>
+					<li class="list-group-item d-flex"><input type="text" class="form-control form-control-sm col-md-8"><button class="modableSpell btn btn-sm col-md-2">Details</button><button class="remLi btn btn-sm col-md-2">Remove</button></li>
 				</ul>
-				<ul class="col-md-3 list-group">
+				<ul class="col-md-4 list-group">
 					<label class="d-flex">Level 4: <button class="addLi btn btn-sm col-md-3 form-control-sm">Add</button><input class="form-control form-control-sm col-md-3" type="number" placeholder="Spent"><input class="form-control form-control-sm col-md-3" type="number" placeholder="Total"></label>
-					<li class="list-group-item d-flex"><input type="text" class="form-control form-control-sm col-md-9"><button class="remLi btn btn-sm col-md-3">Remove</button></li>
+					<li class="list-group-item d-flex"><input type="text" class="form-control form-control-sm col-md-8"><button class="modableSpell btn btn-sm col-md-2">Details</button><button class="remLi btn btn-sm col-md-2">Remove</button></li>
 				</ul>
-				<ul class="col-md-3 list-group">
+				<ul class="col-md-4 list-group">
 					<label class="d-flex">Level 5: <button class="addLi btn btn-sm col-md-3 form-control-sm">Add</button><input class="form-control form-control-sm col-md-3" type="number" placeholder="Spent"><input class="form-control form-control-sm col-md-3" type="number" placeholder="Total"></label>
-					<li class="list-group-item d-flex"><input type="text" class="form-control form-control-sm col-md-9"><button class="remLi btn btn-sm col-md-3">Remove</button></li>
+					<li class="list-group-item d-flex"><input type="text" class="form-control form-control-sm col-md-8"><button class="modableSpell btn btn-sm col-md-2">Details</button><button class="remLi btn btn-sm col-md-2">Remove</button></li>
 				</ul>
-				<ul class="col-md-3 list-group">
+				<ul class="col-md-4 list-group">
 					<label class="d-flex">Level 6: <button class="addLi btn btn-sm col-md-3 form-control-sm">Add</button><input class="form-control form-control-sm col-md-3" type="number" placeholder="Spent"><input class="form-control form-control-sm col-md-3" type="number" placeholder="Total"></label>
-					<li class="list-group-item d-flex"><input type="text" class="form-control form-control-sm col-md-9"><button class="remLi btn btn-sm col-md-3">Remove</button></li>
+					<li class="list-group-item d-flex"><input type="text" class="form-control form-control-sm col-md-8"><button class="modableSpell btn btn-sm col-md-2">Details</button><button class="remLi btn btn-sm col-md-2">Remove</button></li>
 				</ul>
-				<ul class="col-md-3 list-group">
+				<ul class="col-md-4 list-group">
 					<label class="d-flex">Level 7: <button class="addLi btn btn-sm col-md-3 form-control-sm">Add</button><input class="form-control form-control-sm col-md-3" type="number" placeholder="Spent"><input class="form-control form-control-sm col-md-3" type="number" placeholder="Total"></label>
-					<li class="list-group-item d-flex"><input type="text" class="form-control form-control-sm col-md-9"><button class="remLi btn btn-sm col-md-3">Remove</button></li>
+					<li class="list-group-item d-flex"><input type="text" class="form-control form-control-sm col-md-8"><button class="modableSpell btn btn-sm col-md-2">Details</button><button class="remLi btn btn-sm col-md-2">Remove</button></li>
 				</ul>
-				<ul class="col-md-3 list-group">
+				<ul class="col-md-4 list-group">
 					<label class="d-flex">Level 8: <button class="addLi btn btn-sm col-md-3 form-control-sm">Add</button><input class="form-control form-control-sm col-md-3" type="number" placeholder="Spent"><input class="form-control form-control-sm col-md-3" type="number" placeholder="Total"></label>
-					<li class="list-group-item d-flex"><input type="text" class="form-control form-control-sm col-md-9"><button class="remLi btn btn-sm col-md-3">Remove</button></li>
+					<li class="list-group-item d-flex"><input type="text" class="form-control form-control-sm col-md-8"><button class="modableSpell btn btn-sm col-md-2">Details</button><button class="remLi btn btn-sm col-md-2">Remove</button></li>
 				</ul>
-				<ul class="col-md-3 list-group">
+				<ul class="col-md-4 list-group">
 					<label class="d-flex">Level 9: <button class="addLi btn btn-sm col-md-3 form-control-sm">Add</button><input class="form-control form-control-sm col-md-3" type="number" placeholder="Spent"><input class="form-control form-control-sm col-md-3" type="number" placeholder="Total"></label>
-					<li class="list-group-item d-flex"><input type="text" class="form-control form-control-sm col-md-9"><button class="remLi btn btn-sm col-md-3">Remove</button></li>
+					<li class="list-group-item d-flex"><input type="text" class="form-control form-control-sm col-md-8"><button class="modableSpell btn btn-sm col-md-2">Details</button><button class="remLi btn btn-sm col-md-2">Remove</button></li>
 				</ul>
 			</div>
 		</div>

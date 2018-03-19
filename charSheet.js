@@ -5,6 +5,7 @@ $(document).ready(function () {
 	$("#add").click(function () {
 		$("#weaponRow").clone().prependTo("#weapons");
 		$("#rem").click(RemoveWeaponRow);
+		$(".modableWeapon").click(openWeaponModal);
 
 	});
 
@@ -25,6 +26,7 @@ $(document).ready(function () {
 		$(copyLi).clone().appendTo(currUl);
 
 		$(".remLi").click(RemoveListItem);
+		$(".modableSpell").click(openSpellModal);
 	});
 
 	$(".remLi").click(RemoveListItem);
@@ -86,27 +88,41 @@ $(document).ready(function () {
 			});
 		});
 	}
-	
-		/*ITEM DETAIL MODAL BOX*/
 
-	$(".modable").click(function () {
+	/*ITEM DETAIL MODAL BOX*/
+
+	$(".modable").click(openModal);
+
+	$(".modableWeapon").click(openWeaponModal);
+
+	$(".modableSkill").click(openSkillModal);
+
+	$(".modableSpell").click(openSpellModal);
+
+	function openModal() {
 		var title = $(this).html();
 		$("#modTitle").html(title);
 		$("#detailModal").modal('toggle');
-	});
-	
-	
-	$(".modableWeapon").click(function () {
+	}
+
+	function openWeaponModal() {
+		var title = $(this).parent().siblings("#weapName").children().val();
+		$("#modTitle").html(title);
+		$("#detailModal").modal('toggle');
+	}
+
+	function openSkillModal() {
 		var title = $(this).html();
 		$("#modTitle").html(title);
 		$("#detailModal").modal('toggle');
-	});
-	
-	$(".modableSkill").click(function () {
-		var title = $(this).html();
+	}
+
+	function openSpellModal() {
+		var title = $(this).prev().val();
 		$("#modTitle").html(title);
 		$("#detailModal").modal('toggle');
-	});
+	}
+
 
 }); //end document.ready funtion
 
