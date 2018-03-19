@@ -42,14 +42,6 @@ $(document).ready(function () {
 		$(this).parent().next().toggle();
 	});
 
-	/*ITEM DETAIL MODAL BOX*/
-
-	$(".modable").click(function () {
-		var title = $(this).html();
-		$("#modTitle").html(title + " Details");
-		$("#detailModal").modal('toggle');
-	});
-
 	/*AUTOMATIC MODIFIERS*/
 
 	$("#Level").blur(function () { //updates Prof Bonus and Prof skill mods
@@ -94,6 +86,27 @@ $(document).ready(function () {
 			});
 		});
 	}
+	
+		/*ITEM DETAIL MODAL BOX*/
+
+	$(".modable").click(function () {
+		var title = $(this).html();
+		$("#modTitle").html(title);
+		$("#detailModal").modal('toggle');
+	});
+	
+	
+	$(".modableWeapon").click(function () {
+		var title = $(this).html();
+		$("#modTitle").html(title);
+		$("#detailModal").modal('toggle');
+	});
+	
+	$(".modableSkill").click(function () {
+		var title = $(this).html();
+		$("#modTitle").html(title);
+		$("#detailModal").modal('toggle');
+	});
 
 }); //end document.ready funtion
 

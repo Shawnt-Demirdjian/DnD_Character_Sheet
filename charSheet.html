@@ -45,7 +45,7 @@
 					<input class="form-control" type="number" placeholder="XP" id="XP">
 				</div>
 				<div class="col-md-1">
-					<label for="inspiration">Inspiration</label>
+					<label for="inspiration" class="modable">Inspiration</label>
 					<input class="form-control" type="text" placeholder="" id="inspiration">
 				</div>
 				<div class="col-md-1">
@@ -53,15 +53,15 @@
 					<input class="form-control" type="number" placeholder="Bonus" readonly id="PB">
 				</div>
 				<div class="col-md-2">
-					<label for="Race">Race</label>
+					<label for="Race" class="modable">Race</label>
 					<input class="form-control" type="text" placeholder="Race" id="Race">
 				</div>
 				<div class="col-md-2">
-					<label for="Alignment">Alignment</label>
+					<label for="Alignment" class="modable">Alignment</label>
 					<input class="form-control" type="text" placeholder="Alignment" id="Alignment">
 				</div>
 				<div class="col-md-2">
-					<label for="Background">Background</label>
+					<label for="Background" class="modable">Background</label>
 					<input class="form-control" type="text" placeholder="Background" id="Background">
 				</div>
 			</div>
@@ -72,18 +72,18 @@
 				<div class="col-md-2">
 					<table>
 						<tr>
-							<th>Strength</th>
+							<th class="modable">Strength</th>
 						</tr>
 						<tr>
 							<td><input class="form-control autoMod" type="number" value="0" placeholder="STR" id="STR"></td>
 							<td><input class="form-control natMod" type="number" readonly id="STR_MOD" value="0"></td>
 						</tr>
 						<tr>
-							<td><input class="" type="checkbox" name="STR_SAVE">Saving Throw</td>
+							<td class="modableSkill"><input type="checkbox" name="STR_SAVE">Saving Throw</td>
 							<td><input class="form-control mod" type="number" readonly id="STR_SAVE_MOD" value="0" size="3"></td>
 						</tr>
 						<tr>
-							<td><input class="" type="checkbox" name="athletics">Athletics</td>
+							<td class="modableSkill"><input type="checkbox" name="athletics">Athletics</td>
 							<td><input class="form-control mod" type="number" readonly id="ATH_MOD" value="0" size="3"></td>
 						</tr>
 					</table>
@@ -91,26 +91,26 @@
 				<div class="col-md-2">
 					<table>
 						<tr>
-							<th>Dexterity</th>
+							<th class="modable">Dexterity</th>
 						</tr>
 						<tr>
 							<td><input class="form-control autoMod" type="number" value="0" placeholder="DEX" id="DEX"></td>
 							<td><input class="form-control natMod" type="number" readonly id="DEX_MOD" value="0"></td>
 						</tr>
 						<tr>
-							<td><input class="" type="checkbox" name="DEX_SAVE">Saving Throw</td>
+							<td class="modableSkill"><input class="" type="checkbox" name="DEX_SAVE">Saving Throw</td>
 							<td><input class="form-control mod" type="number" readonly id="DEX_SAVE_MOD" value="0" size="3"></td>
 						</tr>
 						<tr>
-							<td><input class="" type="checkbox" name="acrobatics">Acrobatics</td>
+							<td class="modableSkill"><input class="" type="checkbox" name="acrobatics">Acrobatics</td>
 							<td><input class="form-control mod" type="number" readonly id="ACR_MOD" value="0" size="3"></td>
 						</tr>
 						<tr>
-							<td><input class="" type="checkbox" name="slight_of_hand">Slight of Hand</td>
+							<td class="modableSkill"><input class="" type="checkbox" name="slight_of_hand">Slight of Hand</td>
 							<td><input class="form-control mod" type="number" readonly id="SoH_MOD" value="0" size="3"></td>
 						</tr>
 						<tr>
-							<td><input class="" type="checkbox" name="stealth">Stealth</td>
+							<td class="modableSkill"><input class="" type="checkbox" name="stealth">Stealth</td>
 							<td><input class="form-control mod" type="number" readonly id="STL_MOD" value="0" size="3"></td>
 						</tr>
 					</table>
@@ -118,14 +118,14 @@
 				<div class="col-md-2">
 					<table>
 						<tr>
-							<th>Constitution</th>
+							<th class="modable">Constitution</th>
 						</tr>
 						<tr>
 							<td><input class="form-control autoMod" type="number" value="0" placeholder="CONST" id="CONST"></td>
 							<td><input class="form-control natMod" type="number" readonly id="CONST_MOD" value="0"></td>
 						</tr>
 						<tr>
-							<td><input class="" type="checkbox" name="CONST_SAVE">Saving Throw</td>
+							<td class="modableSkill"><input class="" type="checkbox" name="CONST_SAVE">Saving Throw</td>
 							<td><input class="form-control mod" type="number" readonly id="CONST_SAVE_MOD" value="0" size="3"></td>
 						</tr>
 					</table>
@@ -133,34 +133,34 @@
 				<div class="col-md-2">
 					<table>
 						<tr>
-							<th>Intelligence</th>
+							<th class="modable">Intelligence</th>
 						</tr>
 						<tr>
 							<td><input class="form-control autoMod" type="number" value="0" placeholder="INT" id="INT"></td>
 							<td><input class="form-control natMod" type="number" readonly id="INT_MOD" value="0"></td>
 						</tr>
 						<tr>
-							<td><input class="" type="checkbox" name="INT_SAVE">Saving Throw</td>
+							<td class="modableSkill"><input class="" type="checkbox" name="INT_SAVE">Saving Throw</td>
 							<td><input class="form-control mod" type="number" readonly id="INT_SAVE_MOD" value="0" size="3"></td>
 						</tr>
 						<tr>
-							<td><input class="" type="checkbox" name="arcana">Arcana</td>
+							<td class="modableSkill"><input class="" type="checkbox" name="arcana">Arcana</td>
 							<td><input class="form-control mod" type="number" readonly id="ARC_MOD" value="0" size="3"></td>
 						</tr>
 						<tr>
-							<td><input class="" type="checkbox" name="history">History</td>
+							<td class="modableSkill"><input class="" type="checkbox" name="history">History</td>
 							<td><input class="form-control mod" type="number" readonly id="HIS_MOD" value="0" size="3"></td>
 						</tr>
 						<tr>
-							<td><input class="" type="checkbox" name="investigation">Investigation</td>
+							<td class="modableSkill"><input class="" type="checkbox" name="investigation">Investigation</td>
 							<td><input class="form-control mod" type="number" readonly id="INV_MOD" value="0" size="3"></td>
 						</tr>
 						<tr>
-							<td><input class="" type="checkbox" name="nature">Nature</td>
+							<td class="modableSkill"><input class="" type="checkbox" name="nature">Nature</td>
 							<td><input class="form-control mod" type="number" readonly id="NAT_MOD" value="0" size="3"></td>
 						</tr>
 						<tr>
-							<td><input class="" type="checkbox" name="religion">Religion</td>
+							<td class="modableSkill"><input class="" type="checkbox" name="religion">Religion</td>
 							<td><input class="form-control mod" type="number" readonly id="REL_MOD" value="0" size="3"></td>
 						</tr>
 					</table>
@@ -168,34 +168,34 @@
 				<div class="col-md-2">
 					<table>
 						<tr>
-							<th>Wisdom</th>
+							<th class="modable">Wisdom</th>
 						</tr>
 						<tr>
 							<td><input class="form-control autoMod" type="number" value="0" placeholder="WIS" id="WIS"></td>
 							<td><input class="form-control natMod" type="number" readonly id="WIS_MOD" value="0"></td>
 						</tr>
 						<tr>
-							<td><input class="" type="checkbox" name="WIS_SAVE">Saving Throw</td>
+							<td class="modableSkill"><input class="" type="checkbox" name="WIS_SAVE">Saving Throw</td>
 							<td><input class="form-control mod" type="number" readonly id="WIS_SAVE_MOD" value="0" size="3"></td>
 						</tr>
 						<tr>
-							<td><input class="" type="checkbox" name="animal_handling">Animal Handling</td>
+							<td class="modableSkill"><input class="" type="checkbox" name="animal_handling">Animal Handling</td>
 							<td><input class="form-control mod" type="number" readonly id="AnH_MOD" value="0" size="3"></td>
 						</tr>
 						<tr>
-							<td><input class="" type="checkbox" name="insight">Insight</td>
+							<td class="modableSkill"><input class="" type="checkbox" name="insight">Insight</td>
 							<td><input class="form-control mod" type="number" readonly id="INS_MOD" value="0" size="3"></td>
 						</tr>
 						<tr>
-							<td><input class="" type="checkbox" name="medicine">Medicine</td>
+							<td class="modableSkill"><input class="" type="checkbox" name="medicine">Medicine</td>
 							<td><input class="form-control mod" type="number" readonly id="MED_MOD" value="0" size="3"></td>
 						</tr>
 						<tr>
-							<td><input class="" type="checkbox" name="perception">Perception</td>
+							<td class="modableSkill"><input class="" type="checkbox" name="perception">Perception</td>
 							<td><input class="form-control mod" type="number" readonly id="PER_MOD" value="0" size="3"></td>
 						</tr>
 						<tr>
-							<td><input class="" type="checkbox" name="survival">Survival</td>
+							<td class="modableSkill"><input class="" type="checkbox" name="survival">Survival</td>
 							<td><input class="form-control mod" type="number" readonly id="SUR_MOD" value="0" size="3"></td>
 						</tr>
 					</table>
@@ -203,30 +203,30 @@
 				<div class="col-md-2">
 					<table>
 						<tr>
-							<th>Charisma</th>
+							<th class="modable">Charisma</th>
 						</tr>
 						<tr>
 							<td><input class="form-control autoMod" type="number" value="0" placeholder="CHAR" id="CHAR"></td>
 							<td><input class="form-control natMod" type="number" readonly id="CHAR_MOD" value="0"></td>
 						</tr>
 						<tr>
-							<td><input class="" type="checkbox" name="CHR_SAVE">Saving Throw</td>
+							<td class="modableSkill"><input class="" type="checkbox" name="CHR_SAVE">Saving Throw</td>
 							<td><input class="form-control mod" type="number" readonly id="CHR_SAVE_MOD" value="0" size="3"></td>
 						</tr>
 						<tr>
-							<td><input class="" type="checkbox" name="deception">Deception</td>
+							<td class="modableSkill"><input class="" type="checkbox" name="deception">Deception</td>
 							<td><input class="form-control mod" type="number" readonly id="DEC_MOD" value="0" size="3"></td>
 						</tr>
 						<tr>
-							<td><input class="" type="checkbox" name="intimidation">Intimidation</td>
+							<td class="modableSkill"><input class="" type="checkbox" name="intimidation">Intimidation</td>
 							<td><input class="form-control mod" type="number" readonly id="IND_MOD" value="0" size="3"></td>
 						</tr>
 						<tr>
-							<td><input class="" type="checkbox" name="performance">Performance</td>
+							<td class="modableSkill"><input class="" type="checkbox" name="performance">Performance</td>
 							<td><input class="form-control mod" type="number" readonly id="PEF_MOD" value="0" size="3"></td>
 						</tr>
 						<tr>
-							<td><input class="" type="checkbox" name="persuasion">Persuasion</td>
+							<td class="modableSkill"><input class="" type="checkbox" name="persuasion">Persuasion</td>
 							<td><input class="form-control mod" type="number" readonly id="PES_MOD" value="0" size="3"></td>
 						</tr>
 					</table>
@@ -242,15 +242,15 @@
 				<div class="col-md-3">
 					<table>
 						<tr>
-							<td><label>Armor Class:</label></td>
+							<td><label class="modable">Armor Class:</label></td>
 							<td><input class="form-control" type="number" id="AC" value=""></td>
 						</tr>
 						<tr>
-							<td><label>Speed (feet):</label></td>
+							<td><label class="modable">Speed (feet):</label></td>
 							<td><input class="form-control" type="number" id="speed" value=""></td>
 						</tr>
 						<tr>
-							<td><label>Initiative:</label></td>
+							<td><label class="modable">Initiative:</label></td>
 							<td><input class="form-control" type="number" id="initiative" value=""></td>
 						</tr>
 					</table>
@@ -285,7 +285,7 @@
 				</div>
 				<div class="col-md-3">
 					<table>
-						<label>Death Saves</label>
+						<label class="modable">Death Saves</label>
 						<tr>
 							<td><label>Successes:</label></td>
 							<td><input class="" type="checkbox" id="" value=""></td>
@@ -359,7 +359,6 @@
 							<th scope="col">Range</th>
 							<th scope="col">Weight</th>
 							<th scope="col">Properties</th>
-							<th scope="col">Remove</th>
 						</tr>
 					</thead>
 					<tbody id="weapons">
@@ -370,6 +369,7 @@
 							<td><input type="text" placeholder="Range"></td>
 							<td><input type="text" placeholder="Weight"></td>
 							<td><input type="text" placeholder="Properties"></td>
+							<td><button id="" class="btn btn-sm modableWeapon">Detials</button></td>
 							<td><button id="rem" class="btn btn-sm">Remove</button></td>
 						</tr>
 					</tbody>
@@ -390,7 +390,7 @@
 				<table class="table table-striped table-responsive table-sm col-md-2" id="coin">
 					<thead>
 						<tr>
-							<th>Coin</th>
+							<th class="modable">Coin</th>
 							<th>Amount</th>
 						</tr>
 					</thead>
@@ -430,57 +430,57 @@
 					<input class="form-control" type="text" placeholder="Class" id="spellClass">
 				</div>
 				<div class="col-md-3">
-					<label for="spellAbility">Spell Casting Ability</label>
+					<label for="spellAbility" class="modable">Spell Casting Ability</label>
 					<input class="form-control" type="text" placeholder="Ability" id="spellAbility">
 				</div>
 				<div class="col-md-3">
-					<label for="spellDC">Spell Save DC</label>
+					<label for="spellDC" class="modable">Spell Save DC</label>
 					<input class="form-control" type="text" placeholder="DC" id="spellDC">
 				</div>
 				<div class="col-md-3">
-					<label for="spellDC">Spell Attack Modifier</label>
+					<label for="spellDC" class="modable">Spell Attack Modifier</label>
 					<input class="form-control" type="text" placeholder="Modifier" id="spellMod">
 				</div>
 			</div>
 			<div class="row" id="spellLists">
 				<ul class="col-md-3 list-group">
-					<label>Cantrips:<button class="addLi btn col-md-3">Add</button></label>
+					<label>Cantrips:<button class="addLi btn btn-sm col-md-3 form-control-sm">Add</button></label>
 					<li class="list-group-item d-flex"><input type="text" class="form-control form-control-sm col-md-9"><button class="remLi btn btn-sm col-md-3">Remove</button></li>
 				</ul>
 				<ul class="col-md-3 list-group">
-					<label class="d-flex">Level 1: <button class="addLi btn btn-sm col-md-3">Add</button><input class="form-control col-md-3" type="number" placeholder="Spent"><input class="form-control col-md-3" type="number" placeholder="Total"></label>
+					<label class="d-flex">Level 1: <button class="addLi btn btn-sm col-md-3 form-control-sm">Add</button><input class="form-control form-control-sm col-md-3" type="number" placeholder="Spent"><input class="form-control form-control-sm col-md-3" type="number" placeholder="Total"></label>
 					<li class="list-group-item d-flex"><input type="text" class="form-control form-control-sm col-md-9"><button class="remLi btn btn-sm col-md-3">Remove</button></li>
 				</ul>
 				<ul class="col-md-3 list-group">
-					<label class="d-flex">Level 2: <button class="addLi btn btn-sm col-md-3">Add</button><input class="form-control col-md-3" type="number" placeholder="Spent"><input class="form-control col-md-3" type="number" placeholder="Total"></label>
+					<label class="d-flex">Level 2: <button class="addLi btn btn-sm col-md-3 form-control-sm">Add</button><input class="form-control form-control-sm col-md-3" type="number" placeholder="Spent"><input class="form-control form-control-sm col-md-3" type="number" placeholder="Total"></label>
 					<li class="list-group-item d-flex"><input type="text" class="form-control form-control-sm col-md-9"><button class="remLi btn btn-sm col-md-3">Remove</button></li>
 				</ul>
 				<ul class="col-md-3 list-group">
-					<label class="d-flex">Level 3: <button class="addLi btn btn-sm col-md-3">Add</button><input class="form-control col-md-3" type="number" placeholder="Spent"><input class="form-control col-md-3" type="number" placeholder="Total"></label>
+					<label class="d-flex">Level 3: <button class="addLi btn btn-sm col-md-3 form-control-sm">Add</button><input class="form-control form-control-sm col-md-3" type="number" placeholder="Spent"><input class="form-control form-control-sm col-md-3" type="number" placeholder="Total"></label>
 					<li class="list-group-item d-flex"><input type="text" class="form-control form-control-sm col-md-9"><button class="remLi btn btn-sm col-md-3">Remove</button></li>
 				</ul>
 				<ul class="col-md-3 list-group">
-					<label class="d-flex">Level 4: <button class="addLi btn btn-sm col-md-3">Add</button><input class="form-control col-md-3" type="number" placeholder="Spent"><input class="form-control col-md-3" type="number" placeholder="Total"></label>
+					<label class="d-flex">Level 4: <button class="addLi btn btn-sm col-md-3 form-control-sm">Add</button><input class="form-control form-control-sm col-md-3" type="number" placeholder="Spent"><input class="form-control form-control-sm col-md-3" type="number" placeholder="Total"></label>
 					<li class="list-group-item d-flex"><input type="text" class="form-control form-control-sm col-md-9"><button class="remLi btn btn-sm col-md-3">Remove</button></li>
 				</ul>
 				<ul class="col-md-3 list-group">
-					<label class="d-flex">Level 5: <button class="addLi btn btn-sm col-md-3">Add</button><input class="form-control col-md-3" type="number" placeholder="Spent"><input class="form-control col-md-3" type="number" placeholder="Total"></label>
+					<label class="d-flex">Level 5: <button class="addLi btn btn-sm col-md-3 form-control-sm">Add</button><input class="form-control form-control-sm col-md-3" type="number" placeholder="Spent"><input class="form-control form-control-sm col-md-3" type="number" placeholder="Total"></label>
 					<li class="list-group-item d-flex"><input type="text" class="form-control form-control-sm col-md-9"><button class="remLi btn btn-sm col-md-3">Remove</button></li>
 				</ul>
 				<ul class="col-md-3 list-group">
-					<label class="d-flex">Level 6: <button class="addLi btn btn-sm col-md-3">Add</button><input class="form-control col-md-3" type="number" placeholder="Spent"><input class="form-control col-md-3" type="number" placeholder="Total"></label>
+					<label class="d-flex">Level 6: <button class="addLi btn btn-sm col-md-3 form-control-sm">Add</button><input class="form-control form-control-sm col-md-3" type="number" placeholder="Spent"><input class="form-control form-control-sm col-md-3" type="number" placeholder="Total"></label>
 					<li class="list-group-item d-flex"><input type="text" class="form-control form-control-sm col-md-9"><button class="remLi btn btn-sm col-md-3">Remove</button></li>
 				</ul>
 				<ul class="col-md-3 list-group">
-					<label class="d-flex">Level 7: <button class="addLi btn btn-sm col-md-3">Add</button><input class="form-control col-md-3" type="number" placeholder="Spent"><input class="form-control col-md-3" type="number" placeholder="Total"></label>
+					<label class="d-flex">Level 7: <button class="addLi btn btn-sm col-md-3 form-control-sm">Add</button><input class="form-control form-control-sm col-md-3" type="number" placeholder="Spent"><input class="form-control form-control-sm col-md-3" type="number" placeholder="Total"></label>
 					<li class="list-group-item d-flex"><input type="text" class="form-control form-control-sm col-md-9"><button class="remLi btn btn-sm col-md-3">Remove</button></li>
 				</ul>
 				<ul class="col-md-3 list-group">
-					<label class="d-flex">Level 8: <button class="addLi btn btn-sm col-md-3">Add</button><input class="form-control col-md-3" type="number" placeholder="Spent"><input class="form-control col-md-3" type="number" placeholder="Total"></label>
+					<label class="d-flex">Level 8: <button class="addLi btn btn-sm col-md-3 form-control-sm">Add</button><input class="form-control form-control-sm col-md-3" type="number" placeholder="Spent"><input class="form-control form-control-sm col-md-3" type="number" placeholder="Total"></label>
 					<li class="list-group-item d-flex"><input type="text" class="form-control form-control-sm col-md-9"><button class="remLi btn btn-sm col-md-3">Remove</button></li>
 				</ul>
 				<ul class="col-md-3 list-group">
-					<label class="d-flex">Level 9: <button class="addLi btn btn-sm col-md-3">Add</button><input class="form-control col-md-3" type="number" placeholder="Spent"><input class="form-control col-md-3" type="number" placeholder="Total"></label>
+					<label class="d-flex">Level 9: <button class="addLi btn btn-sm col-md-3 form-control-sm">Add</button><input class="form-control form-control-sm col-md-3" type="number" placeholder="Spent"><input class="form-control form-control-sm col-md-3" type="number" placeholder="Total"></label>
 					<li class="list-group-item d-flex"><input type="text" class="form-control form-control-sm col-md-9"><button class="remLi btn btn-sm col-md-3">Remove</button></li>
 				</ul>
 			</div>
@@ -521,7 +521,7 @@
 		</div>
 	</div>
 
-	<!--		Item Detail Modal Box			-->
+	<!--		ITEM DETAIL MODAL BOX			-->
 
 	<div class="modal fade" id="detailModal">
 		<div class="modal-dialog modal-dialog-centered">
@@ -531,6 +531,9 @@
 					<button type="button" class="close" data-dismiss="modal">&times;</button>
 				</div>
 				<div class="modal-body" id="modBody">
+
+					SOME BOMB ASS DETAILS WILL GO HERE
+
 				</div>
 				<div class="modal-footer" id="modFoot">
 					<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
@@ -538,6 +541,8 @@
 			</div>
 		</div>
 	</div>
+
+	<!--		JAVASCRIPT						-->
 
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
