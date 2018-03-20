@@ -17,9 +17,9 @@
 	
 ### Tuesday, March 27 (Day 15):
 	* Use HTML Web Storage; localStorage Objects (or other option) to store a Character's info
-	* Add UI for accessing multiple Characters
 
 ### Friday, March 30 (Day 18):
+	* Add UI for accessing multiple Characters
 	* Add CSS design, colooring and animations
 
 ### Tuesday, April 3 (Day 22):
