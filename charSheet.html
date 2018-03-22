@@ -33,7 +33,7 @@
 		<form class="sect form" id="character">
 			<div class="row" id="basicInfo">
 				<div class="col-md-2">
-					<label for="Class" id="myClass" class="modable">Class</label>
+					<label for="Class" id="myClass" class="modableClass">Class</label>
 					<input class="form-control" type="text" placeholder="Class" id="Class">
 				</div>
 				<div class="col-md-1">
@@ -45,7 +45,7 @@
 					<input class="form-control" type="number" placeholder="XP" id="XP">
 				</div>
 				<div class="col-md-1">
-					<label for="inspiration" class="modable">Inspiration</label>
+					<label for="inspiration" class="">Inspiration</label>
 					<input class="form-control" type="text" placeholder="" id="inspiration">
 				</div>
 				<div class="col-md-1">
@@ -53,15 +53,15 @@
 					<input class="form-control" type="number" placeholder="Bonus" readonly id="PB">
 				</div>
 				<div class="col-md-2">
-					<label for="Race" class="modable">Race</label>
+					<label for="Race" class="modableRace">Race</label>
 					<input class="form-control" type="text" placeholder="Race" id="Race">
 				</div>
 				<div class="col-md-2">
-					<label for="Alignment" class="modable">Alignment</label>
+					<label for="Alignment" class="">Alignment</label>
 					<input class="form-control" type="text" placeholder="Alignment" id="Alignment">
 				</div>
 				<div class="col-md-2">
-					<label for="Background" class="modable">Background</label>
+					<label for="Background" class="">Background</label>
 					<input class="form-control" type="text" placeholder="Background" id="Background">
 				</div>
 			</div>
@@ -72,14 +72,14 @@
 				<div class="col-md-2">
 					<table>
 						<tr>
-							<th class="modable">Strength</th>
+							<th class="modableAbil">Strength</th>
 						</tr>
 						<tr>
 							<td><input class="form-control autoMod" type="number" value="0" placeholder="STR" id="STR"></td>
 							<td><input class="form-control natMod" type="number" readonly id="STR_MOD" value="0"></td>
 						</tr>
 						<tr>
-							<td class="d-inline d-flex"><input type="checkbox" name="STR_SAVE"><label class="form-control-sm modableSkill">Saving Throw</label></td>
+							<td class="d-inline d-flex"><input type="checkbox" name="STR_SAVE"><label class="form-control-sm">Saving Throw</label></td>
 							<td><input class="form-control mod" type="number" readonly id="STR_SAVE_MOD" value="0" size="3"></td>
 						</tr>
 						<tr>
@@ -91,14 +91,14 @@
 				<div class="col-md-2">
 					<table>
 						<tr>
-							<th class="modable">Dexterity</th>
+							<th class="modableAbil">Dexterity</th>
 						</tr>
 						<tr>
 							<td><input class="form-control autoMod" type="number" value="0" placeholder="DEX" id="DEX"></td>
 							<td><input class="form-control natMod" type="number" readonly id="DEX_MOD" value="0"></td>
 						</tr>
 						<tr>
-							<td class="d-inline d-flex"><input class="" type="checkbox" name="DEX_SAVE"><label class="form-control-sm modableSkill">Saving Throw</label></td>
+							<td class="d-inline d-flex"><input class="" type="checkbox" name="DEX_SAVE"><label class="form-control-sm">Saving Throw</label></td>
 							<td><input class="form-control mod" type="number" readonly id="DEX_SAVE_MOD" value="0" size="3"></td>
 						</tr>
 						<tr>
@@ -118,14 +118,14 @@
 				<div class="col-md-2">
 					<table>
 						<tr>
-							<th class="modable">Constitution</th>
+							<th class="modableAbil">Constitution</th>
 						</tr>
 						<tr>
 							<td><input class="form-control autoMod" type="number" value="0" placeholder="CONST" id="CONST"></td>
 							<td><input class="form-control natMod" type="number" readonly id="CONST_MOD" value="0"></td>
 						</tr>
 						<tr>
-							<td class="d-inline d-flex"><input class="" type="checkbox" name="CONST_SAVE"><label class="form-control-sm modableSkill">Saving Throw</label></td>
+							<td class="d-inline d-flex"><input class="" type="checkbox" name="CONST_SAVE"><label class="form-control-sm">Saving Throw</label></td>
 							<td><input class="form-control mod" type="number" readonly id="CONST_SAVE_MOD" value="0" size="3"></td>
 						</tr>
 					</table>
@@ -133,14 +133,14 @@
 				<div class="col-md-2">
 					<table>
 						<tr>
-							<th class="modable">Intelligence</th>
+							<th class="modableAbil">Intelligence</th>
 						</tr>
 						<tr>
 							<td><input class="form-control autoMod" type="number" value="0" placeholder="INT" id="INT"></td>
 							<td><input class="form-control natMod" type="number" readonly id="INT_MOD" value="0"></td>
 						</tr>
 						<tr>
-							<td class="d-inline d-flex"><input class="" type="checkbox" name="INT_SAVE"><label class="form-control-sm modableSkill">Saving Throw</label></td>
+							<td class="d-inline d-flex"><input class="" type="checkbox" name="INT_SAVE"><label class="form-control-sm">Saving Throw</label></td>
 							<td><input class="form-control mod" type="number" readonly id="INT_SAVE_MOD" value="0" size="3"></td>
 						</tr>
 						<tr>
@@ -168,14 +168,14 @@
 				<div class="col-md-2">
 					<table>
 						<tr>
-							<th class="modable">Wisdom</th>
+							<th class="modableAbil">Wisdom</th>
 						</tr>
 						<tr>
 							<td><input class="form-control autoMod" type="number" value="0" placeholder="WIS" id="WIS"></td>
 							<td><input class="form-control natMod" type="number" readonly id="WIS_MOD" value="0"></td>
 						</tr>
 						<tr>
-							<td class="d-inline d-flex"><input class="" type="checkbox" name="WIS_SAVE"><label class="form-control-sm modableSkill">Saving Throw</label></td>
+							<td class="d-inline d-flex"><input class="" type="checkbox" name="WIS_SAVE"><label class="form-control-sm">Saving Throw</label></td>
 							<td><input class="form-control mod" type="number" readonly id="WIS_SAVE_MOD" value="0" size="3"></td>
 						</tr>
 						<tr>
@@ -203,14 +203,14 @@
 				<div class="col-md-2">
 					<table>
 						<tr>
-							<th class="modable">Charisma</th>
+							<th class="modableAbil">Charisma</th>
 						</tr>
 						<tr>
 							<td><input class="form-control autoMod" type="number" value="0" placeholder="CHAR" id="CHAR"></td>
 							<td><input class="form-control natMod" type="number" readonly id="CHAR_MOD" value="0"></td>
 						</tr>
 						<tr>
-							<td class="d-inline d-flex"><input class="" type="checkbox" name="CHR_SAVE"><label class="form-control-sm modableSkill">Saving Throw</label></td>
+							<td class="d-inline d-flex"><input class="" type="checkbox" name="CHR_SAVE"><label class="form-control-sm">Saving Throw</label></td>
 							<td><input class="form-control mod" type="number" readonly id="CHR_SAVE_MOD" value="0" size="3"></td>
 						</tr>
 						<tr>
@@ -242,15 +242,15 @@
 				<div class="col-md-3">
 					<table>
 						<tr>
-							<td><label class="modable">Armor Class:</label></td>
+							<td><label class="">Armor Class:</label></td>
 							<td><input class="form-control" type="number" id="AC" value=""></td>
 						</tr>
 						<tr>
-							<td><label class="modable">Speed (feet):</label></td>
+							<td><label class="">Speed (feet):</label></td>
 							<td><input class="form-control" type="number" id="speed" value=""></td>
 						</tr>
 						<tr>
-							<td><label class="modable">Initiative:</label></td>
+							<td><label class="">Initiative:</label></td>
 							<td><input class="form-control" type="number" id="initiative" value=""></td>
 						</tr>
 					</table>
@@ -364,12 +364,12 @@
 					<tbody id="weapons">
 						<tr class="weaponRows" id="weaponRow">
 							<th id="weapName" scope="row"><input type="text" placeholder="Weapon"></th>
-							<td><input type="text" placeholder="Damage"></td>
-							<td><input type="text" placeholder="Damage Type"></td>
-							<td><input type="text" placeholder="Range"></td>
-							<td><input type="text" placeholder="Weight"></td>
-							<td><input type="text" placeholder="Properties"></td>
-							<td><button id="det" class="btn btn-sm modableWeapon">Detials</button></td>
+							<td id="damage"><input type="text" placeholder="Damage"></td>
+							<td id="damageType"><input type="text" placeholder="Damage Type"></td>
+							<td id="range"><input type="text" placeholder="Range"></td>
+							<td id="weight"><input type="text" placeholder="Weight"></td>
+							<td id="weapProp"><input type="text" placeholder="Properties"></td>
+							<td><button id="fill" class="btn btn-sm fillWeaponRow">Fill Details</button></td>
 							<td><button id="rem" class="btn btn-sm">Remove</button></td>
 						</tr>
 					</tbody>
@@ -531,9 +531,6 @@
 					<button type="button" class="close" data-dismiss="modal">&times;</button>
 				</div>
 				<div class="modal-body" id="modBody">
-
-					SOME NICE DETAILS WILL GO HERE
-
 				</div>
 				<div class="modal-footer" id="modFoot">
 					<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
@@ -544,9 +541,10 @@
 
 	<!--		JAVASCRIPT						-->
 
-	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	<script src="Dictionaries.js"></script>
 	<script src="charSheet.js"></script>
 </body>
 

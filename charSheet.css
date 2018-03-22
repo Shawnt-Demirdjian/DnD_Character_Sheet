@@ -25,11 +25,17 @@ label {
 }
 
 .modable,
-.modableSkill {
+.modableClass,
+.modableRace,
+.modableAbil,
+.modableSkill{
 	text-decoration: underline;
 }
 
 .modable:hover,
+.modableClass:hover,
+.modableRace:hover,
+.modableAbil:hover,
 .modableSkill:hover {
 	color: blue;
 	cursor: pointer;
