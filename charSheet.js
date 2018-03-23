@@ -181,17 +181,41 @@ $(document).ready(function () {
 		var title = $(this).prev().val();
 		var searchTitle = title.replace(" ", "+");
 		var newUrl = url + "spells/?name=" + searchTitle;
-		$.get(newUrl, function (response) {
+		$.get(newUrl, function (response) { //search for that spell
 			if (response.count >= 1) {
 				newUrl = response.results[0].url;
-				$.get(newUrl, function (response) {
-					var body = "";
-					$.each(response, function(key, value){
-						key = key.replace("_", " ");
-						body += "<b>" + key + ": </b>" + value + "<br>";
-					});					
-					$("#modBody").html(body);
-					//$("#modBody").html("<b>Description: </b>" + response.desc + "<br>" + "<b>Range: </b>" + response.range + "<br>" + "<b>Components: </b>" + JSON.stringify(response.components) + "<br>" + "<b>Ritual: </b>" + response.ritual + "<br>" + "<b>duration</b>");
+				$.get(newUrl, function (response) { //get and print the spell
+					$("#modBody").html("");
+					$("#modBody").html($("#modBody").html() + "<b>Description: </b>" + response.desc + "<br>");
+					$("#modBody").html($("#modBody").html() + "<b>Higher level: </b>" + response.higher_level + "<br>");
+					$("#modBody").html($("#modBody").html() + "<b>Page: </b>" + response.page + "<br>");
+					$("#modBody").html($("#modBody").html() + "<b>Range: </b>" + response.range + "<br>");
+					$("#modBody").html($("#modBody").html() + "<b>Components: </b>" + response.components + "<br>");
+					if ("materials" in response) {
+						$("#modBody").html($("#modBody").html() + "<b>Materials: </b>" + response.materials + "<br>");
+					}
+					$("#modBody").html($("#modBody").html() + "<b>Ritual: </b>" + response.ritual + "<br>");
+					$("#modBody").html($("#modBody").html() + "<b>Duration: </b>" + response.duration + "<br>");
+					$("#modBody").html($("#modBody").html() + "<b>Concentration: </b>" + response.concentration + "<br>");
+					$("#modBody").html($("#modBody").html() + "<b>Casting Time: </b>" + response.casting_time + "<br>");
+					$("#modBody").html($("#modBody").html() + "<b>Level: </b>" + response.level + "<br>");
+					$("#modBody").html($("#modBody").html() + "<b>School: </b><b>" + response.school.name + "</b>: ");
+					$.ajax({ //get desc for the school. sync because class will print too soon
+						type: "GET",
+						url: response.school.url,
+						async: false,
+						success: function (schResponse) {
+							$("#modBody").html($("#modBody").html() + schResponse.desc + "<br>");
+						}
+					});
+					$("#modBody").html($("#modBody").html() + "<b>Classes: </b><br>");
+					$.each(response.classes, function (index) {
+						$("#modBody").html($("#modBody").html() + response.classes[index].name + "<br>");
+					});
+					$("#modBody").html($("#modBody").html() + "<b>Subclasses: </b><br>");
+					$.each(response.subclasses, function (index) {
+						$("#modBody").html($("#modBody").html() + response.subclasses[index].name + "<br>");
+					});
 				});
 			} else {
 				$("#modBody").html("Sorry, there is no spell '" + title + "' in the D&D 5e SRD.");
@@ -202,15 +226,3 @@ $(document).ready(function () {
 	}
 
 }); //end document.ready funtion
-
-
-/*
-	$('#send').on("click", function () {
-		var url = "http://www.dnd5eapi.co/api/classes";
-
-		$.get(url, function (response) {
-			$('#phrase').html(response);
-			console.log(response);
-		});
-	});
-*/
