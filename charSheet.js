@@ -2,15 +2,15 @@ $(document).ready(function () {
 
 	/*WEAPON ROW MANEGEMENT*/
 
-	$("#add").click(function () {
-		$("#weaponRow").clone().prependTo("#weapons");
-		$("#rem").click(RemoveWeaponRow);
-		$(".fillWeaponRow").click(fillWeaponRow);
+	$("#addWeap").click(function () {
+		$("#weapons").append("<tr class='weaponRows' id='weaponRow'><th id='weapName' scope='row'><input type='text' placeholder='Weapon'></th><td id='damage'><input type='text' placeholder='Damage'></td><td id='damageType'><input type='text' placeholder='Damage Type'></td><td id='range'><input type='text' placeholder='Range'></td><td id='weight'><input type='text' placeholder='Weight'></td><td id='weapProp'><input type='text' placeholder='Properties'></td><td><button id='fill' class='btn btn-sm fillWeaponRow'>Fill Details</button></td><td><button id='rem' class='remWeap btn btn-sm'>Remove</button></td></tr>");
 
+		$(".remWeap").click(RemoveWeaponRow);
+		$(".fillWeaponRow").click(fillWeaponRow);
 	});
 
+	$(".remWeap").click(RemoveWeaponRow);
 	$(".fillWeaponRow").click(fillWeaponRow);
-	$("#rem").click(RemoveWeaponRow);
 
 	function RemoveWeaponRow() {
 		if ($(".weaponRows").length <= 1) {
@@ -48,7 +48,8 @@ $(document).ready(function () {
 	/*LIST ITEM MANAGEMENT*/
 
 	$(".addLi").click(function () {
-		var copyLi = $(this).parent().next();
+		var copyLi = $(this).parent().next().clone();
+		copyLi.children().val("");
 		var currUl = $(this).parent().parent();
 		$(copyLi).clone().appendTo(currUl);
 
@@ -178,12 +179,27 @@ $(document).ready(function () {
 
 	function openSpellModal() {
 		var title = $(this).prev().val();
+		var searchTitle = title.replace(" ", "+");
+		var newUrl = url + "spells/?name=" + searchTitle;
+		$.get(newUrl, function (response) {
+			if (response.count >= 1) {
+				newUrl = response.results[0].url;
+				$.get(newUrl, function (response) {
+					var body = "";
+					$.each(response, function(key, value){
+						key = key.replace("_", " ");
+						body += "<b>" + key + ": </b>" + value + "<br>";
+					});					
+					$("#modBody").html(body);
+					//$("#modBody").html("<b>Description: </b>" + response.desc + "<br>" + "<b>Range: </b>" + response.range + "<br>" + "<b>Components: </b>" + JSON.stringify(response.components) + "<br>" + "<b>Ritual: </b>" + response.ritual + "<br>" + "<b>duration</b>");
+				});
+			} else {
+				$("#modBody").html("Sorry, there is no spell '" + title + "' in the D&D 5e SRD.");
+			}
+		});
 		$("#modTitle").html(title);
 		$("#detailModal").modal('toggle');
 	}
-
-
-
 
 }); //end document.ready funtion
 
