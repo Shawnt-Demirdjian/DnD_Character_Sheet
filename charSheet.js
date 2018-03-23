@@ -187,7 +187,9 @@ $(document).ready(function () {
 				$.get(newUrl, function (response) { //get and print the spell
 					$("#modBody").html("");
 					$("#modBody").html($("#modBody").html() + "<b>Description: </b>" + response.desc + "<br>");
-					$("#modBody").html($("#modBody").html() + "<b>Higher level: </b>" + response.higher_level + "<br>");
+					if ("higher_level" in response){
+						$("#modBody").html($("#modBody").html() + "<b>Higher level: </b>" + response.higher_level + "<br>");
+					}
 					$("#modBody").html($("#modBody").html() + "<b>Page: </b>" + response.page + "<br>");
 					$("#modBody").html($("#modBody").html() + "<b>Range: </b>" + response.range + "<br>");
 					$("#modBody").html($("#modBody").html() + "<b>Components: </b>" + response.components + "<br>");
