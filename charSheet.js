@@ -74,7 +74,7 @@ $(document).ready(function () {
 
     /*AUTOMATIC MODIFIERS*/
 
-    $("#Level").change(function () { //updates Prof Bonus and Prof skill mods
+    $("#Level").blur(function () { //updates Prof Bonus and Prof skill mods
         var lev = $(this).val();
         if (lev <= 4) {
             $("#PB").val(2);
@@ -89,15 +89,17 @@ $(document).ready(function () {
         }
 
         profSkillModChange();
+        spellInfoChange();
     });
 
-    $(".autoMod").change(function () { //updates all ability and skill mods
+    $(".autoMod").blur(function () { //updates all ability and skill mods
         var natMod = Math.floor(($(this).val() - 10) / 2);
         $(this).parent().next().children().val(natMod);
         $.each($(this).parent().parent().parent().find(":not(:checked)"), function (index, skill) {
             $(skill).parent().next().children().val(natMod);
         });
         profSkillModChange();
+        spellInfoChange();
     });
 
     $("#ability input:checkbox").mouseup(function () { //updates skill mod on loss/gain prof
@@ -116,18 +118,19 @@ $(document).ready(function () {
             });
         });
     }
-    
+
     /*AUTOMATIC SPELLCASTING INFO*/
-    
-    $("#spellAbility").blur(SpellInfoChange);
-    
-    function SpellInfoChange(){
+
+    function spellInfoChange() {
         var abilityID = $("#spellAbility").val() + "Mod";
         var abilityMod = $("#" + abilityID).val();
         var DC = 8 + parseInt(abilityMod) + parseInt($("#PB").val());
+        var attackMod = parseInt(abilityMod) + parseInt($("#PB").val());
+
         $("#spellDC").val(DC);
+        $("#spellAttMod").val(attackMod);
     }
-    
+
     /*ITEM DETAIL MODAL BOX*/
 
     $(".modable").click(openModal);
@@ -290,6 +293,7 @@ $(document).ready(function () {
                     $("#modBody").html($("#modBody").html() + "<br>")
                 });
                 $("#spellAbility").val(abilityAbv[response.spellcasting_ability.name]);
+                spellInfoChange();
             });
         } else {
             $("#modBody").html("Sorry, there is no spellcasting class '" + title + "' in the D&D 5e SRD.");
@@ -297,5 +301,5 @@ $(document).ready(function () {
         $("#modTitle").html(title);
         $("#detailModal").modal('toggle');
     }
-    
+
 }); //end document.ready funtion
