@@ -138,7 +138,13 @@ $(document).ready(function () {
 	}
 
 	function openClassModal() {
-		var title = $(this).html();
+		var title = $(this).next().val();
+		var newUrl = url + "classes/" + title.toLowerCase();
+		$.get(newUrl,function(response){
+			$("#modBody").html("<b>Hit Dice: d<b>" + response.hit_die + "<br>");
+			$("#modBody").html($("#modBody").html() + "<b>Choose " + response.proficiency_choices[0].choose + " Proficiencies: <b>" + "<br>");
+			
+		});		
 		$("#modTitle").html(title);
 		$("#detailModal").modal('toggle');
 	}
@@ -185,8 +191,7 @@ $(document).ready(function () {
 			if (response.count >= 1) {
 				newUrl = response.results[0].url;
 				$.get(newUrl, function (response) { //get and print the spell
-					$("#modBody").html("");
-					$("#modBody").html($("#modBody").html() + "<b>Description: </b>" + response.desc + "<br>");
+					$("#modBody").html("<b>Description: </b>" + response.desc + "<br>");
 					if ("higher_level" in response){
 						$("#modBody").html($("#modBody").html() + "<b>Higher level: </b>" + response.higher_level + "<br>");
 					}
