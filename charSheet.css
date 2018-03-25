@@ -1,51 +1,53 @@
 .sect {
-	border: solid 5px black;
+    border: solid 5px black;
 }
 
 label {
-	font-size: 130%;
-	font-weight: bold;
-	margin-bottom: 0;
+    font-size: 130%;
+    font-weight: bold;
+    margin-bottom: 0;
 }
 
 .list-group-item {
-	padding: 3px 10px
+    padding: 3px 10px
 }
 
 #coin {
-	margin-right: -3em;
+    margin-right: -3em;
 }
 
 #spellLists ul {
-	padding-top: 1%;
+    padding-top: 1%;
 }
 
 #names {
-	padding-bottom: 10px;
+    padding-bottom: 10px;
 }
 
 .modable,
 .modableClass,
 .modableRace,
 .modableAbil,
-.modableSkill{
-	text-decoration: underline;
+.modableSkill,
+.modableSpellClass {
+    text-decoration: underline;
 }
 
 .modable:hover,
 .modableClass:hover,
 .modableRace:hover,
 .modableAbil:hover,
-.modableSkill:hover {
-	color: blue;
-	cursor: pointer;
+.modableSkill:hover,
+.modableSpellClass:hover {
+    color: blue;
+    cursor: pointer;
 }
 
 #spellLists label button,
 input {
-	margin: auto;
+    margin: auto;
 }
 
-h1 button{
-	margin-left: 10px;
+h1 button {
+    margin-left: 10px;
 }

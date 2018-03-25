@@ -74,7 +74,7 @@ $(document).ready(function () {
 
     /*AUTOMATIC MODIFIERS*/
 
-    $("#Level").blur(function () { //updates Prof Bonus and Prof skill mods
+    $("#Level").change(function () { //updates Prof Bonus and Prof skill mods
         var lev = $(this).val();
         if (lev <= 4) {
             $("#PB").val(2);
@@ -91,7 +91,7 @@ $(document).ready(function () {
         profSkillModChange();
     });
 
-    $(".autoMod").blur(function () { //updates all ability and skill mods
+    $(".autoMod").change(function () { //updates all ability and skill mods
         var natMod = Math.floor(($(this).val() - 10) / 2);
         $(this).parent().next().children().val(natMod);
         $.each($(this).parent().parent().parent().find(":not(:checked)"), function (index, skill) {
@@ -116,7 +116,18 @@ $(document).ready(function () {
             });
         });
     }
-
+    
+    /*AUTOMATIC SPELLCASTING INFO*/
+    
+    $("#spellAbility").blur(SpellInfoChange);
+    
+    function SpellInfoChange(){
+        var abilityID = $("#spellAbility").val() + "Mod";
+        var abilityMod = $("#" + abilityID).val();
+        var DC = 8 + parseInt(abilityMod) + parseInt($("#PB").val());
+        $("#spellDC").val(DC);
+    }
+    
     /*ITEM DETAIL MODAL BOX*/
 
     $(".modable").click(openModal);
@@ -130,6 +141,8 @@ $(document).ready(function () {
     $(".modableSkill").click(openSkillModal);
 
     $(".modableSpell").click(openSpellModal);
+
+    $(".modableSpellClass").click(openSpellClassModal);
 
     function openModal() {
         var title = $(this).html();
@@ -155,7 +168,7 @@ $(document).ready(function () {
                     $("#modBody").html($("#modBody").html() + ", " + skilObj.name.replace("Skill:", ""));
                 });
             });
-            
+
             //Class Proficiencies
             $("#modBody").html($("#modBody").html() + "<br><b>Proficiencies: </b>" + "<br>");
             $("#modBody").html($("#modBody").html() + response.proficiencies[0].name);
@@ -263,4 +276,26 @@ $(document).ready(function () {
         $("#detailModal").modal('toggle');
     }
 
+    function openSpellClassModal() {
+        var title = $(this).next().val();
+        if (title in spellClassDict) {
+            var newUrl = url + "spellcasting/" + spellClassDict[title];
+            $("#modBody").html("");
+            $.get(newUrl, function (response) {
+                $.each(response.info, function (index, value) {
+                    $("#modBody").html($("#modBody").html() + "<b>" + value.name + ": </b><br>");
+                    $.each(value.desc, function (index, value) {
+                        $("#modBody").html($("#modBody").html() + value);
+                    });
+                    $("#modBody").html($("#modBody").html() + "<br>")
+                });
+                $("#spellAbility").val(abilityAbv[response.spellcasting_ability.name]);
+            });
+        } else {
+            $("#modBody").html("Sorry, there is no spellcasting class '" + title + "' in the D&D 5e SRD.");
+        }
+        $("#modTitle").html(title);
+        $("#detailModal").modal('toggle');
+    }
+    
 }); //end document.ready funtion

@@ -76,7 +76,7 @@
 						</tr>
 						<tr>
 							<td><input class="form-control autoMod" type="number" value="0" placeholder="STR" id="STR"></td>
-							<td><input class="form-control natMod" type="number" readonly id="STR_MOD" value="0"></td>
+							<td><input class="form-control natMod" type="number" readonly id="StrengthMod" value="0"></td>
 						</tr>
 						<tr>
 							<td class="d-inline d-flex"><input type="checkbox" name="STR_SAVE"><label class="form-control-sm">Saving Throw</label></td>
@@ -95,7 +95,7 @@
 						</tr>
 						<tr>
 							<td><input class="form-control autoMod" type="number" value="0" placeholder="DEX" id="DEX"></td>
-							<td><input class="form-control natMod" type="number" readonly id="DEX_MOD" value="0"></td>
+							<td><input class="form-control natMod" type="number" readonly id="DexterityMod" value="0"></td>
 						</tr>
 						<tr>
 							<td class="d-inline d-flex"><input class="" type="checkbox" name="DEX_SAVE"><label class="form-control-sm">Saving Throw</label></td>
@@ -122,7 +122,7 @@
 						</tr>
 						<tr>
 							<td><input class="form-control autoMod" type="number" value="0" placeholder="CONST" id="CONST"></td>
-							<td><input class="form-control natMod" type="number" readonly id="CONST_MOD" value="0"></td>
+							<td><input class="form-control natMod" type="number" readonly id="ConstitutionMod" value="0"></td>
 						</tr>
 						<tr>
 							<td class="d-inline d-flex"><input class="" type="checkbox" name="CONST_SAVE"><label class="form-control-sm">Saving Throw</label></td>
@@ -137,7 +137,7 @@
 						</tr>
 						<tr>
 							<td><input class="form-control autoMod" type="number" value="0" placeholder="INT" id="INT"></td>
-							<td><input class="form-control natMod" type="number" readonly id="INT_MOD" value="0"></td>
+							<td><input class="form-control natMod" type="number" readonly id="IntelligenceMod" value="0"></td>
 						</tr>
 						<tr>
 							<td class="d-inline d-flex"><input class="" type="checkbox" name="INT_SAVE"><label class="form-control-sm">Saving Throw</label></td>
@@ -172,7 +172,7 @@
 						</tr>
 						<tr>
 							<td><input class="form-control autoMod" type="number" value="0" placeholder="WIS" id="WIS"></td>
-							<td><input class="form-control natMod" type="number" readonly id="WIS_MOD" value="0"></td>
+							<td><input class="form-control natMod" type="number" readonly id="WisdomMod" value="0"></td>
 						</tr>
 						<tr>
 							<td class="d-inline d-flex"><input class="" type="checkbox" name="WIS_SAVE"><label class="form-control-sm">Saving Throw</label></td>
@@ -207,7 +207,7 @@
 						</tr>
 						<tr>
 							<td><input class="form-control autoMod" type="number" value="0" placeholder="CHAR" id="CHAR"></td>
-							<td><input class="form-control natMod" type="number" readonly id="CHAR_MOD" value="0"></td>
+							<td><input class="form-control natMod" type="number" readonly id="CharismaMod" value="0"></td>
 						</tr>
 						<tr>
 							<td class="d-inline d-flex"><input class="" type="checkbox" name="CHR_SAVE"><label class="form-control-sm">Saving Throw</label></td>
@@ -420,17 +420,17 @@
 			</div>
 		</div>
 
-		<!--		SPELL CASTING	-->
+		<!--		SPELLCASTING	-->
 
-		<h1>Spell Casting<button class="hide btn btn-sm">Show/Hide</button></h1>
+		<h1>Spellcasting<button class="hide btn btn-sm">Show/Hide</button></h1>
 		<div class="sect container-fluid" id="spells">
 			<div class="row">
 				<div class="col-md-3">
-					<label for="spellClass">Spell Casting Class</label>
+					<label for="spellClass" class="modableSpellClass">Spellcasting Class</label>
 					<input class="form-control" type="text" placeholder="Class" id="spellClass">
 				</div>
 				<div class="col-md-3">
-					<label for="spellAbility" class="modable">Spell Casting Ability</label>
+					<label for="spellAbility" >Spellcasting Ability</label>
 					<input class="form-control" type="text" placeholder="Ability" id="spellAbility">
 				</div>
 				<div class="col-md-3">
@@ -438,8 +438,8 @@
 					<input class="form-control" type="text" placeholder="DC" id="spellDC">
 				</div>
 				<div class="col-md-3">
-					<label for="spellDC" class="modable">Spell Attack Modifier</label>
-					<input class="form-control" type="text" placeholder="Modifier" id="spellMod">
+					<label for="spellAttMod" class="modable">Spell Attack Modifier</label>
+					<input class="form-control" type="text" placeholder="Modifier" id="spellAttMod">
 				</div>
 			</div>
 			<div class="row" id="spellLists">
