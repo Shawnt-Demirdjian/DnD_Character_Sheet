@@ -9,7 +9,16 @@
 		Intelligence: 4,
 		Wisdom: 5,
 		Charisma: 6
-	};
+	}
+
+    var abilityAbv ={
+        STR: "Strength",
+        DEX: "Dexterity",
+        CON: "Constitution",
+        INT: "Intelligence",
+        WIS: "Wisdom",
+        CHA: "Charisma"
+    }
 
 	var skillsDict = {
 		Acrobatics: 1,
@@ -30,7 +39,7 @@
 		"Slight of Hand": 16,
 		Stealth: 17,
 		Survival: 18
-	};
+	}
 
 	var racesDict = {
 		Dwarf: 1,
