@@ -2,12 +2,6 @@
     border: solid 5px black;
 }
 
-label {
-    font-size: 130%;
-    font-weight: bold;
-    margin-bottom: 0;
-}
-
 .list-group-item {
     padding: 3px 10px
 }
@@ -50,4 +44,8 @@ input {
 
 h1 button {
     margin-left: 10px;
+}
+
+#ability table{
+    
 }
