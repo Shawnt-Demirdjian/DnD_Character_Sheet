@@ -302,4 +302,98 @@ $(document).ready(function () {
         $("#detailModal").modal('toggle');
     }
 
+    /*SAVE & LOAD JSON FILE*/
+
+    $("#save").click(saveFile);
+
+    function saveFile() {
+        var charObj = {
+            items: [],
+            traitList: [],
+            featureList: [],
+            profWeap: [],
+            profLang: [],
+            profTool: [],
+            profArmor: [],
+            weapons: [],
+            gear: [],
+            treasure: [],
+            cantrips: [],
+            spell1: [],
+            spell2: [],
+            spell3: [],
+            spell4: [],
+            spell5: [],
+            spell6: [],
+            spell7: [],
+            spell8: [],
+            spell9: [],
+            personality: [],
+            ideals: [],
+            bonds: [],
+            flaws: []
+        };
+
+        /*FILL [ITEMS] (NON LISTS ITEMS) ARRAY*/
+
+        //all text fields
+        $.each($(":input[type='text']"), function (index, element) {
+            var currId = $(element).attr("id");
+            if (currId !== undefined) {
+                var currValue = $(element).val();
+                charObj.items.push({
+                    id: currId,
+                    value: currValue
+                });
+            }
+        });
+        //all number fields
+        $.each($(":input[type='number']"), function (index, element) {
+            var currId = $(element).attr("id");
+            var currValue = $(element).val();
+            charObj.items.push({
+                id: currId,
+                value: currValue
+            });
+        });
+        //all checked checkboxes
+        $.each($(":checked"), function (index, element) {
+            var currId = $(element).attr("id");
+            charObj.items.push({
+                id: currId,
+                value: true
+            });
+        });
+        //portrait and character details
+        charObj.items.push({
+            id: "portrait",
+            value: $("#portrait").attr("src")
+        });
+        charObj.items.push({
+            id: "charDetails",
+            value: $("#charDetails").val()
+        });
+
+        /*FILL WEAPONS ARRAY*/
+
+        $.each($("#weapons").children(), function (rowIndex, rowElement) {
+            charObj.weapons[rowIndex] = {};
+            $.each($(rowElement).children(), function (weapIndex, weapElement) {
+                if (weapIndex < 6) {
+                    $.extend(charObj.weapons[rowIndex], {
+                    [$(weapElement).attr('id')]: $(weapElement).children().val()
+                    });
+                }
+            });
+        });
+    }
+
+
+
+
+
+
+
+
+
 }); //end document.ready funtion
