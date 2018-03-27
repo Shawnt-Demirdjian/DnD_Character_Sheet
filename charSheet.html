@@ -309,11 +309,11 @@
         <h1>Features and Traits<button class="hide btn btn-sm">Show/Hide</button></h1>
         <div class="sect container-fluid" id="feat_trait">
             <div class="row">
-                <ul class="col-md-6 list-group">
+                <ul class="col-md-6 list-group" id="traitList">
                     <label>Race and Background <button class="addLi btn btn-sm col-md-2">Add</button></label>
                     <li class="list-group-item d-flex"><input type="text" class="form-control form-control-sm col-md-10"><button class="remLi btn btn-sm col-md-2">Remove</button></li>
                 </ul>
-                <ul class="col-md-6 list-group">
+                <ul class="col-md-6 list-group" id="featureList">
                     <label>Class <button class="addLi btn btn-sm col-md-2">Add</button></label>
                     <li class="list-group-item d-flex"><input type="text" class="form-control form-control-sm col-md-10"><button class="remLi btn btn-sm col-md-2">Remove</button></li>
                 </ul>
@@ -325,19 +325,19 @@
         <h1>Proficiencies<button class="hide btn btn-sm">Show/Hide</button></h1>
         <div class="sect container-fluid" id="proficiencies">
             <div class="row">
-                <ul class="col-md-3 list-group">
+                <ul class="col-md-3 list-group" id="profWeap">
                     <label>Weapons <button class="addLi btn btn-sm col-md-2">Add</button></label>
                     <li class="list-group-item d-flex"><input type="text" class="form-control form-control-sm col-md-9"><button class="remLi btn btn-sm col-md-3">Remove</button></li>
                 </ul>
-                <ul class="col-md-3 list-group">
+                <ul class="col-md-3 list-group" id="profLang">
                     <label>Languages <button class="addLi btn btn-sm col-md-2">Add</button></label>
                     <li class="list-group-item d-flex"><input type="text" class="form-control form-control-sm col-md-9"><button class="remLi btn btn-sm col-md-3">Remove</button></li>
                 </ul>
-                <ul class="col-md-3 list-group">
+                <ul class="col-md-3 list-group" id="profTool">
                     <label>Tools and Vehicles <button class="addLi btn btn-sm col-md-2">Add</button></label>
                     <li class="list-group-item d-flex"><input type="text" class="form-control form-control-sm col-md-9"><button class="remLi btn btn-sm col-md-3">Remove</button></li>
                 </ul>
-                <ul class="col-md-3 list-group">
+                <ul class="col-md-3 list-group" id="profArmor">
                     <label>Armors <button class="addLi btn btn-sm col-md-2">Add</button></label>
                     <li class="list-group-item d-flex"><input type="text" class="form-control form-control-sm col-md-9"><button class="remLi btn btn-sm col-md-3">Remove</button></li>
                 </ul>
@@ -380,11 +380,11 @@
                 </table>
             </div>
             <div class="row container-fluid justify-content-around">
-                <ul class="col-md-5 list-group">
+                <ul class="col-md-5 list-group" id="gear">
                     <label>Gear <button class="addLi btn btn-sm col-md-2">Add</button></label>
                     <li class="list-group-item d-flex"><input type="text" class="form-control form-control-sm col-md-9"><button class="remLi btn btn-sm col-md-3">Remove</button></li>
                 </ul>
-                <ul class="col-md-5 list-group">
+                <ul class="col-md-5 list-group" id="treasure">
                     <label>Treasure <button class="addLi btn btn-sm col-md-2">Add</button></label>
                     <li class="list-group-item d-flex"><input type="text" class="form-control form-control-sm col-md-9"><button class="remLi btn btn-sm col-md-3">Remove</button></li>
                 </ul>
@@ -444,43 +444,43 @@
                 </div>
             </div>
             <div class="row" id="spellLists">
-                <ul class="col-md-4 list-group">
+                <ul class="col-md-4 list-group" id="cantrips">
                     <label>Cantrips:<button class="addLi btn btn-sm col-md-3 form-control-sm">Add</button></label>
                     <li class="list-group-item d-flex"><input type="text" class="form-control form-control-sm col-md-8"><button class="modableSpell btn btn-sm col-md-2">Details</button><button class="remLi btn btn-sm col-md-2">Remove</button></li>
                 </ul>
-                <ul class="col-md-4 list-group">
+                <ul class="col-md-4 list-group" id="spell1">
                     <label class="d-flex">Level 1: <button class="addLi btn btn-sm col-md-3 form-control-sm">Add</button><input class="form-control form-control-sm col-md-3" type="number" placeholder="Spent" id="spent1"><input class="form-control form-control-sm col-md-3" type="number" placeholder="Total" id="total1"></label>
                     <li class="list-group-item d-flex"><input type="text" class="form-control form-control-sm col-md-8"><button class="modableSpell btn btn-sm col-md-2">Details</button><button class="remLi btn btn-sm col-md-2">Remove</button></li>
                 </ul>
-                <ul class="col-md-4 list-group">
+                <ul class="col-md-4 list-group" id="spell2">
                     <label class="d-flex">Level 2: <button class="addLi btn btn-sm col-md-3 form-control-sm">Add</button><input class="form-control form-control-sm col-md-3" type="number" placeholder="Spent" id="spent2"><input class="form-control form-control-sm col-md-3" type="number" placeholder="Total" id="total2"></label>
                     <li class="list-group-item d-flex"><input type="text" class="form-control form-control-sm col-md-8"><button class="modableSpell btn btn-sm col-md-2">Details</button><button class="remLi btn btn-sm col-md-2">Remove</button></li>
                 </ul>
-                <ul class="col-md-4 list-group">
+                <ul class="col-md-4 list-group" id="spell3">
                     <label class="d-flex">Level 3: <button class="addLi btn btn-sm col-md-3 form-control-sm">Add</button><input class="form-control form-control-sm col-md-3" type="number" placeholder="Spent" id="spent3"><input class="form-control form-control-sm col-md-3" type="number" placeholder="Total" id="total3"></label>
                     <li class="list-group-item d-flex"><input type="text" class="form-control form-control-sm col-md-8"><button class="modableSpell btn btn-sm col-md-2">Details</button><button class="remLi btn btn-sm col-md-2">Remove</button></li>
                 </ul>
-                <ul class="col-md-4 list-group">
+                <ul class="col-md-4 list-group" id="spell4">
                     <label class="d-flex">Level 4: <button class="addLi btn btn-sm col-md-3 form-control-sm">Add</button><input class="form-control form-control-sm col-md-3" type="number" placeholder="Spent" id="spent4"><input class="form-control form-control-sm col-md-3" type="number" placeholder="Total" id="total4"></label>
                     <li class="list-group-item d-flex"><input type="text" class="form-control form-control-sm col-md-8"><button class="modableSpell btn btn-sm col-md-2">Details</button><button class="remLi btn btn-sm col-md-2">Remove</button></li>
                 </ul>
-                <ul class="col-md-4 list-group">
+                <ul class="col-md-4 list-group" id="spell5">
                     <label class="d-flex">Level 5: <button class="addLi btn btn-sm col-md-3 form-control-sm">Add</button><input class="form-control form-control-sm col-md-3" type="number" placeholder="Spent" id="spent5"><input class="form-control form-control-sm col-md-3" type="number" placeholder="Total" id="total5"></label>
                     <li class="list-group-item d-flex"><input type="text" class="form-control form-control-sm col-md-8"><button class="modableSpell btn btn-sm col-md-2">Details</button><button class="remLi btn btn-sm col-md-2">Remove</button></li>
                 </ul>
-                <ul class="col-md-4 list-group">
+                <ul class="col-md-4 list-group" id="spell6">
                     <label class="d-flex">Level 6: <button class="addLi btn btn-sm col-md-3 form-control-sm">Add</button><input class="form-control form-control-sm col-md-3" type="number" placeholder="Spent" id="spent6"><input class="form-control form-control-sm col-md-3" type="number" placeholder="Total" id="total6"></label>
                     <li class="list-group-item d-flex"><input type="text" class="form-control form-control-sm col-md-8"><button class="modableSpell btn btn-sm col-md-2">Details</button><button class="remLi btn btn-sm col-md-2">Remove</button></li>
                 </ul>
-                <ul class="col-md-4 list-group">
+                <ul class="col-md-4 list-group" id="spell7">
                     <label class="d-flex">Level 7: <button class="addLi btn btn-sm col-md-3 form-control-sm">Add</button><input class="form-control form-control-sm col-md-3" type="number" placeholder="Spent" id="spent7"><input class="form-control form-control-sm col-md-3" type="number" placeholder="Total" id="total7"></label>
                     <li class="list-group-item d-flex"><input type="text" class="form-control form-control-sm col-md-8"><button class="modableSpell btn btn-sm col-md-2">Details</button><button class="remLi btn btn-sm col-md-2">Remove</button></li>
                 </ul>
-                <ul class="col-md-4 list-group">
+                <ul class="col-md-4 list-group" id="spell8">
                     <label class="d-flex">Level 8: <button class="addLi btn btn-sm col-md-3 form-control-sm">Add</button><input class="form-control form-control-sm col-md-3" type="number" placeholder="Spent" id="spent8"><input class="form-control form-control-sm col-md-3" type="number" placeholder="Total" id="total8"></label>
                     <li class="list-group-item d-flex"><input type="text" class="form-control form-control-sm col-md-8"><button class="modableSpell btn btn-sm col-md-2">Details</button><button class="remLi btn btn-sm col-md-2">Remove</button></li>
                 </ul>
-                <ul class="col-md-4 list-group">
+                <ul class="col-md-4 list-group" id="spell9">
                     <label class="d-flex">Level 9: <button class="addLi btn btn-sm col-md-3 form-control-sm">Add</button><input class="form-control form-control-sm col-md-3" type="number" placeholder="Spent" id="spent9"><input class="form-control form-control-sm col-md-3" type="number" placeholder="Total" id="total9"></label>
                     <li class="list-group-item d-flex"><input type="text" class="form-control form-control-sm col-md-8"><button class="modableSpell btn btn-sm col-md-2">Details</button><button class="remLi btn btn-sm col-md-2">Remove</button></li>
                 </ul>
@@ -492,19 +492,19 @@
         <h1>Character Details<button class="hide btn btn-sm">Show/Hide</button></h1>
         <div class="sect container-fluid" id="charDetails">
             <div class="row">
-                <ul class="col-md-3 list-group">
+                <ul class="col-md-3 list-group" id="personality">
                     <label>Personality Traits<button class="addLi btn btn-sm col-md-3">Add</button></label>
                     <li class="list-group-item d-flex"><input type="text" class="form-control form-control-sm col-md-9"><button class="remLi btn btn-sm col-md-3">Remove</button></li>
                 </ul>
-                <ul class="col-md-3 list-group">
+                <ul class="col-md-3 list-group" id="ideals">
                     <label>Ideals<button class="addLi btn btn-sm col-md-3">Add</button></label>
                     <li class="list-group-item d-flex"><input type="text" class="form-control form-control-sm col-md-9"><button class="remLi btn btn-sm col-md-3">Remove</button></li>
                 </ul>
-                <ul class="col-md-3 list-group">
+                <ul class="col-md-3 list-group" id="bonds">
                     <label>Bonds<button class="addLi btn btn-sm col-md-3">Add</button></label>
                     <li class="list-group-item d-flex"><input type="text" class="form-control form-control-sm col-md-9"><button class="remLi btn btn-sm col-md-3">Remove</button></li>
                 </ul>
-                <ul class="col-md-3 list-group">
+                <ul class="col-md-3 list-group" id="flaws">
                     <label>Flaws<button class="addLi btn btn-sm col-md-3">Add</button></label>
                     <li class="list-group-item d-flex"><input type="text" class="form-control form-control-sm col-md-9"><button class="remLi btn btn-sm col-md-3">Remove</button></li>
                 </ul>
@@ -516,7 +516,7 @@
                 </div>
                 <div class="form-group col-md-9">
                     <label for="deatilText">Character Details</label>
-                    <textarea id="charDetails" class="form-control" rows="15" id="detailText" placeholder="Character backstory, religion, associated organizations, and other details..."></textarea>
+                    <textarea id="charDetailsForm" class="form-control" rows="15" id="detailText" placeholder="Character backstory, religion, associated organizations, and other details..."></textarea>
                 </div>
             </div>
         </div>

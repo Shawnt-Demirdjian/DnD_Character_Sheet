@@ -313,29 +313,7 @@ $(document).ready(function () {
     function saveFile() {
         var charObj = {
             items: [],
-            traitList: [],
-            featureList: [],
-            profWeap: [],
-            profLang: [],
-            profTool: [],
-            profArmor: [],
-            weapons: [],
-            gear: [],
-            treasure: [],
-            cantrips: [],
-            spell1: [],
-            spell2: [],
-            spell3: [],
-            spell4: [],
-            spell5: [],
-            spell6: [],
-            spell7: [],
-            spell8: [],
-            spell9: [],
-            personality: [],
-            ideals: [],
-            bonds: [],
-            flaws: []
+            weapons: []
         };
         //all text fields
         $.each($(":input[type='text']"), function (index, element) {
@@ -372,7 +350,7 @@ $(document).ready(function () {
         });
         charObj.items.push({
             id: "charDetails",
-            value: $("#charDetails").val()
+            value: $("#charDetailsForm").val()
         });
         //fill weapons array
         $.each($("#weapons").children(), function (rowIndex, rowElement) {
@@ -385,15 +363,17 @@ $(document).ready(function () {
                 }
             });
         });
-        //fill
+        //create and fill list arrays
+        $.each($("ul"), function (listIndex, currList) { //iterate through all lists
+            var name = $(currList).attr("id");
+            var list = [];
+            $.each($(this).children("li"), function (liIndex, currLi) {
+                list.push($(currLi).children("input").val());
+            });
+            $.extend(charObj, {
+                [name]: list
+            });
+        });
+        console.log(charObj);
     }
-
-
-
-
-
-
-
-
-
 }); //end document.ready funtion
