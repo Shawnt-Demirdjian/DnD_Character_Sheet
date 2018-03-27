@@ -47,7 +47,6 @@ $(document).ready(function () {
         }
     }
 
-
     /*LIST ITEM MANAGEMENT*/
 
     $(".addLi").click(function () {
@@ -309,6 +308,7 @@ $(document).ready(function () {
     /*SAVE & LOAD JSON FILE*/
 
     $("#save").click(saveFile);
+    $("#load").click(loadFile);
 
     function saveFile() {
         var charObj = {
@@ -374,6 +374,22 @@ $(document).ready(function () {
                 [name]: list
             });
         });
-        console.log(charObj);
+        //download JSON file
+        var data = "text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(charObj));
+        data = "data:" + data;
+        var name = $("#charName").val() + ".json";
+        $("#save").attr("href",data);
+        $("#save").attr("download",name);
     }
+    
+    function loadFile(){
+        
+    }
+    
+    
+    
+    
+    
+    
+    
 }); //end document.ready funtion
