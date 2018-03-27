@@ -14,6 +14,9 @@ $(document).ready(function () {
 
     function RemoveWeaponRow() {
         if ($(".weaponRows").length <= 1) {
+            $.each($(this).parent().siblings(), function (index, item) {
+                $(item).children("input").val("");
+            });
             return;
         }
         $(this).parent().parent().remove();
@@ -61,6 +64,7 @@ $(document).ready(function () {
 
     function RemoveListItem() {
         if ($(this).parent().parent().children().length <= 2) {
+            $(this).siblings(":input[type='text']").val("");
             return;
         }
         $(this).parent().remove();
@@ -333,9 +337,6 @@ $(document).ready(function () {
             bonds: [],
             flaws: []
         };
-
-        /*FILL [ITEMS] (NON LISTS ITEMS) ARRAY*/
-
         //all text fields
         $.each($(":input[type='text']"), function (index, element) {
             var currId = $(element).attr("id");
@@ -373,9 +374,7 @@ $(document).ready(function () {
             id: "charDetails",
             value: $("#charDetails").val()
         });
-
-        /*FILL WEAPONS ARRAY*/
-
+        //fill weapons array
         $.each($("#weapons").children(), function (rowIndex, rowElement) {
             charObj.weapons[rowIndex] = {};
             $.each($(rowElement).children(), function (weapIndex, weapElement) {
@@ -386,6 +385,7 @@ $(document).ready(function () {
                 }
             });
         });
+        //fill
     }
 
 
