@@ -415,17 +415,14 @@ $(document).ready(function () {
 				});
 			});
 			//load list items
-			$.each(newCharObj, function(index, currList){
-				if(index < 2){return;} //ignore items and weapons
-				
+			$.each(newCharObj.lists, function(index, currList){
+				for(var i=1; i < currList.listItems.length; i++){
+					$("#" + currList.id).find(".addLi").trigger("click");
+				}
+				$.each($("#" + currList.id).children("li"), function(liIndex, currLi){
+					$(currLi).children("input").val(currList.listItems[liIndex]);
+				});
 			});
 		}
 	}
-
-
-
-
-
-
-
 }); //end document.ready funtion
