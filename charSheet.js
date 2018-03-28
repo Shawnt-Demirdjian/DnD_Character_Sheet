@@ -1,14 +1,14 @@
 $(document).ready(function () {
 
     /*WEAPON ROW MANEGEMENT*/
-
-    $("#addWeap").click(function () {
+	
+	$("#addWeap").click(addWeapon);
+	function addWeapon() {
         $("#weapons").append("<tr class='weaponRows' id='weaponRow'><th id='weapName' scope='row'><input type='text' placeholder='Weapon'></th><td id='damage'><input type='text' placeholder='Damage'></td><td id='damageType'><input type='text' placeholder='Damage Type'></td><td id='range'><input type='text' placeholder='Range'></td><td id='weight'><input type='text' placeholder='Weight'></td><td id='weapProp'><input type='text' placeholder='Properties'></td><td><button id='fill' class='btn btn-sm fillWeaponRow'>Fill Details</button></td><td><button id='rem' class='remWeap btn btn-sm'>Remove</button></td></tr>");
 
         $(".remWeap").click(RemoveWeaponRow);
         $(".fillWeaponRow").click(fillWeaponRow);
-    });
-
+    }
     $(".remWeap").click(RemoveWeaponRow);
     $(".fillWeaponRow").click(fillWeaponRow);
 
@@ -349,17 +349,22 @@ $(document).ready(function () {
             value: $("#portrait").attr("src")
         });
         charObj.items.push({
-            id: "charDetails",
+            id: "charDetailsForm",
             value: $("#charDetailsForm").val()
         });
         //fill weapons array
         $.each($("#weapons").children(), function (rowIndex, rowElement) {
-            charObj.weapons[rowIndex] = {};
+            charObj.weapons[rowIndex] = [];
             $.each($(rowElement).children(), function (weapIndex, weapElement) {
                 if (weapIndex < 6) {
-                    $.extend(charObj.weapons[rowIndex], {
-                    [$(weapElement).attr('id')]: $(weapElement).children().val()
+					charObj.weapons[rowIndex].push({
+                    id : $(weapElement).attr('id'),
+					value : $(weapElement).children().val()
                     });
+                    /*$.extend(charObj.weapons[rowIndex], {
+                    id : $(weapElement).attr('id'),
+					value : $(weapElement).children().val()
+                    });*/
                 }
             });
         });
@@ -385,17 +390,31 @@ $(document).ready(function () {
     function loadFile() {
         //get and parse file from upload
         var newCharFile = document.getElementById("upload").files[0];
-        if(!newCharFile){return;} //abort if no file was uploaded
+        if (!newCharFile) {
+            return;
+        } //abort if no file was uploaded
         var newCharObj = "";
         var fileReader = new FileReader();
         fileReader.readAsText(newCharFile, "UTF-8");
         fileReader.onload = function (evt) {
             newCharObj = JSON.parse(evt.target.result);
-            
+
         }
         //load file into page
         fileReader.onloadend = function () {
-            
+            //loading non-list items
+            $.each(newCharObj.items, function (index, currObj) {
+                $("#" + currObj.id).val(currObj.value);
+            });
+            //load weapons
+			for(var i=1; i<newCharObj.weapons.length; i++){ //add needed # rows
+				addWeapon();
+			}
+            $.each($(".weaponRows"), function (index, currRow){ //fill the rows in
+				$.each(newCharObj.weapons[index], function(propIndex, currProp){
+					$(currRow).children("#" + currProp.id).children().val(currProp.value);
+				});
+            });
         }
     }
 
