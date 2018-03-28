@@ -378,18 +378,31 @@ $(document).ready(function () {
         var data = "text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(charObj));
         data = "data:" + data;
         var name = $("#charName").val() + ".json";
-        $("#save").attr("href",data);
-        $("#save").attr("download",name);
+        $("#save").attr("href", data);
+        $("#save").attr("download", name);
     }
-    
-    function loadFile(){
-        
+
+    function loadFile() {
+        //get and parse file from upload
+        var newCharFile = document.getElementById("upload").files[0];
+        if(!newCharFile){return;} //abort if no file was uploaded
+        var newCharObj = "";
+        var fileReader = new FileReader();
+        fileReader.readAsText(newCharFile, "UTF-8");
+        fileReader.onload = function (evt) {
+            newCharObj = JSON.parse(evt.target.result);
+            
+        }
+        //load file into page
+        fileReader.onloadend = function () {
+            
+        }
     }
-    
-    
-    
-    
-    
-    
-    
+
+
+
+
+
+
+
 }); //end document.ready funtion
