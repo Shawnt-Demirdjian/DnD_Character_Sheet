@@ -137,8 +137,6 @@ $(document).ready(function () {
 
 	/*ITEM DETAIL MODAL BOX*/
 
-	$(".modable").click(openModal);
-
 	$(".modableClass").click(openClassModal);
 
 	$(".modableRace").click(openRaceModal);
@@ -150,12 +148,6 @@ $(document).ready(function () {
 	$(".modableSpell").click(openSpellModal);
 
 	$(".modableSpellClass").click(openSpellClassModal);
-
-	function openModal() {
-		var title = $(this).html();
-		$("#modTitle").html(title);
-		$("#detailModal").modal('toggle');
-	}
 
 	function openClassModal() {
 		var title = $(this).next().val();
