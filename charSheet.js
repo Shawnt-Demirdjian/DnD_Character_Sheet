@@ -222,7 +222,11 @@ $(document).ready(function () {
 		if (title in racesDict) {
 			var newUrl = url + "races/" + racesDict[title];
 			$.get(newUrl, function (response) {
-				$("#modBody").html("<b>Alingment: </b>" + response["alignment"] + "<br>" + "<b>Age: </b>" + response["age"] + "<br>" + "<b>Size: </b>" + response["size"] + "; " + response["size_description"]);
+				$("#modBody").html("<b>Alingment: </b>" + response["alignment"] + "<br>");
+				$("#modBody").html($("#modBody").html() + "<b>Age: </b>" + response["age"] + "<br>");
+				$("#modBody").html($("#modBody").html() + "<b>Size: </b>" + response["size"] + "; " + response["size_description"]);
+				
+				$("#speed").val(parseInt(response.speed));
 			});
 		} else {
 			$("#modBody").html("Sorry, there is no race '" + title + "' in the D&D 5e SRD.");
