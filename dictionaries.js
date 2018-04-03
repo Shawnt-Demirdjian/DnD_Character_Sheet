@@ -65,6 +65,8 @@
 	}
 
 	var weaponsDict = {
+		"Simple weapons": 19,
+		"Martial weapons": 20,		
 	    Club: 1,
 	    Dagger: 2,
 	    Greatclub: 3,
@@ -102,4 +104,25 @@
 	    "Heavy Crossbow": 35,
 	    Longbow: 36,
 	    Net: 37
+	}
+	
+	var armorsDict = {
+		"Light armor": 1,
+		"Medium armor": 2,
+		"Heavy armor": 3,
+		"All armor": 4,
+		Shields: 18,
+		Padded: 38,
+		Leather: 39,
+		"Studded Leather": 40,
+		Hide: 41,
+		"Chain Shirt": 42,
+		"Scale Mail": 43,
+		Breastplate: 44,
+		"Half Plate": 45,
+		"Ring Mail": 46,
+		"Chain Mail": 47,
+		Splint: 48,
+		Plate: 49,
+		Shield: 50
 	}

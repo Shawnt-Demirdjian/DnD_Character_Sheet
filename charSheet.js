@@ -97,7 +97,7 @@ $(document).ready(function () {
 	});
 
 	$(".autoMod").blur(function () { //updates all ability and skill mods
-		var natMod = Math.floor(($(this).val() - 10) / 2);
+		var natMod = Math.floor(($(this).val()-10)/2);
 		$(this).parent().next().children().val(natMod);
 		$.each($(this).parent().parent().parent().find(":not(:checked)"), function (index, skill) {
 			$(skill).parent().next().children().val(natMod);
@@ -106,7 +106,7 @@ $(document).ready(function () {
 		spellInfoChange();
 	});
 
-	$("#ability input:checkbox").mouseup(function () { //updates skill mod on loss/gain prof
+	$("#ability input:checkbox").mousedown(function () { //updates skill mod on loss/gain prof
 		var currMod = $(this).parent().next().children().val();
 		if ($(this).is(":checked")) { //loose proficiency
 			$(this).parent().next().children().val(parseInt(currMod) - parseInt($("#PB").val()));
@@ -149,11 +149,12 @@ $(document).ready(function () {
 
 	$(".modableSpellClass").click(openSpellClassModal);
 
-	function openClassModal() {
+	function openClassModal() { //fills the class modal and autocompletes info on page
 		var title = $(this).next().val();
 		var newUrl = url + "classes/" + title.toLowerCase();
 		$.get(newUrl, function (response) {
-			$("#modBody").html("<b>Hit Dice: d<b>" + response.hit_die + "<br>");
+			$("#HDtype").val("d" + response.hit_die); //update Hit Dice Type
+			$("#modBody").html("<b>Hit Dice: </b>d" + response.hit_die + "<br>");
 
 			//Skill Proficiency Choices
 			$("#modBody").html($("#modBody").html() + "<b>Proficiency Choices: </b>");
@@ -167,21 +168,25 @@ $(document).ready(function () {
 					$("#modBody").html($("#modBody").html() + ", " + skilObj.name.replace("Skill:", ""));
 				});
 			});
-
 			//Class Proficiencies
 			$("#modBody").html($("#modBody").html() + "<br><b>Proficiencies: </b>" + "<br>");
 			$("#modBody").html($("#modBody").html() + response.proficiencies[0].name);
+			fillWeaponProf(response.proficiencies);
 			$.each(response.proficiencies, function (index, profObj) {
 				if (index < 1) {
 					return;
 				}
 				$("#modBody").html($("#modBody").html() + ", " + profObj.name);
 			});
-
 			//Saving Throw Proficiencies
+			$(".saving").each(function (index, item) { //uncheck old saving throws
+				$(item).prop("checked", false);
+			});
 			$("#modBody").html($("#modBody").html() + "<br><b>Saving Throws: </b>" + "<br>");
 			$("#modBody").html($("#modBody").html() + abilityAbv[response.saving_throws[0].name]);
 			$.each(response.saving_throws, function (index, savObj) {
+				var currID = savObj.name + "_prof"
+				$("#" + currID).prop("checked", true) //check new saving throws
 				if (index < 1) {
 					return;
 				}
@@ -190,6 +195,26 @@ $(document).ready(function () {
 		});
 		$("#modTitle").html(title);
 		$("#detailModal").modal('toggle');
+	}
+
+	function fillWeaponProf(proficiencies) { //fill weapon and armor proficiencies when class modal is opened
+		var weaponIndex = 0;
+		var armorIndex = 0;
+		$.each(proficiencies, function (index, currProf) {
+			if (currProf.name in weaponsDict) {
+				var listItems = $("#profWeap").find("li").toArray();
+				$(listItems[weaponIndex++]).children("input").val(currProf.name);
+				if(listItems.length <= weaponIndex/* && (weaponIndex+1 + armorIndex+1) < proficiencies.length*/){
+					$("#profWeap").find(".addLi").trigger("click");
+				}
+			} else if (currProf.name in armorsDict) {				
+				var listItems = $("#profArmor").find("li").toArray();
+				$(listItems[armorIndex++]).children("input").val(currProf.name);
+				if(listItems.length <= armorIndex/* && (weaponIndex+1 + armorIndex+1) < proficiencies.length*/){
+					$("#profArmor").find(".addLi").trigger("click");
+				}
+			}
+		});
 	}
 
 	function openRaceModal() {
@@ -407,11 +432,11 @@ $(document).ready(function () {
 				});
 			});
 			//load list items
-			$.each(newCharObj.lists, function(index, currList){
-				for(var i=1; i < currList.listItems.length; i++){
+			$.each(newCharObj.lists, function (index, currList) {
+				for (var i = 1; i < currList.listItems.length; i++) {
 					$("#" + currList.id).find(".addLi").trigger("click");
 				}
-				$.each($("#" + currList.id).children("li"), function(liIndex, currLi){
+				$.each($("#" + currList.id).children("li"), function (liIndex, currLi) {
 					$(currLi).children("input").val(currList.listItems[liIndex]);
 				});
 			});
