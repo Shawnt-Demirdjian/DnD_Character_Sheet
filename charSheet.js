@@ -97,7 +97,7 @@ $(document).ready(function () {
 	});
 
 	$(".autoMod").blur(function () { //updates all ability and skill mods
-		var natMod = Math.floor(($(this).val()-10)/2);
+		var natMod = Math.floor(($(this).val() - 10) / 2);
 		$(this).parent().next().children().val(natMod);
 		$.each($(this).parent().parent().parent().find(":not(:checked)"), function (index, skill) {
 			$(skill).parent().next().children().val(natMod);
@@ -204,13 +204,13 @@ $(document).ready(function () {
 			if (currProf.name in weaponsDict) {
 				var listItems = $("#profWeap").find("li").toArray();
 				$(listItems[weaponIndex++]).children("input").val(currProf.name);
-				if(listItems.length <= weaponIndex/* && (weaponIndex+1 + armorIndex+1) < proficiencies.length*/){
+				if (listItems.length <= weaponIndex /* && (weaponIndex+1 + armorIndex+1) < proficiencies.length*/ ) {
 					$("#profWeap").find(".addLi").trigger("click");
 				}
-			} else if (currProf.name in armorsDict) {				
+			} else if (currProf.name in armorsDict) {
 				var listItems = $("#profArmor").find("li").toArray();
 				$(listItems[armorIndex++]).children("input").val(currProf.name);
-				if(listItems.length <= armorIndex/* && (weaponIndex+1 + armorIndex+1) < proficiencies.length*/){
+				if (listItems.length <= armorIndex /* && (weaponIndex+1 + armorIndex+1) < proficiencies.length*/ ) {
 					$("#profArmor").find(".addLi").trigger("click");
 				}
 			}
@@ -225,7 +225,7 @@ $(document).ready(function () {
 				$("#modBody").html("<b>Alingment: </b>" + response["alignment"] + "<br>");
 				$("#modBody").html($("#modBody").html() + "<b>Age: </b>" + response["age"] + "<br>");
 				$("#modBody").html($("#modBody").html() + "<b>Size: </b>" + response["size"] + "; " + response["size_description"]);
-				
+
 				$("#speed").val(parseInt(response.speed));
 			});
 		} else {
@@ -446,18 +446,16 @@ $(document).ready(function () {
 			});
 		}
 	}
-	
+
 	/*PORTRAIT UPLOAD*/
-	$("#portraitUpload").change(function(){
+	$("#portraitUpload").change(function () {
 		if (this.files && this.files[0]) {
-            var reader = new FileReader();
-            
-            reader.onload = function (e) {
-                $('#portrait').attr('src', e.target.result);
-            }
-            
-            reader.readAsDataURL(this.files[0]);
-        }
+			var reader = new FileReader();
+			reader.onload = function (element) {
+				$('#portrait').attr('src', element.target.result);
+			}
+			reader.readAsDataURL(this.files[0]);
+		}
 	});
-	
+
 }); //end document.ready funtion
