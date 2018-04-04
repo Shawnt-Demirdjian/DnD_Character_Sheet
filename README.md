@@ -1,26 +1,6 @@
 # DnD_Character_Sheet
 
-## SCHEDULE:
+This interactive Dungeons and Dragons 5e Character Sheet uses the 5e SRD API provided by Adrian Padua at [D&D 5e API](http://www.dnd5eapi.co/).
 
-### Tuesday, March 13 (Day 1):
-	* START
-	
-### Friday, March 16 (Day 4):
-	* Character Sheet page with fillable forms
-	* Use bootstrap to make sections responsive
+This is made possible by the Open-Gaming License (OGL), contained in LICENSE.md.
 
-### Tuesday, March 20 (Day 8):
-	* Add modal boxes for details upon clicked on items and character properties
-	
-### Friday, March 23 (Day 11):
-	* Use dnd5eapi.co (or other option) to issue requests and add these details in the modal boxes
-	
-### Tuesday, March 27 (Day 15):
-	* Use HTML Web Storage; localStorage Objects (or other option) to store a Character's info
-
-### Friday, March 30 (Day 18):
-	* Add UI for accessing multiple Characters
-	* Add CSS design, colooring and animations
-
-### Tuesday, April 3 (Day 22):
-	* FINISH

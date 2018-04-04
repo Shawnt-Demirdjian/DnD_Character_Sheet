@@ -460,6 +460,6 @@ $(document).ready(function () {
 	
 	/*DRAG AND DROP*/
 	
-	$('#test').sortable({placeholder: "ui-state-highlight",helper:'clone'});
+	$('#page').sortable({placeholder: "ui-state-highlight",helper:'clone'});
 
 }); //end document.ready funtion
