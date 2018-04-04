@@ -457,5 +457,9 @@ $(document).ready(function () {
 			reader.readAsDataURL(this.files[0]);
 		}
 	});
+	
+	/*DRAG AND DROP*/
+	
+	$('#test').sortable({placeholder: "ui-state-highlight",helper:'clone'});
 
 }); //end document.ready funtion

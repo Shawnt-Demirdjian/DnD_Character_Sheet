@@ -2,561 +2,566 @@
 <html lang="en">
 
 <head>
-    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="charSheet.css">
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="charSheet.css">
 </head>
 
 <body>
-    <div class="container-fluid">
+	<div class="container-fluid">
 
-        <!--        NAV BAR                         -->
+		<!--        NAV BAR                         -->
 
-        <nav class="justify-content-between navbar navbar-expand-md">
-            <h1 class="col-md-8">Dungeons and Dragons 5e Character Sheet</h1>
-            <a class="btn col-md-1" href="" download="" id="save">SAVE FILE</a>
-            <a class="btn col-md-1" id="load">LOAD FILE</a>
-            <input class="col-md-3" type="file" id="upload">            
-        </nav>
+		<nav class="justify-content-between navbar navbar-expand-md">
+			<h1 class="col-md-8">Dungeons and Dragons 5e Character Sheet</h1>
+			<a class="btn col-md-1" href="" download="" id="save">SAVE FILE</a>
+			<a class="btn col-md-1" id="load">LOAD FILE</a>
+			<input class="col-md-3" type="file" id="upload">
+		</nav>
 
-        <!--		NAMES							-->
+		<!--		NAMES							-->
+		<div id="test">
+			<div class="sortable">
+				<h1>Names<button class="hide btn btn-sm">Show/Hide</button></h1>
+				<form class="sect form" id="names">
+					<div class="row">
+						<div class="col-md-6">
+							<label for="charName">Character Name</label>
+							<input class="form-control" type="text" placeholder="" id="charName">
+						</div>
+						<div class="col-md-6">
+							<label for="playerName">Player Name</label>
+							<input class="form-control" type="text" placeholder="" id="playerName">
+						</div>
+					</div>
+				</form>
+			</div>
+			<!--		GENERAL CHARACTER INFORMATION	-->
+			<div class="sortable">
+				<h1>Character Abilities and Skills<button class="hide btn btn-sm">Show/Hide</button></h1>
+				<form class="sect form" id="character">
+					<div class="row" id="basicInfo">
+						<div class="col-md-2">
+							<label for="Class" id="myClass" class="modableClass">Class</label>
+							<input class="form-control" type="text" placeholder="Class" id="Class">
+						</div>
+						<div class="col-md-1">
+							<label for="Level">Level</label>
+							<input class="form-control" type="number" placeholder="Level" id="Level">
+						</div>
+						<div class="col-md-1">
+							<label for="XP">XP</label>
+							<input class="form-control" type="number" placeholder="XP" id="XP">
+						</div>
+						<div class="col-md-1">
+							<label for="inspiration" class="">Inspiration</label>
+							<input class="form-control" type="text" placeholder="" id="inspiration">
+						</div>
+						<div class="col-md-1">
+							<label for="PB">Proficiency</label>
+							<input class="form-control" type="number" placeholder="Bonus" readonly id="PB">
+						</div>
+						<div class="col-md-2">
+							<label for="Race" class="modableRace">Race</label>
+							<input class="form-control" type="text" placeholder="Race" id="Race">
+						</div>
+						<div class="col-md-2">
+							<label for="Alignment" class="">Alignment</label>
+							<input class="form-control" type="text" placeholder="Alignment" id="Alignment">
+						</div>
+						<div class="col-md-2">
+							<label for="Background" class="">Background</label>
+							<input class="form-control" type="text" placeholder="Background" id="Background">
+						</div>
+					</div>
 
-        <h1>Names<button class="hide btn btn-sm">Show/Hide</button></h1>
-        <form class="sect form" id="names">
-            <div class="row">
-                <div class="col-md-6">
-                    <label for="charName">Character Name</label>
-                    <input class="form-control" type="text" placeholder="" id="charName">
-                </div>
-                <div class="col-md-6">
-                    <label for="playerName">Player Name</label>
-                    <input class="form-control" type="text" placeholder="" id="playerName">
-                </div>
-            </div>
-        </form>
+					<!--		ABILITY SCORES AND MODIFIERS	-->
 
-        <!--		GENERAL CHARACTER INFORMATION	-->
+					<div class="row form-group no-gutters" id="ability">
+						<div class="col-md-2">
+							<table class="table table-responsive table-sm">
+								<tr>
+									<th class="modableAbil">Strength</th>
+									<th class=""></th>
+								</tr>
+								<tr>
+									<td><input class="form-control autoMod" type="number" value="0" placeholder="STR" id="STR"></td>
+									<td><input class="form-control natMod" type="number" readonly id="StrengthMod" value="0"></td>
+								</tr>
+								<tr>
+									<td class=""><input type="checkbox" class="saving" name="STR_SAVE" id=STR_prof><label class="form-control-sm">Saving Throw</label></td>
+									<td><input class="form-control mod" type="number" readonly id="STR_SAVE_MOD" value="0" size="3"></td>
+								</tr>
+								<tr>
+									<td class=""><input type="checkbox" name="athletics" id=ATH_prof><label class="form-control-sm modableSkill">Athletics</label></td>
+									<td><input class="form-control mod" type="number" readonly id="ATH_MOD" value="0" size="3"></td>
+								</tr>
+							</table>
+						</div>
+						<div class="col">
+							<table class="table table-sm">
+								<tr>
+									<th class="modableAbil">Dexterity</th>
+								</tr>
+								<tr>
+									<td><input class="form-control autoMod" type="number" value="0" placeholder="DEX" id="DEX"></td>
+									<td><input class="form-control natMod" type="number" readonly id="DexterityMod" value="0"></td>
+								</tr>
+								<tr>
+									<td class=""><input class="saving" type="checkbox" name="DEX_SAVE" id="DEX_prof"><label class="form-control-sm">Saving Throw</label></td>
+									<td><input class="form-control mod" type="number" readonly id="DEX_SAVE_MOD" value="0" size="3"></td>
+								</tr>
+								<tr>
+									<td class=""><input class="" type="checkbox" name="acrobatics" id="ACR_prof"><label class="form-control-sm modableSkill">Acrobatics</label></td>
+									<td><input class="form-control mod" type="number" readonly id="ACR_MOD" value="0" size="3"></td>
+								</tr>
+								<tr>
+									<td class=""><input class="" type="checkbox" name="slight_of_hand" id="SoH_prof"><label class="form-control-sm modableSkill">Slight of Hand</label></td>
+									<td><input class="form-control mod" type="number" readonly id="SoH_MOD" value="0" size="3"></td>
+								</tr>
+								<tr>
+									<td class=""><input class="" type="checkbox" name="stealth" id="STL_prof"><label class="form-control-sm modableSkill">Stealth</label></td>
+									<td><input class="form-control mod" type="number" readonly id="STL_MOD" value="0" size="3"></td>
+								</tr>
+							</table>
+						</div>
+						<div class="col">
+							<table class="table table-sm">
+								<tr>
+									<th class="modableAbil">Constitution</th>
+								</tr>
+								<tr>
+									<td><input class="form-control autoMod" type="number" value="0" placeholder="CON" id="CON"></td>
+									<td><input class="form-control natMod" type="number" readonly id="ConstitutionMod" value="0"></td>
+								</tr>
+								<tr>
+									<td class=""><input class="saving" type="checkbox" name="CONST_SAVE" id="CON_prof"><label class="form-control-sm">Saving Throw</label></td>
+									<td><input class="form-control mod" type="number" readonly id="CON_SAVE_MOD" value="0" size="3"></td>
+								</tr>
+							</table>
+						</div>
+						<div class="col">
+							<table class="table table-sm">
+								<tr>
+									<th class="modableAbil">Intelligence</th>
+								</tr>
+								<tr>
+									<td><input class="form-control autoMod" type="number" value="0" placeholder="INT" id="INT"></td>
+									<td><input class="form-control natMod" type="number" readonly id="IntelligenceMod" value="0"></td>
+								</tr>
+								<tr>
+									<td class=""><input class="saving" type="checkbox" name="INT_SAVE" id="INT_prof"><label class="form-control-sm">Saving Throw</label></td>
+									<td><input class="form-control mod" type="number" readonly id="INT_SAVE_MOD" value="0" size="3"></td>
+								</tr>
+								<tr>
+									<td class=""><input class="" type="checkbox" name="arcana" id="ARC_prof"><label class="form-control-sm modableSkill">Arcana</label></td>
+									<td><input class="form-control mod" type="number" readonly id="ARC_MOD" value="0" size="3"></td>
+								</tr>
+								<tr>
+									<td class=""><input class="" type="checkbox" name="history" id="HIS_prof"><label class="form-control-sm modableSkill">History</label></td>
+									<td><input class="form-control mod" type="number" readonly id="HIS_MOD" value="0" size="3"></td>
+								</tr>
+								<tr>
+									<td class=""><input class="" type="checkbox" name="investigation" id="INV_prof"><label class="form-control-sm modableSkill">Investigation</label></td>
+									<td><input class="form-control mod" type="number" readonly id="INV_MOD" value="0" size="3"></td>
+								</tr>
+								<tr>
+									<td class=""><input class="" type="checkbox" name="nature" id="NAT_prof"><label class="form-control-sm modableSkill">Nature</label></td>
+									<td><input class="form-control mod" type="number" readonly id="NAT_MOD" value="0" size="3"></td>
+								</tr>
+								<tr>
+									<td class=""><input class="" type="checkbox" name="religion" id="REL_prof"><label class="form-control-sm modableSkill">Religion</label></td>
+									<td><input class="form-control mod" type="number" readonly id="REL_MOD" value="0" size="3"></td>
+								</tr>
+							</table>
+						</div>
+						<div class="col">
+							<table class="table table-sm">
+								<tr>
+									<th class="modableAbil">Wisdom</th>
+								</tr>
+								<tr>
+									<td><input class="form-control autoMod" type="number" value="0" placeholder="WIS" id="WIS"></td>
+									<td><input class="form-control natMod" type="number" readonly id="WisdomMod" value="0"></td>
+								</tr>
+								<tr>
+									<td class=""><input class="saving" type="checkbox" name="WIS_SAVE" id="WIS_prof"><label class="form-control-sm">Saving Throw</label></td>
+									<td><input class="form-control mod" type="number" readonly id="WIS_SAVE_MOD" value="0" size="3"></td>
+								</tr>
+								<tr>
+									<td class=""><input class="" type="checkbox" name="animal_handling" id="AnH_prof"><label class="form-control-sm modableSkill">Animal Handling</label></td>
+									<td><input class="form-control mod" type="number" readonly id="AnH_MOD" value="0" size="3"></td>
+								</tr>
+								<tr>
+									<td class=""><input class="" type="checkbox" name="insight" id="INS_prof"><label class="form-control-sm modableSkill">Insight</label></td>
+									<td><input class="form-control mod" type="number" readonly id="INS_MOD" value="0" size="3"></td>
+								</tr>
+								<tr>
+									<td class=""><input class="" type="checkbox" name="medicine" id="MED_prof"><label class="form-control-sm modableSkill">Medicine</label></td>
+									<td><input class="form-control mod" type="number" readonly id="MED_MOD" value="0" size="3"></td>
+								</tr>
+								<tr>
+									<td class=""><input class="" type="checkbox" name="perception" id="PER_prof"><label class="form-control-sm modableSkill">Perception</label></td>
+									<td><input class="form-control mod" type="number" readonly id="PER_MOD" value="0" size="3"></td>
+								</tr>
+								<tr>
+									<td class=""><input class="" type="checkbox" name="survival" id="SUR_prof"><label class="form-control-sm modableSkill">Survival</label></td>
+									<td><input class="form-control mod" type="number" readonly id="SUR_MOD" value="0" size="3"></td>
+								</tr>
+							</table>
+						</div>
+						<div class="col">
+							<table class="table table-sm">
+								<tr>
+									<th class="modableAbil">Charisma</th>
+								</tr>
+								<tr>
+									<td><input class="form-control autoMod" type="number" value="0" placeholder="CHA" id="CHA"></td>
+									<td><input class="form-control natMod" type="number" readonly id="CharismaMod" value="0"></td>
+								</tr>
+								<tr>
+									<td class=""><input class="saving" type="checkbox" name="CHR_SAVE" id="CHA_prof"><label class="form-control-sm">Saving Throw</label></td>
+									<td><input class="form-control mod" type="number" readonly id="CHA_SAVE_MOD" value="0" size="3"></td>
+								</tr>
+								<tr>
+									<td class=""><input class="" type="checkbox" name="deception" id="DEC_prof"><label class="form-control-sm modableSkill">Deception</label></td>
+									<td><input class="form-control mod" type="number" readonly id="DEC_MOD" value="0" size="3"></td>
+								</tr>
+								<tr>
+									<td class=""><input class="" type="checkbox" name="intimidation" id="IND_prof"><label class="form-control-sm modableSkill">Intimidation</label></td>
+									<td><input class="form-control mod" type="number" readonly id="IND_MOD" value="0" size="3"></td>
+								</tr>
+								<tr>
+									<td class=""><input class="" type="checkbox" name="performance" id="PEF_prof"><label class="form-control-sm modableSkill">Performance</label></td>
+									<td><input class="form-control mod" type="number" readonly id="PEF_MOD" value="0" size="3"></td>
+								</tr>
+								<tr>
+									<td class=""><input class="" type="checkbox" name="persuasion" id="PES_prof"><label class="form-control-sm modableSkill">Persuasion</label></td>
+									<td><input class="form-control mod" type="number" readonly id="PES_MOD" value="0" size="3"></td>
+								</tr>
+							</table>
+						</div>
+					</div>
+				</form>
+			</div>
+			<!--		Health and Armor	-->
+			<div class="sortable">
+				<h1>Health and Armor<button class="hide btn btn-sm">Show/Hide</button></h1>
+				<form class="sect form" id="healthArmor">
+					<div class="row form-group">
+						<div class="col-md-3">
+							<table>
+								<tr>
+									<td><label class="">Armor Class:</label></td>
+									<td><input class="form-control" type="number" id="AC" value=""></td>
+								</tr>
+								<tr>
+									<td><label class="">Speed (feet):</label></td>
+									<td><input class="form-control" type="number" id="speed" value=""></td>
+								</tr>
+								<tr>
+									<td><label class="">Initiative:</label></td>
+									<td><input class="form-control" type="number" id="initiative" value=""></td>
+								</tr>
+							</table>
+						</div>
+						<div class="col-md-3">
+							<table>
+								<tr>
+									<td><label>Current HP:</label></td>
+									<td><input class="form-control" type="number" id="currHP" value=""></td>
+								</tr>
+								<tr>
+									<td><label>Temp HP:</label></td>
+									<td><input class="form-control" type="number" id="tempHP" value=""></td>
+								</tr>
+								<tr>
+									<td><label>Max HP:</label></td>
+									<td><input class="form-control" type="number" id="maxHP" value=""></td>
+								</tr>
+							</table>
+						</div>
+						<div class="col-md-3">
+							<table>
+								<tr>
+									<td><label>Hit Dice Type:</label></td>
+									<td><input class="form-control" type="text" id="HDtype" value=""></td>
+								</tr>
+								<tr>
+									<td><label>Hit Dice Total:</label></td>
+									<td><input class="form-control" type="number" id="HDtotal" value=""></td>
+								</tr>
+							</table>
+						</div>
+						<div class="col-md-3">
+							<table>
+								<label class="">Death Saves</label>
+								<tr>
+									<td><label>Successes:</label></td>
+									<td><input class="" type="checkbox" id="SUC1" value=""></td>
+									<td><input class="" type="checkbox" id="SUC2" value=""></td>
+									<td><input class="" type="checkbox" id="SUC3" value=""></td>
+								</tr>
+								<tr>
+									<td><label>Faliures:</label></td>
+									<td><input class="" type="checkbox" id="FAIL1" value=""></td>
+									<td><input class="" type="checkbox" id="FAIL2" value=""></td>
+									<td><input class="" type="checkbox" id="FAIL3" value=""></td>
+								</tr>
+							</table>
+						</div>
+					</div>
+				</form>
+			</div>
+			<!--		Features and Traits	-->
+			<div class="sortable">
+				<h1>Features and Traits<button class="hide btn btn-sm">Show/Hide</button></h1>
+				<div class="sect container-fluid" id="feat_trait">
+					<div class="row">
+						<ul class="col-md-6 list-group" id="traitList">
+							<label>Race and Background <button class="addLi btn btn-sm col-md-2">Add</button></label>
+							<li class="list-group-item d-flex"><input type="text" class="form-control form-control-sm col-md-10"><button class="remLi btn btn-sm col-md-2">Remove</button></li>
+						</ul>
+						<ul class="col-md-6 list-group" id="featureList">
+							<label>Class <button class="addLi btn btn-sm col-md-2">Add</button></label>
+							<li class="list-group-item d-flex"><input type="text" class="form-control form-control-sm col-md-10"><button class="remLi btn btn-sm col-md-2">Remove</button></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<!--		Proficiencies		-->
+			<div class="sortable">
+				<h1>Proficiencies<button class="hide btn btn-sm">Show/Hide</button></h1>
+				<div class="sect container-fluid" id="proficiencies">
+					<div class="row">
+						<ul class="col-md-3 list-group" id="profWeap">
+							<label>Weapons <button class="addLi btn btn-sm col-md-2">Add</button></label>
+							<li class="list-group-item d-flex"><input type="text" class="form-control form-control-sm col-md-9"><button class="remLi btn btn-sm col-md-3">Remove</button></li>
+						</ul>
+						<ul class="col-md-3 list-group" id="profLang">
+							<label>Languages <button class="addLi btn btn-sm col-md-2">Add</button></label>
+							<li class="list-group-item d-flex"><input type="text" class="form-control form-control-sm col-md-9"><button class="remLi btn btn-sm col-md-3">Remove</button></li>
+						</ul>
+						<ul class="col-md-3 list-group" id="profTool">
+							<label>Tools and Vehicles <button class="addLi btn btn-sm col-md-2">Add</button></label>
+							<li class="list-group-item d-flex"><input type="text" class="form-control form-control-sm col-md-9"><button class="remLi btn btn-sm col-md-3">Remove</button></li>
+						</ul>
+						<ul class="col-md-3 list-group" id="profArmor">
+							<label>Armors <button class="addLi btn btn-sm col-md-2">Add</button></label>
+							<li class="list-group-item d-flex"><input type="text" class="form-control form-control-sm col-md-9"><button class="remLi btn btn-sm col-md-3">Remove</button></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<!--		Equipment		-->
+			<div class="sortable">
+				<h1>Equipment<button class="hide btn btn-sm">Show/Hide</button></h1>
+				<div class="sect container-fluid" id="equipment">
+					<div class="row">
+						<table class="table table-responsive table-striped table-sm">
+							<thead>
+								<tr>
+									<th scope="col">
+										<h4 class="font-weight-bold">Weapons</h4>
+									</th>
+									<th scope="col">Damage</th>
+									<th scope="col">Damage Type</th>
+									<th scope="col">Range</th>
+									<th scope="col">Weight</th>
+									<th scope="col">Properties</th>
+								</tr>
+							</thead>
+							<tbody id="weapons">
+								<tr class="weaponRows" id="weaponRow">
+									<th id="weapName"><input type="text" placeholder="Weapon"></th>
+									<td id="damage"><input type="text" placeholder="Damage"></td>
+									<td id="damageType"><input type="text" placeholder="Damage Type"></td>
+									<td id="range"><input type="text" placeholder="Range"></td>
+									<td id="weight"><input type="text" placeholder="Weight"></td>
+									<td id="weapProp"><input type="text" placeholder="Properties"></td>
+									<td><button id="fill" class="btn btn-sm fillWeaponRow">Fill Details</button></td>
+									<td><button id="rem" class="remWeap btn btn-sm">Remove</button></td>
+								</tr>
+							</tbody>
+							<tfoot>
+								<td><button id="addWeap" class="btn col-md-4">Add</button></td>
+							</tfoot>
+						</table>
+					</div>
+					<div class="row container-fluid justify-content-around">
+						<ul class="col-md-5 list-group" id="gear">
+							<label>Gear <button class="addLi btn btn-sm col-md-2">Add</button></label>
+							<li class="list-group-item d-flex"><input type="text" class="form-control form-control-sm col-md-9"><button class="remLi btn btn-sm col-md-3">Remove</button></li>
+						</ul>
+						<ul class="col-md-5 list-group" id="treasure">
+							<label>Treasure <button class="addLi btn btn-sm col-md-2">Add</button></label>
+							<li class="list-group-item d-flex"><input type="text" class="form-control form-control-sm col-md-9"><button class="remLi btn btn-sm col-md-3">Remove</button></li>
+						</ul>
+						<table class="table table-striped table-responsive table-sm col-md-2" id="coin">
+							<thead>
+								<tr>
+									<th class="modable">Coin</th>
+									<th>Amount</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<th scope="row">Copper</th>
+									<td><input type="number" class="col-md-10" value="0" id="copper"></td>
+								</tr>
+								<tr>
+									<th scope="row">Silver</th>
+									<td><input type="number" class="col-md-10" value="0" id="silver"></td>
+								</tr>
+								<tr>
+									<th scope="row">Electrum</th>
+									<td><input type="number" class="col-md-10" value="0" id="electrum"></td>
+								</tr>
+								<tr>
+									<th scope="row">Gold</th>
+									<td><input type="number" class="col-md-10" value="0" id="gold"></td>
+								</tr>
+								<tr>
+									<th scope="row">Platinum</th>
+									<td><input type="number" class="col-md-10" value="0" id="platinum"></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+			<!--		SPELLCASTING	-->
+			<div class="sortable">
+				<h1>Spellcasting<button class="hide btn btn-sm">Show/Hide</button></h1>
+				<div class="sect container-fluid" id="spells">
+					<div class="row">
+						<div class="col-md-3">
+							<label for="spellClass" class="modableSpellClass">Spellcasting Class</label>
+							<input class="form-control" type="text" placeholder="Class" id="spellClass">
+						</div>
+						<div class="col-md-3">
+							<label for="spellAbility">Spellcasting Ability</label>
+							<input class="form-control" type="text" placeholder="Ability" id="spellAbility">
+						</div>
+						<div class="col-md-3">
+							<label for="spellDC" class="">Spell Save DC</label>
+							<input class="form-control" type="number" placeholder="DC" id="spellDC">
+						</div>
+						<div class="col-md-3">
+							<label for="spellAttMod" class="">Spell Attack Modifier</label>
+							<input class="form-control" type="number" placeholder="Modifier" id="spellAttMod">
+						</div>
+					</div>
+					<div class="row" id="spellLists">
+						<ul class="col-md-4 list-group" id="cantrips">
+							<label>Cantrips:<button class="addLi btn btn-sm col-md-3 form-control-sm">Add</button></label>
+							<li class="list-group-item d-flex"><input type="text" class="form-control form-control-sm col-md-8"><button class="modableSpell btn btn-sm col-md-2">Details</button><button class="remLi btn btn-sm col-md-2">Remove</button></li>
+						</ul>
+						<ul class="col-md-4 list-group" id="spell1">
+							<label class="d-flex">Level 1: <button class="addLi btn btn-sm col-md-3 form-control-sm">Add</button><input class="form-control form-control-sm col-md-3" type="number" placeholder="Spent" id="spent1"><input class="form-control form-control-sm col-md-3" type="number" placeholder="Total" id="total1"></label>
+							<li class="list-group-item d-flex"><input type="text" class="form-control form-control-sm col-md-8"><button class="modableSpell btn btn-sm col-md-2">Details</button><button class="remLi btn btn-sm col-md-2">Remove</button></li>
+						</ul>
+						<ul class="col-md-4 list-group" id="spell2">
+							<label class="d-flex">Level 2: <button class="addLi btn btn-sm col-md-3 form-control-sm">Add</button><input class="form-control form-control-sm col-md-3" type="number" placeholder="Spent" id="spent2"><input class="form-control form-control-sm col-md-3" type="number" placeholder="Total" id="total2"></label>
+							<li class="list-group-item d-flex"><input type="text" class="form-control form-control-sm col-md-8"><button class="modableSpell btn btn-sm col-md-2">Details</button><button class="remLi btn btn-sm col-md-2">Remove</button></li>
+						</ul>
+						<ul class="col-md-4 list-group" id="spell3">
+							<label class="d-flex">Level 3: <button class="addLi btn btn-sm col-md-3 form-control-sm">Add</button><input class="form-control form-control-sm col-md-3" type="number" placeholder="Spent" id="spent3"><input class="form-control form-control-sm col-md-3" type="number" placeholder="Total" id="total3"></label>
+							<li class="list-group-item d-flex"><input type="text" class="form-control form-control-sm col-md-8"><button class="modableSpell btn btn-sm col-md-2">Details</button><button class="remLi btn btn-sm col-md-2">Remove</button></li>
+						</ul>
+						<ul class="col-md-4 list-group" id="spell4">
+							<label class="d-flex">Level 4: <button class="addLi btn btn-sm col-md-3 form-control-sm">Add</button><input class="form-control form-control-sm col-md-3" type="number" placeholder="Spent" id="spent4"><input class="form-control form-control-sm col-md-3" type="number" placeholder="Total" id="total4"></label>
+							<li class="list-group-item d-flex"><input type="text" class="form-control form-control-sm col-md-8"><button class="modableSpell btn btn-sm col-md-2">Details</button><button class="remLi btn btn-sm col-md-2">Remove</button></li>
+						</ul>
+						<ul class="col-md-4 list-group" id="spell5">
+							<label class="d-flex">Level 5: <button class="addLi btn btn-sm col-md-3 form-control-sm">Add</button><input class="form-control form-control-sm col-md-3" type="number" placeholder="Spent" id="spent5"><input class="form-control form-control-sm col-md-3" type="number" placeholder="Total" id="total5"></label>
+							<li class="list-group-item d-flex"><input type="text" class="form-control form-control-sm col-md-8"><button class="modableSpell btn btn-sm col-md-2">Details</button><button class="remLi btn btn-sm col-md-2">Remove</button></li>
+						</ul>
+						<ul class="col-md-4 list-group" id="spell6">
+							<label class="d-flex">Level 6: <button class="addLi btn btn-sm col-md-3 form-control-sm">Add</button><input class="form-control form-control-sm col-md-3" type="number" placeholder="Spent" id="spent6"><input class="form-control form-control-sm col-md-3" type="number" placeholder="Total" id="total6"></label>
+							<li class="list-group-item d-flex"><input type="text" class="form-control form-control-sm col-md-8"><button class="modableSpell btn btn-sm col-md-2">Details</button><button class="remLi btn btn-sm col-md-2">Remove</button></li>
+						</ul>
+						<ul class="col-md-4 list-group" id="spell7">
+							<label class="d-flex">Level 7: <button class="addLi btn btn-sm col-md-3 form-control-sm">Add</button><input class="form-control form-control-sm col-md-3" type="number" placeholder="Spent" id="spent7"><input class="form-control form-control-sm col-md-3" type="number" placeholder="Total" id="total7"></label>
+							<li class="list-group-item d-flex"><input type="text" class="form-control form-control-sm col-md-8"><button class="modableSpell btn btn-sm col-md-2">Details</button><button class="remLi btn btn-sm col-md-2">Remove</button></li>
+						</ul>
+						<ul class="col-md-4 list-group" id="spell8">
+							<label class="d-flex">Level 8: <button class="addLi btn btn-sm col-md-3 form-control-sm">Add</button><input class="form-control form-control-sm col-md-3" type="number" placeholder="Spent" id="spent8"><input class="form-control form-control-sm col-md-3" type="number" placeholder="Total" id="total8"></label>
+							<li class="list-group-item d-flex"><input type="text" class="form-control form-control-sm col-md-8"><button class="modableSpell btn btn-sm col-md-2">Details</button><button class="remLi btn btn-sm col-md-2">Remove</button></li>
+						</ul>
+						<ul class="col-md-4 list-group" id="spell9">
+							<label class="d-flex">Level 9: <button class="addLi btn btn-sm col-md-3 form-control-sm">Add</button><input class="form-control form-control-sm col-md-3" type="number" placeholder="Spent" id="spent9"><input class="form-control form-control-sm col-md-3" type="number" placeholder="Total" id="total9"></label>
+							<li class="list-group-item d-flex"><input type="text" class="form-control form-control-sm col-md-8"><button class="modableSpell btn btn-sm col-md-2">Details</button><button class="remLi btn btn-sm col-md-2">Remove</button></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<!--		CHARACTER BACKSTORY AND DETAILS-->
+			<div class="sortable">
+				<h1>Character Details<button class="hide btn btn-sm">Show/Hide</button></h1>
+				<div class="sect container-fluid" id="charDetails">
+					<div class="row">
+						<ul class="col-md-3 list-group" id="personality">
+							<label>Personality Traits<button class="addLi btn btn-sm col-md-3">Add</button></label>
+							<li class="list-group-item d-flex"><input type="text" class="form-control form-control-sm col-md-9"><button class="remLi btn btn-sm col-md-3">Remove</button></li>
+						</ul>
+						<ul class="col-md-3 list-group" id="ideals">
+							<label>Ideals<button class="addLi btn btn-sm col-md-3">Add</button></label>
+							<li class="list-group-item d-flex"><input type="text" class="form-control form-control-sm col-md-9"><button class="remLi btn btn-sm col-md-3">Remove</button></li>
+						</ul>
+						<ul class="col-md-3 list-group" id="bonds">
+							<label>Bonds<button class="addLi btn btn-sm col-md-3">Add</button></label>
+							<li class="list-group-item d-flex"><input type="text" class="form-control form-control-sm col-md-9"><button class="remLi btn btn-sm col-md-3">Remove</button></li>
+						</ul>
+						<ul class="col-md-3 list-group" id="flaws">
+							<label>Flaws<button class="addLi btn btn-sm col-md-3">Add</button></label>
+							<li class="list-group-item d-flex"><input type="text" class="form-control form-control-sm col-md-9"><button class="remLi btn btn-sm col-md-3">Remove</button></li>
+						</ul>
+					</div>
+					<div class="row">
+						<div class="form-group col-md-3">
+							<label for="portrait">Character Portait</label>
+							<input type="file" id="portraitUpload">
+							<img src="#" class="img-responsive img-fluid form-control" id="portrait">
+						</div>
+						<div class="form-group col-md-9">
+							<label for="charDetailsForm">Character Details</label>
+							<textarea id="charDetailsForm" class="form-control" rows="18" placeholder="Character backstory, religion, associated organizations, and other details..."></textarea>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 
-        <h1>Character Abilities and Skills<button class="hide btn btn-sm">Show/Hide</button></h1>
-        <form class="sect form" id="character">
-            <div class="row" id="basicInfo">
-                <div class="col-md-2">
-                    <label for="Class" id="myClass" class="modableClass">Class</label>
-                    <input class="form-control" type="text" placeholder="Class" id="Class">
-                </div>
-                <div class="col-md-1">
-                    <label for="Level">Level</label>
-                    <input class="form-control" type="number" placeholder="Level" id="Level">
-                </div>
-                <div class="col-md-1">
-                    <label for="XP">XP</label>
-                    <input class="form-control" type="number" placeholder="XP" id="XP">
-                </div>
-                <div class="col-md-1">
-                    <label for="inspiration" class="">Inspiration</label>
-                    <input class="form-control" type="text" placeholder="" id="inspiration">
-                </div>
-                <div class="col-md-1">
-                    <label for="PB">Proficiency</label>
-                    <input class="form-control" type="number" placeholder="Bonus" readonly id="PB">
-                </div>
-                <div class="col-md-2">
-                    <label for="Race" class="modableRace">Race</label>
-                    <input class="form-control" type="text" placeholder="Race" id="Race">
-                </div>
-                <div class="col-md-2">
-                    <label for="Alignment" class="">Alignment</label>
-                    <input class="form-control" type="text" placeholder="Alignment" id="Alignment">
-                </div>
-                <div class="col-md-2">
-                    <label for="Background" class="">Background</label>
-                    <input class="form-control" type="text" placeholder="Background" id="Background">
-                </div>
-            </div>
+		<!--		ITEM DETAIL MODAL BOX			-->
 
-            <!--		ABILITY SCORES AND MODIFIERS	-->
+		<div class="modal fade" id="detailModal">
+			<div class="modal-dialog modal-dialog-centered">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h4 class="modal-title" id="modTitle"></h4>
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+					</div>
+					<div class="modal-body" id="modBody">
+					</div>
+					<div class="modal-footer" id="modFoot">
+						<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 
-            <div class="row form-group no-gutters" id="ability">
-                <div class="col-md-2">
-                    <table class="table table-responsive table-sm">
-                        <tr>
-                            <th class="modableAbil">Strength</th>
-                            <th class=""></th>
-                        </tr>
-                        <tr>
-                            <td><input class="form-control autoMod" type="number" value="0" placeholder="STR" id="STR"></td>
-                            <td><input class="form-control natMod" type="number" readonly id="StrengthMod" value="0"></td>
-                        </tr>
-                        <tr>
-                            <td class=""><input type="checkbox" class="saving" name="STR_SAVE" id=STR_prof><label class="form-control-sm">Saving Throw</label></td>
-                            <td><input class="form-control mod" type="number" readonly id="STR_SAVE_MOD" value="0" size="3"></td>
-                        </tr>
-                        <tr>
-                            <td class=""><input type="checkbox" name="athletics" id=ATH_prof><label class="form-control-sm modableSkill">Athletics</label></td>
-                            <td><input class="form-control mod" type="number" readonly id="ATH_MOD" value="0" size="3"></td>
-                        </tr>
-                    </table>
-                </div>
-                <div class="col">
-                    <table class="table table-sm">
-                        <tr>
-                            <th class="modableAbil">Dexterity</th>
-                        </tr>
-                        <tr>
-                            <td><input class="form-control autoMod" type="number" value="0" placeholder="DEX" id="DEX"></td>
-                            <td><input class="form-control natMod" type="number" readonly id="DexterityMod" value="0"></td>
-                        </tr>
-                        <tr>
-                            <td class=""><input class="saving" type="checkbox" name="DEX_SAVE" id="DEX_prof"><label class="form-control-sm">Saving Throw</label></td>
-                            <td><input class="form-control mod" type="number" readonly id="DEX_SAVE_MOD" value="0" size="3"></td>
-                        </tr>
-                        <tr>
-                            <td class=""><input class="" type="checkbox" name="acrobatics" id="ACR_prof"><label class="form-control-sm modableSkill">Acrobatics</label></td>
-                            <td><input class="form-control mod" type="number" readonly id="ACR_MOD" value="0" size="3"></td>
-                        </tr>
-                        <tr>
-                            <td class=""><input class="" type="checkbox" name="slight_of_hand" id="SoH_prof"><label class="form-control-sm modableSkill">Slight of Hand</label></td>
-                            <td><input class="form-control mod" type="number" readonly id="SoH_MOD" value="0" size="3"></td>
-                        </tr>
-                        <tr>
-                            <td class=""><input class="" type="checkbox" name="stealth" id="STL_prof"><label class="form-control-sm modableSkill">Stealth</label></td>
-                            <td><input class="form-control mod" type="number" readonly id="STL_MOD" value="0" size="3"></td>
-                        </tr>
-                    </table>
-                </div>
-                <div class="col">
-                    <table class="table table-sm">
-                        <tr>
-                            <th class="modableAbil">Constitution</th>
-                        </tr>
-                        <tr>
-                            <td><input class="form-control autoMod" type="number" value="0" placeholder="CON" id="CON"></td>
-                            <td><input class="form-control natMod" type="number" readonly id="ConstitutionMod" value="0"></td>
-                        </tr>
-                        <tr>
-                            <td class=""><input class="saving" type="checkbox" name="CONST_SAVE" id="CON_prof"><label class="form-control-sm">Saving Throw</label></td>
-                            <td><input class="form-control mod" type="number" readonly id="CON_SAVE_MOD" value="0" size="3"></td>
-                        </tr>
-                    </table>
-                </div>
-                <div class="col">
-                    <table class="table table-sm">
-                        <tr>
-                            <th class="modableAbil">Intelligence</th>
-                        </tr>
-                        <tr>
-                            <td><input class="form-control autoMod" type="number" value="0" placeholder="INT" id="INT"></td>
-                            <td><input class="form-control natMod" type="number" readonly id="IntelligenceMod" value="0"></td>
-                        </tr>
-                        <tr>
-                            <td class=""><input class="saving" type="checkbox" name="INT_SAVE" id="INT_prof"><label class="form-control-sm">Saving Throw</label></td>
-                            <td><input class="form-control mod" type="number" readonly id="INT_SAVE_MOD" value="0" size="3"></td>
-                        </tr>
-                        <tr>
-                            <td class=""><input class="" type="checkbox" name="arcana" id="ARC_prof"><label class="form-control-sm modableSkill">Arcana</label></td>
-                            <td><input class="form-control mod" type="number" readonly id="ARC_MOD" value="0" size="3"></td>
-                        </tr>
-                        <tr>
-                            <td class=""><input class="" type="checkbox" name="history" id="HIS_prof"><label class="form-control-sm modableSkill">History</label></td>
-                            <td><input class="form-control mod" type="number" readonly id="HIS_MOD" value="0" size="3"></td>
-                        </tr>
-                        <tr>
-                            <td class=""><input class="" type="checkbox" name="investigation" id="INV_prof"><label class="form-control-sm modableSkill">Investigation</label></td>
-                            <td><input class="form-control mod" type="number" readonly id="INV_MOD" value="0" size="3"></td>
-                        </tr>
-                        <tr>
-                            <td class=""><input class="" type="checkbox" name="nature" id="NAT_prof"><label class="form-control-sm modableSkill">Nature</label></td>
-                            <td><input class="form-control mod" type="number" readonly id="NAT_MOD" value="0" size="3"></td>
-                        </tr>
-                        <tr>
-                            <td class=""><input class="" type="checkbox" name="religion" id="REL_prof"><label class="form-control-sm modableSkill">Religion</label></td>
-                            <td><input class="form-control mod" type="number" readonly id="REL_MOD" value="0" size="3"></td>
-                        </tr>
-                    </table>
-                </div>
-                <div class="col">
-                    <table class="table table-sm">
-                        <tr>
-                            <th class="modableAbil">Wisdom</th>
-                        </tr>
-                        <tr>
-                            <td><input class="form-control autoMod" type="number" value="0" placeholder="WIS" id="WIS"></td>
-                            <td><input class="form-control natMod" type="number" readonly id="WisdomMod" value="0"></td>
-                        </tr>
-                        <tr>
-                            <td class=""><input class="saving" type="checkbox" name="WIS_SAVE" id="WIS_prof"><label class="form-control-sm">Saving Throw</label></td>
-                            <td><input class="form-control mod" type="number" readonly id="WIS_SAVE_MOD" value="0" size="3"></td>
-                        </tr>
-                        <tr>
-                            <td class=""><input class="" type="checkbox" name="animal_handling" id="AnH_prof"><label class="form-control-sm modableSkill">Animal Handling</label></td>
-                            <td><input class="form-control mod" type="number" readonly id="AnH_MOD" value="0" size="3"></td>
-                        </tr>
-                        <tr>
-                            <td class=""><input class="" type="checkbox" name="insight" id="INS_prof"><label class="form-control-sm modableSkill">Insight</label></td>
-                            <td><input class="form-control mod" type="number" readonly id="INS_MOD" value="0" size="3"></td>
-                        </tr>
-                        <tr>
-                            <td class=""><input class="" type="checkbox" name="medicine" id="MED_prof"><label class="form-control-sm modableSkill">Medicine</label></td>
-                            <td><input class="form-control mod" type="number" readonly id="MED_MOD" value="0" size="3"></td>
-                        </tr>
-                        <tr>
-                            <td class=""><input class="" type="checkbox" name="perception" id="PER_prof"><label class="form-control-sm modableSkill">Perception</label></td>
-                            <td><input class="form-control mod" type="number" readonly id="PER_MOD" value="0" size="3"></td>
-                        </tr>
-                        <tr>
-                            <td class=""><input class="" type="checkbox" name="survival" id="SUR_prof"><label class="form-control-sm modableSkill">Survival</label></td>
-                            <td><input class="form-control mod" type="number" readonly id="SUR_MOD" value="0" size="3"></td>
-                        </tr>
-                    </table>
-                </div>
-                <div class="col">
-                    <table class="table table-sm">
-                        <tr>
-                            <th class="modableAbil">Charisma</th>
-                        </tr>
-                        <tr>
-                            <td><input class="form-control autoMod" type="number" value="0" placeholder="CHA" id="CHA"></td>
-                            <td><input class="form-control natMod" type="number" readonly id="CharismaMod" value="0"></td>
-                        </tr>
-                        <tr>
-                            <td class=""><input class="saving" type="checkbox" name="CHR_SAVE" id="CHA_prof"><label class="form-control-sm">Saving Throw</label></td>
-                            <td><input class="form-control mod" type="number" readonly id="CHA_SAVE_MOD" value="0" size="3"></td>
-                        </tr>
-                        <tr>
-                            <td class=""><input class="" type="checkbox" name="deception" id="DEC_prof"><label class="form-control-sm modableSkill">Deception</label></td>
-                            <td><input class="form-control mod" type="number" readonly id="DEC_MOD" value="0" size="3"></td>
-                        </tr>
-                        <tr>
-                            <td class=""><input class="" type="checkbox" name="intimidation" id="IND_prof"><label class="form-control-sm modableSkill">Intimidation</label></td>
-                            <td><input class="form-control mod" type="number" readonly id="IND_MOD" value="0" size="3"></td>
-                        </tr>
-                        <tr>
-                            <td class=""><input class="" type="checkbox" name="performance" id="PEF_prof"><label class="form-control-sm modableSkill">Performance</label></td>
-                            <td><input class="form-control mod" type="number" readonly id="PEF_MOD" value="0" size="3"></td>
-                        </tr>
-                        <tr>
-                            <td class=""><input class="" type="checkbox" name="persuasion" id="PES_prof"><label class="form-control-sm modableSkill">Persuasion</label></td>
-                            <td><input class="form-control mod" type="number" readonly id="PES_MOD" value="0" size="3"></td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
-        </form>
+	<!--		JAVASCRIPT						-->
 
-        <!--		Health and Armor	-->
-
-        <h1>Health and Armor<button class="hide btn btn-sm">Show/Hide</button></h1>
-        <form class="sect form" id="healthArmor">
-            <div class="row form-group">
-                <div class="col-md-3">
-                    <table>
-                        <tr>
-                            <td><label class="">Armor Class:</label></td>
-                            <td><input class="form-control" type="number" id="AC" value=""></td>
-                        </tr>
-                        <tr>
-                            <td><label class="">Speed (feet):</label></td>
-                            <td><input class="form-control" type="number" id="speed" value=""></td>
-                        </tr>
-                        <tr>
-                            <td><label class="">Initiative:</label></td>
-                            <td><input class="form-control" type="number" id="initiative" value=""></td>
-                        </tr>
-                    </table>
-                </div>
-                <div class="col-md-3">
-                    <table>
-                        <tr>
-                            <td><label>Current HP:</label></td>
-                            <td><input class="form-control" type="number" id="currHP" value=""></td>
-                        </tr>
-                        <tr>
-                            <td><label>Temp HP:</label></td>
-                            <td><input class="form-control" type="number" id="tempHP" value=""></td>
-                        </tr>
-                        <tr>
-                            <td><label>Max HP:</label></td>
-                            <td><input class="form-control" type="number" id="maxHP" value=""></td>
-                        </tr>
-                    </table>
-                </div>
-                <div class="col-md-3">
-                    <table>
-                        <tr>
-                            <td><label>Hit Dice Type:</label></td>
-                            <td><input class="form-control" type="text" id="HDtype" value=""></td>
-                        </tr>
-                        <tr>
-                            <td><label>Hit Dice Total:</label></td>
-                            <td><input class="form-control" type="number" id="HDtotal" value=""></td>
-                        </tr>
-                    </table>
-                </div>
-                <div class="col-md-3">
-                    <table>
-                        <label class="">Death Saves</label>
-                        <tr>
-                            <td><label>Successes:</label></td>
-                            <td><input class="" type="checkbox" id="SUC1" value=""></td>
-                            <td><input class="" type="checkbox" id="SUC2" value=""></td>
-                            <td><input class="" type="checkbox" id="SUC3" value=""></td>
-                        </tr>
-                        <tr>
-                            <td><label>Faliures:</label></td>
-                            <td><input class="" type="checkbox" id="FAIL1" value=""></td>
-                            <td><input class="" type="checkbox" id="FAIL2" value=""></td>
-                            <td><input class="" type="checkbox" id="FAIL3" value=""></td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
-        </form>
-
-        <!--		Features and Traits	-->
-
-        <h1>Features and Traits<button class="hide btn btn-sm">Show/Hide</button></h1>
-        <div class="sect container-fluid" id="feat_trait">
-            <div class="row">
-                <ul class="col-md-6 list-group" id="traitList">
-                    <label>Race and Background <button class="addLi btn btn-sm col-md-2">Add</button></label>
-                    <li class="list-group-item d-flex"><input type="text" class="form-control form-control-sm col-md-10"><button class="remLi btn btn-sm col-md-2">Remove</button></li>
-                </ul>
-                <ul class="col-md-6 list-group" id="featureList">
-                    <label>Class <button class="addLi btn btn-sm col-md-2">Add</button></label>
-                    <li class="list-group-item d-flex"><input type="text" class="form-control form-control-sm col-md-10"><button class="remLi btn btn-sm col-md-2">Remove</button></li>
-                </ul>
-            </div>
-        </div>
-
-        <!--		Proficiencies		-->
-
-        <h1>Proficiencies<button class="hide btn btn-sm">Show/Hide</button></h1>
-        <div class="sect container-fluid" id="proficiencies">
-            <div class="row">
-                <ul class="col-md-3 list-group" id="profWeap">
-                    <label>Weapons <button class="addLi btn btn-sm col-md-2">Add</button></label>
-                    <li class="list-group-item d-flex"><input type="text" class="form-control form-control-sm col-md-9"><button class="remLi btn btn-sm col-md-3">Remove</button></li>
-                </ul>
-                <ul class="col-md-3 list-group" id="profLang">
-                    <label>Languages <button class="addLi btn btn-sm col-md-2">Add</button></label>
-                    <li class="list-group-item d-flex"><input type="text" class="form-control form-control-sm col-md-9"><button class="remLi btn btn-sm col-md-3">Remove</button></li>
-                </ul>
-                <ul class="col-md-3 list-group" id="profTool">
-                    <label>Tools and Vehicles <button class="addLi btn btn-sm col-md-2">Add</button></label>
-                    <li class="list-group-item d-flex"><input type="text" class="form-control form-control-sm col-md-9"><button class="remLi btn btn-sm col-md-3">Remove</button></li>
-                </ul>
-                <ul class="col-md-3 list-group" id="profArmor">
-                    <label>Armors <button class="addLi btn btn-sm col-md-2">Add</button></label>
-                    <li class="list-group-item d-flex"><input type="text" class="form-control form-control-sm col-md-9"><button class="remLi btn btn-sm col-md-3">Remove</button></li>
-                </ul>
-            </div>
-        </div>
-
-        <!--		Equipment		-->
-
-        <h1>Equipment<button class="hide btn btn-sm">Show/Hide</button></h1>
-        <div class="sect container-fluid" id="equipment">
-            <div class="row">
-                <table class="table table-responsive table-striped table-sm">
-                    <thead>
-                        <tr>
-                            <th scope="col">
-                                <h4 class="font-weight-bold">Weapons</h4>
-                            </th>
-                            <th scope="col">Damage</th>
-                            <th scope="col">Damage Type</th>
-                            <th scope="col">Range</th>
-                            <th scope="col">Weight</th>
-                            <th scope="col">Properties</th>
-                        </tr>
-                    </thead>
-                    <tbody id="weapons">
-                        <tr class="weaponRows" id="weaponRow">
-                            <th id="weapName"><input type="text" placeholder="Weapon"></th>
-                            <td id="damage"><input type="text" placeholder="Damage"></td>
-                            <td id="damageType"><input type="text" placeholder="Damage Type"></td>
-                            <td id="range"><input type="text" placeholder="Range"></td>
-                            <td id="weight"><input type="text" placeholder="Weight"></td>
-                            <td id="weapProp"><input type="text" placeholder="Properties"></td>
-                            <td><button id="fill" class="btn btn-sm fillWeaponRow">Fill Details</button></td>
-                            <td><button id="rem" class="remWeap btn btn-sm">Remove</button></td>
-                        </tr>
-                    </tbody>
-                    <tfoot>
-                        <td><button id="addWeap" class="btn col-md-4">Add</button></td>
-                    </tfoot>
-                </table>
-            </div>
-            <div class="row container-fluid justify-content-around">
-                <ul class="col-md-5 list-group" id="gear">
-                    <label>Gear <button class="addLi btn btn-sm col-md-2">Add</button></label>
-                    <li class="list-group-item d-flex"><input type="text" class="form-control form-control-sm col-md-9"><button class="remLi btn btn-sm col-md-3">Remove</button></li>
-                </ul>
-                <ul class="col-md-5 list-group" id="treasure">
-                    <label>Treasure <button class="addLi btn btn-sm col-md-2">Add</button></label>
-                    <li class="list-group-item d-flex"><input type="text" class="form-control form-control-sm col-md-9"><button class="remLi btn btn-sm col-md-3">Remove</button></li>
-                </ul>
-                <table class="table table-striped table-responsive table-sm col-md-2" id="coin">
-                    <thead>
-                        <tr>
-                            <th class="modable">Coin</th>
-                            <th>Amount</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="row">Copper</th>
-                            <td><input type="number" class="col-md-10" value="0" id="copper"></td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Silver</th>
-                            <td><input type="number" class="col-md-10" value="0" id="silver"></td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Electrum</th>
-                            <td><input type="number" class="col-md-10" value="0" id="electrum"></td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Gold</th>
-                            <td><input type="number" class="col-md-10" value="0" id="gold"></td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Platinum</th>
-                            <td><input type="number" class="col-md-10" value="0" id="platinum"></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-
-        <!--		SPELLCASTING	-->
-
-        <h1>Spellcasting<button class="hide btn btn-sm">Show/Hide</button></h1>
-        <div class="sect container-fluid" id="spells">
-            <div class="row">
-                <div class="col-md-3">
-                    <label for="spellClass" class="modableSpellClass">Spellcasting Class</label>
-                    <input class="form-control" type="text" placeholder="Class" id="spellClass">
-                </div>
-                <div class="col-md-3">
-                    <label for="spellAbility">Spellcasting Ability</label>
-                    <input class="form-control" type="text" placeholder="Ability" id="spellAbility">
-                </div>
-                <div class="col-md-3">
-                    <label for="spellDC" class="">Spell Save DC</label>
-                    <input class="form-control" type="number" placeholder="DC" id="spellDC">
-                </div>
-                <div class="col-md-3">
-                    <label for="spellAttMod" class="">Spell Attack Modifier</label>
-                    <input class="form-control" type="number" placeholder="Modifier" id="spellAttMod">
-                </div>
-            </div>
-            <div class="row" id="spellLists">
-                <ul class="col-md-4 list-group" id="cantrips">
-                    <label>Cantrips:<button class="addLi btn btn-sm col-md-3 form-control-sm">Add</button></label>
-                    <li class="list-group-item d-flex"><input type="text" class="form-control form-control-sm col-md-8"><button class="modableSpell btn btn-sm col-md-2">Details</button><button class="remLi btn btn-sm col-md-2">Remove</button></li>
-                </ul>
-                <ul class="col-md-4 list-group" id="spell1">
-                    <label class="d-flex">Level 1: <button class="addLi btn btn-sm col-md-3 form-control-sm">Add</button><input class="form-control form-control-sm col-md-3" type="number" placeholder="Spent" id="spent1"><input class="form-control form-control-sm col-md-3" type="number" placeholder="Total" id="total1"></label>
-                    <li class="list-group-item d-flex"><input type="text" class="form-control form-control-sm col-md-8"><button class="modableSpell btn btn-sm col-md-2">Details</button><button class="remLi btn btn-sm col-md-2">Remove</button></li>
-                </ul>
-                <ul class="col-md-4 list-group" id="spell2">
-                    <label class="d-flex">Level 2: <button class="addLi btn btn-sm col-md-3 form-control-sm">Add</button><input class="form-control form-control-sm col-md-3" type="number" placeholder="Spent" id="spent2"><input class="form-control form-control-sm col-md-3" type="number" placeholder="Total" id="total2"></label>
-                    <li class="list-group-item d-flex"><input type="text" class="form-control form-control-sm col-md-8"><button class="modableSpell btn btn-sm col-md-2">Details</button><button class="remLi btn btn-sm col-md-2">Remove</button></li>
-                </ul>
-                <ul class="col-md-4 list-group" id="spell3">
-                    <label class="d-flex">Level 3: <button class="addLi btn btn-sm col-md-3 form-control-sm">Add</button><input class="form-control form-control-sm col-md-3" type="number" placeholder="Spent" id="spent3"><input class="form-control form-control-sm col-md-3" type="number" placeholder="Total" id="total3"></label>
-                    <li class="list-group-item d-flex"><input type="text" class="form-control form-control-sm col-md-8"><button class="modableSpell btn btn-sm col-md-2">Details</button><button class="remLi btn btn-sm col-md-2">Remove</button></li>
-                </ul>
-                <ul class="col-md-4 list-group" id="spell4">
-                    <label class="d-flex">Level 4: <button class="addLi btn btn-sm col-md-3 form-control-sm">Add</button><input class="form-control form-control-sm col-md-3" type="number" placeholder="Spent" id="spent4"><input class="form-control form-control-sm col-md-3" type="number" placeholder="Total" id="total4"></label>
-                    <li class="list-group-item d-flex"><input type="text" class="form-control form-control-sm col-md-8"><button class="modableSpell btn btn-sm col-md-2">Details</button><button class="remLi btn btn-sm col-md-2">Remove</button></li>
-                </ul>
-                <ul class="col-md-4 list-group" id="spell5">
-                    <label class="d-flex">Level 5: <button class="addLi btn btn-sm col-md-3 form-control-sm">Add</button><input class="form-control form-control-sm col-md-3" type="number" placeholder="Spent" id="spent5"><input class="form-control form-control-sm col-md-3" type="number" placeholder="Total" id="total5"></label>
-                    <li class="list-group-item d-flex"><input type="text" class="form-control form-control-sm col-md-8"><button class="modableSpell btn btn-sm col-md-2">Details</button><button class="remLi btn btn-sm col-md-2">Remove</button></li>
-                </ul>
-                <ul class="col-md-4 list-group" id="spell6">
-                    <label class="d-flex">Level 6: <button class="addLi btn btn-sm col-md-3 form-control-sm">Add</button><input class="form-control form-control-sm col-md-3" type="number" placeholder="Spent" id="spent6"><input class="form-control form-control-sm col-md-3" type="number" placeholder="Total" id="total6"></label>
-                    <li class="list-group-item d-flex"><input type="text" class="form-control form-control-sm col-md-8"><button class="modableSpell btn btn-sm col-md-2">Details</button><button class="remLi btn btn-sm col-md-2">Remove</button></li>
-                </ul>
-                <ul class="col-md-4 list-group" id="spell7">
-                    <label class="d-flex">Level 7: <button class="addLi btn btn-sm col-md-3 form-control-sm">Add</button><input class="form-control form-control-sm col-md-3" type="number" placeholder="Spent" id="spent7"><input class="form-control form-control-sm col-md-3" type="number" placeholder="Total" id="total7"></label>
-                    <li class="list-group-item d-flex"><input type="text" class="form-control form-control-sm col-md-8"><button class="modableSpell btn btn-sm col-md-2">Details</button><button class="remLi btn btn-sm col-md-2">Remove</button></li>
-                </ul>
-                <ul class="col-md-4 list-group" id="spell8">
-                    <label class="d-flex">Level 8: <button class="addLi btn btn-sm col-md-3 form-control-sm">Add</button><input class="form-control form-control-sm col-md-3" type="number" placeholder="Spent" id="spent8"><input class="form-control form-control-sm col-md-3" type="number" placeholder="Total" id="total8"></label>
-                    <li class="list-group-item d-flex"><input type="text" class="form-control form-control-sm col-md-8"><button class="modableSpell btn btn-sm col-md-2">Details</button><button class="remLi btn btn-sm col-md-2">Remove</button></li>
-                </ul>
-                <ul class="col-md-4 list-group" id="spell9">
-                    <label class="d-flex">Level 9: <button class="addLi btn btn-sm col-md-3 form-control-sm">Add</button><input class="form-control form-control-sm col-md-3" type="number" placeholder="Spent" id="spent9"><input class="form-control form-control-sm col-md-3" type="number" placeholder="Total" id="total9"></label>
-                    <li class="list-group-item d-flex"><input type="text" class="form-control form-control-sm col-md-8"><button class="modableSpell btn btn-sm col-md-2">Details</button><button class="remLi btn btn-sm col-md-2">Remove</button></li>
-                </ul>
-            </div>
-        </div>
-
-        <!--		CHARACTER BACKSTORY AND DETAILS-->
-
-        <h1>Character Details<button class="hide btn btn-sm">Show/Hide</button></h1>
-        <div class="sect container-fluid" id="charDetails">
-            <div class="row">
-                <ul class="col-md-3 list-group" id="personality">
-                    <label>Personality Traits<button class="addLi btn btn-sm col-md-3">Add</button></label>
-                    <li class="list-group-item d-flex"><input type="text" class="form-control form-control-sm col-md-9"><button class="remLi btn btn-sm col-md-3">Remove</button></li>
-                </ul>
-                <ul class="col-md-3 list-group" id="ideals">
-                    <label>Ideals<button class="addLi btn btn-sm col-md-3">Add</button></label>
-                    <li class="list-group-item d-flex"><input type="text" class="form-control form-control-sm col-md-9"><button class="remLi btn btn-sm col-md-3">Remove</button></li>
-                </ul>
-                <ul class="col-md-3 list-group" id="bonds">
-                    <label>Bonds<button class="addLi btn btn-sm col-md-3">Add</button></label>
-                    <li class="list-group-item d-flex"><input type="text" class="form-control form-control-sm col-md-9"><button class="remLi btn btn-sm col-md-3">Remove</button></li>
-                </ul>
-                <ul class="col-md-3 list-group" id="flaws">
-                    <label>Flaws<button class="addLi btn btn-sm col-md-3">Add</button></label>
-                    <li class="list-group-item d-flex"><input type="text" class="form-control form-control-sm col-md-9"><button class="remLi btn btn-sm col-md-3">Remove</button></li>
-                </ul>
-            </div>
-            <div class="row">
-                <div class="form-group col-md-3">
-                    <label for="portrait">Character Portait</label>
-					<input type="file" id="portraitUpload">
-                    <img src="#" class="img-responsive img-fluid form-control" id="portrait">
-                </div>
-                <div class="form-group col-md-9">
-                    <label for="charDetailsForm">Character Details</label>
-                    <textarea id="charDetailsForm" class="form-control" rows="18" placeholder="Character backstory, religion, associated organizations, and other details..."></textarea>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!--		ITEM DETAIL MODAL BOX			-->
-
-    <div class="modal fade" id="detailModal">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="modal-title" id="modTitle"></h4>
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                </div>
-                <div class="modal-body" id="modBody">
-                </div>
-                <div class="modal-footer" id="modFoot">
-                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!--		JAVASCRIPT						-->
-
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <script src="Dictionaries.js"></script>
-    <script src="charSheet.js"></script>
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	<script src="Dictionaries.js"></script>
+	<script src="charSheet.js"></script>
 </body>
 
 </html>
